@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
@@ -189,7 +190,8 @@
                                         </td>
                                         <td class="center">
                                         	<a href="{{ route('questions.edit',$item->id) }}" title="">Edit</a>
-                                        	<a href="" title="">Delete</a>
+
+                                        	<a href="{{ route('questions.destroy',$item->id) }}" class="destroy"  title="">Delete</a>
                                         </td>
                                     </tr>
                             	@endforeach       
@@ -237,28 +239,64 @@
     });
     </script>
     <!-- Ajax xoa cau hoi -->
-    <!-- <script>
-		function remove(url){
-			var check = window.confirm('Ban co muon xoa ko');
-			if(check){
-				$.ajax({
-					url : url,
-					data : {
-						"_token" : "{{ csrf_token() }}"
-					},
-					dataType : "json",
-					success($rs){
-						if(rs.status == 204){
-							alert('xoa thanh cong');
-						}
-						else{
-							alert('loi');
-						}
-					}
-				});
-			}
-		};
-	</script> -->
+
+  <!--   Xoa voi GD dep -->
+  <script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+ 
+    <script>
+    $('.destroy').click(function (e) {
+        e.preventDefault();
+        var _this = this;
+        var url = $(_this).attr('href');
+
+        bootbox.confirm({
+            title: "Hành động xóa?",
+            message: "Bạn đã thực sự chắc chắn thực hiện hành động này?",
+            buttons: {
+                cancel: {
+                    label: '<i class="fa fa-times"></i> Hủy bỏ'
+                },
+                confirm: {
+                    label: '<i class="fa fa-check"></i> Xác nhận'
+                }
+            },
+            callback: function (result) {
+                if (result) {
+                    $.ajax({
+                        url: url,
+                        type: 'DELETE',
+                        dataType: 'json',
+                        success: function (rs) {
+                            if (rs.status === 204) {
+                                $(_this).parents().eq(1).remove();
+                                $.notify('Xóa thành công!', 'success');
+                            } else {
+                                $.notify('Xóa không thành công!', 'error');
+                            }
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert("Status: " + textStatus);
+                            alert("Error: " + errorThrown);
+                        }
+                    })
+                }
+            }
+        });
+    })
+
+
+	</script>
 
 </body>
 

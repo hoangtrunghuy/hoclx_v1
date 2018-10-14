@@ -98,19 +98,33 @@ class QuestionController extends Controller
      */
     public function destroy($id)
     {
+        // $model = Question::findOrFail($id);
+
+        // $flag = $model->delete();
+        // if($flag){
+        //     session()->flash('success','xóa thành công !');
+        // }
+        // else{
+        //     session()->flash('warning','xóa không thành công !');
+        // }
+        // return back();
+        
         $model = Question::find($id);
 
-        $flag = $model->delete();
+        $msg = $model->delete();
 
-        if($flag) {
+        if ($msg) {
+
             return response()->json(array(
-                'status' => '204',
-                'message' => ' Success'
-                ));
+                'status' => 204,
+                'msg' => '204: HTTP requests successful'
+            ));
         }
-        return response()->json(array(
-                'status' => '400',
-                'message' => ' Fail'
-                ));
+        return response()->json(array(  
+            'status' => 400,
+            'msg' => '400: Bad Request'
+        ));
+
+
     }
 }
