@@ -18,9 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::resource('questions', 'QuestionController');
 
+<<<<<<< HEAD
 Route::group(['prefix' => 'tips'],function(){
     Route::get(  '/', 'TipController@index')->name('tips.index');
     Route::get(  'create', 'TipController@create')->name('tips.create');
@@ -36,3 +36,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+=======
+Route::resource('users', 'UserController');
+
+Route::resource('feedback', 'FeedbackController');
+>>>>>>> 867cfbc6a65d5db334f9e919759a78a42273701a
