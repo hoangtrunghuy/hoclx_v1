@@ -11,9 +11,28 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 
 Route::resource('questions', 'QuestionController');
+
+Route::group(['prefix' => 'tips'],function(){
+    Route::get(  '/', 'TipController@index')->name('tips.index');
+    Route::get(  'create', 'TipController@create')->name('tips.create');
+    Route::post(  'store', 'TipController@store')->name('tips.store');
+    Route::get(  'show/{id}', 'TipController@show')->name('tips.show');
+    Route::get(  'edit/{id}', 'TipController@edit')->name('tips.edit');
+    Route::post(  'update/{id}', 'TipController@update')->name('tips.update');
+    Route::get(  'destroy/{id}', 'TipController@destroy')->name('tips.destroy');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
