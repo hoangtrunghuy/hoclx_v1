@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Feedback;
 use Illuminate\Http\Request;
-use App\Question;
 
-class QuestionController extends Controller
+class FeedbackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $data = Question::all();
-        // dd($data);
-        return view('Question.index',compact('data'));
+        $data = Feedback::with('user')->get();
+
+        return view('feedback.index', compact('data'));
     }
 
     /**
@@ -26,7 +26,7 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        return view('Question.create');
+        //
     }
 
     /**
@@ -37,14 +37,7 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        $model = new Question();
-
-        $model->fill($request->all());
-
-        $model->save();
-
-        return redirect(route('questions.index'));
+        //
     }
 
     /**
@@ -66,10 +59,7 @@ class QuestionController extends Controller
      */
     public function edit($id)
     {
-        $model = Question::find($id);
-
-        return view('Question.edit',compact('model'));
-
+        //
     }
 
     /**
@@ -81,13 +71,7 @@ class QuestionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $model = Question::find($id);
-
-        $model->fill($request->all());
-
-        $model->update();
-
-        return redirect(route('questions.index'));
+        //
     }
 
     /**
@@ -98,19 +82,6 @@ class QuestionController extends Controller
      */
     public function destroy($id)
     {
-        $model = Question::find($id);
-
-        $flag = $model->delete();
-
-        if($flag) {
-            return response()->json(array(
-                'status' => '204',
-                'message' => ' Success'
-                ));
-        }
-        return response()->json(array(
-                'status' => '400',
-                'message' => ' Fail'
-                ));
+        //
     }
 }

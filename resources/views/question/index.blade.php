@@ -67,7 +67,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><!-- <a href="index.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a> --><?php>header("location:pages/index.html")<?>;logout
+                        {{--<li><!-- <a href="index.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a> --><?php>header("location:pages/index.html")<?>;logout--}}
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
