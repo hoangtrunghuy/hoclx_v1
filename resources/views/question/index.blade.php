@@ -240,7 +240,7 @@
     </script>
     <!-- Ajax xoa cau hoi -->
 
-  <!--   Xoa -->
+  <!--   Xoa voi GD dep -->
   <script>
     $.ajaxSetup({
         headers: {
@@ -253,7 +253,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
-
+ 
     <script>
     $('.destroy').click(function (e) {
         e.preventDefault();
