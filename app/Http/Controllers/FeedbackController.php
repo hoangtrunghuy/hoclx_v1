@@ -12,11 +12,13 @@ class FeedbackController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $data = Feedback::with('user')->get();
 
-        return view('feedback.index', compact('data'));
+/*        return view('admin.feedback.index', compact('data'));*/
+        return view('client.index', compact('data'));
     }
 
     /**
@@ -82,6 +84,15 @@ class FeedbackController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Feedback::findOrFail($id);
+
+        $flag = $model->delete();
+        if($flag){
+            session()->flash('success','xóa thành công !');
+        }
+        else{
+            session()->flash('warning','xóa không thành công !');
+        }
+        return back();
     }
 }

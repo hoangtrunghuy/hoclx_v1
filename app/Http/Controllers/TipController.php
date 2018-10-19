@@ -15,7 +15,7 @@ class TipController extends Controller
     public function index()
     {
         $data = Tip::latest()->get();
-        return view('tips.index',compact('data'));
+        return view('admin.tips.index',compact('data'));
     }
 
     /**
@@ -25,7 +25,7 @@ class TipController extends Controller
      */
     public function create()
     {
-        return view('tips.create');
+        return view('admin.tips.create');
     }
 
     /**
@@ -63,7 +63,7 @@ class TipController extends Controller
     public function show($id)
     {
         $model = Tip::findOrFail($id);
-        return view('tips.show',compact('model'));
+        return view('admin.tips.show',compact('model'));
     }
 
     /**
@@ -76,7 +76,7 @@ class TipController extends Controller
     {
         $model = Tip::findOrFail($id);
 
-        return view('tips.edit',compact('model'));
+        return view('admin.tips.edit',compact('model'));
     }
 
     /**

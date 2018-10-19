@@ -63,7 +63,7 @@
                     <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    <li><a href="#"><i class="fa fa-user fa-fw"></i> </a>
                     </li>
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
@@ -95,7 +95,7 @@
                         <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Tổng quan</a>
                     </li>
                     <li>
-                        <a href="them_cau_hoi.html"><i class="fa fa-edit fa-fw"></i> Quản lý ôn tập</a>
+                        <a href="{{route('questions.index')}}"><i class="fa fa-edit fa-fw"></i> Quản lý ôn tập</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-file-text fa-fw"></i> Quản lý đề thi<span class="fa arrow"></span></a>
@@ -111,7 +111,7 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-comments fa-fw"></i> Quản lý feedback</a>
+                        <a href="{{route('feedback.index')}}" ><i class="fa fa-comments fa-fw"></i> Quản lý feedback</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-users fa-fw"></i> Quản lý User<span class="fa arrow"></span></a>
@@ -132,7 +132,7 @@
                         <a href="#"><i class="fa fa-film fa-fw"></i> Quản lý Video</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-support fa-fw"></i> Quản lý Mẹo lái xe</a>
+                        <a href="{{route('tips.index')}}"><i class="fa fa-support fa-fw"></i> Quản lý Mẹo lái xe</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-car fa-fw"></i> Quản lý tin tức lái xe</a>
@@ -146,198 +146,6 @@
     <div id="page-wrapper">
         @yield('content')
     </div>
-    <!--cu-->
-    <!-- <div id="page-wrapper">
-         <div class="row">
-             <div class="col-lg-12">
-                 <h1 class="page-header">Tổng Quan</h1>
-             </div>
-             &lt;!&ndash; /.col-lg-12 &ndash;&gt;
-         </div>
-         &lt;!&ndash; /.row &ndash;&gt;
-         <div class="row">
-             <div class="col-lg-3 col-md-6">
-                 <div class="panel panel-primary">
-                     <div class="panel-heading">
-                         <div class="row">
-                             <div class="col-xs-3">
-                                 <i class="fa fa-book fa-5x"></i>
-                             </div>
-                             <div class="col-xs-9 text-right">
-                                 <div class="huge">12</div>
-                                 <div>Quản lý câu hỏi ôn tập</div>
-                             </div>
-                         </div>
-                     </div>
-                     <a href="#">
-                         <div class="panel-footer">
-                             <span class="pull-left">Xem chi tiết...</span>
-                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                             <div class="clearfix"></div>
-                         </div>
-                     </a>
-                 </div>
-             </div>
-             <div class="col-lg-3 col-md-6">
-                 <div class="panel panel-primary">
-                     <div class="panel-heading">
-                         <div class="row">
-                             <div class="col-xs-3">
-                                 <i class="fa fa-file-text fa-5x"></i>
-                             </div>
-                             <div class="col-xs-9 text-right">
-                                 <div class="huge">15</div>
-                                 <div>Quản lý đề thi</div>
-                             </div>
-                         </div>
-                     </div>
-                     <a href="#">
-                         <div class="panel-footer">
-                             <span class="pull-left">Xem chi tiết...</span>
-                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                             <div class="clearfix"></div>
-                         </div>
-                     </a>
-                 </div>
-             </div>
-             <div class="col-lg-3 col-md-6">
-                 <div class="panel panel-primary">
-                     <div class="panel-heading">
-                         <div class="row">
-                             <div class="col-xs-3">
-                                 <i class="fa fa-comments fa-5x"></i>
-                             </div>
-                             <div class="col-xs-9 text-right">
-                                 <div class="huge">26</div>
-                                 <div>Quản lý Feedback</div>
-                             </div>
-                         </div>
-                     </div>
-                     <a href="#">
-                         <div class="panel-footer">
-                             <span class="pull-left">Xem chi tiết...</span>
-                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                             <div class="clearfix"></div>
-                         </div>
-                     </a>
-                 </div>
-             </div>
-             <div class="col-lg-3 col-md-6">
-                 <div class="panel panel-primary">
-                     <div class="panel-heading">
-                         <div class="row">
-                             <div class="col-xs-3">
-                                 <i class="fa fa-users fa-5x"></i>
-                             </div>
-                             <div class="col-xs-9 text-right">
-                                 <div class="huge">5</div>
-                                 <div>Quản lý User</div>
-                             </div>
-                         </div>
-                     </div>
-                     <a href="#">
-                         <div class="panel-footer">
-                             <span class="pull-left">Xem chi tiết...</span>
-                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                             <div class="clearfix"></div>
-                         </div>
-                     </a>
-                 </div>
-             </div>
-             <div class="col-lg-3 col-md-6">
-                 <div class="panel panel-primary">
-                     <div class="panel-heading">
-                         <div class="row">
-                             <div class="col-xs-3">
-                                 <i class="fa fa-archive fa-5x"></i>
-                             </div>
-                             <div class="col-xs-9 text-right">
-                                 <div class="huge">12</div>
-                                 <div>Quản lý Pages</div>
-                             </div>
-                         </div>
-                     </div>
-                     <a href="#">
-                         <div class="panel-footer">
-                             <span class="pull-left">Xem chi tiết...</span>
-                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                             <div class="clearfix"></div>
-                         </div>
-                     </a>
-                 </div>
-             </div>
-             <div class="col-lg-3 col-md-6">
-                 <div class="panel panel-primary">
-                     <div class="panel-heading">
-                         <div class="row">
-                             <div class="col-xs-3">
-                                 <i class="fa fa-film fa-5x"></i>
-                             </div>
-                             <div class="col-xs-9 text-right">
-                                 <div class="huge">12</div>
-                                 <div>Quản lý Video</div>
-                             </div>
-                         </div>
-                     </div>
-                     <a href="#">
-                         <div class="panel-footer">
-                             <span class="pull-left">Xem chi tiết...</span>
-                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                             <div class="clearfix"></div>
-                         </div>
-                     </a>
-                 </div>
-             </div>
-             <div class="col-lg-3 col-md-6">
-                 <div class="panel panel-primary">
-                     <div class="panel-heading">
-                         <div class="row">
-                             <div class="col-xs-3">
-                                 <i class="fa fa-support fa-5x"></i>
-                             </div>
-                             <div class="col-xs-9 text-right">
-                                 <div class="huge">13</div>
-                                 <div>Quản Lý Mẹo Lái Xe</div>
-                             </div>
-                         </div>
-                     </div>
-                     <a href="#">
-                         <div class="panel-footer">
-                             <span class="pull-left">Xem chi tiết...</span>
-                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                             <div class="clearfix"></div>
-                         </div>
-                     </a>
-                 </div>
-             </div>
-             <div class="col-lg-3 col-md-6">
-                 <div class="panel panel-primary">
-                     <div class="panel-heading">
-                         <div class="row">
-                             <div class="col-xs-3">
-                                 <i class="fa fa-car fa-4x"></i>
-                             </div>
-                             <div class="col-xs-9 text-right">
-                                 <div class="huge">124</div>
-                                 <div>Quản lý tin tức lái xe</div>
-                             </div>
-                         </div>
-                     </div>
-                     <a href="#">
-                         <div class="panel-footer">
-                             <span class="pull-left">Xem chi tiết...</span>
-                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                             <div class="clearfix"></div>
-                         </div>
-                     </a>
-                 </div>
-             </div>
-         </div>
-
-
-
-     </div>-->
-    <!-- /#page-wrapper -->
 
 </div>
 <!-- /#wrapper -->

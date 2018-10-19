@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         $data = User::all();
 
-        return view('user.index', compact('data'));
+        return view('admin.user.index', compact('data'));
     }
 
     /**
@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('user.create');
+        return view('admin.user.create');
     }
 
     /**
@@ -41,7 +41,7 @@ class UserController extends Controller
 
         $model->fill($request->all());
 
-        if ($request->hasFile('user_img')) {
+        /*if ($request->hasFile('user_img')) {
 
             $image = $request->file('user_img');
 
@@ -53,12 +53,17 @@ class UserController extends Controller
 
             $model->user_img = 'images/'. $imageName;
 
+        }*/
+
+        $flag = $model->save();
+        if($flag){
+            session()->flash('success','tạo mới thành công !');
+        }
+        else{
+            session()->flash('warning','tạo mới không thành công !');
         }
 
-        $model->save();
-
-
-        return redirect(route('users.index'));
+        return redirect(route('admin.user.index'));
 
     }
 
@@ -81,7 +86,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        return view('user.edit');
+        $model = User::findOrFail($id);
+        return view('admin.user.edit',compact('model'));
     }
 
     /**
@@ -93,7 +99,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $model = User::findOrFail($id);
+        $model->fill($request->all());
+        $flag = $model->save();
+        if($flag){
+            session()->flash('success','cập nhật thành công !');
+        }
+        else{
+            session()->flash('warning','cập nhật không thành công !');
+        }
+        return back();
     }
 
     /**
@@ -104,6 +119,15 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = User::findOrFail($id);
+
+        $flag = $model->delete();
+        if($flag){
+            session()->flash('success','xóa thành công !');
+        }
+        else{
+            session()->flash('warning','xóa không thành công !');
+        }
+        return back();
     }
 }

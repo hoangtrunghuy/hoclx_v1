@@ -16,7 +16,7 @@ class QuestionController extends Controller
     {
         $data = Question::all();
         // dd($data);
-        return view('Question.index',compact('data'));
+        return view('admin.Question.index',compact('data'));
     }
 
     /**
@@ -26,7 +26,7 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        return view('Question.create');
+        return view('admin.Question.create');
     }
 
     /**
@@ -68,7 +68,7 @@ class QuestionController extends Controller
     {
         $model = Question::find($id);
 
-        return view('Question.edit',compact('model'));
+        return view('admin.Question.edit',compact('model'));
 
     }
 
