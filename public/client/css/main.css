@@ -604,6 +604,7 @@ Input, textarea : 15px/1.7 'Roboto-Regular', Arial, sans-serif;
   display: -ms-flexbox;
   display: flex;
   padding-bottom: 4px;
+  margin-left: 20px;
 }
 
 .social a {

@@ -22,8 +22,8 @@
                 <td>{{$item->image}}</td>
                 <td class="stringToHtml">{{$item->content}}</td>
                 <td>
-                    <a href="{{route('tips.show', $item->id)}}">{{--<i class="fa fa-eye"></i>--}}Show</a>
-                    <a href="{{route('tips.edit', $item->id)}}">{{--<i class="fa fa-pencil"></i>--}}Edit</a>
+                    <a href="{{route('tips.show', $item->id)}}">Show</a>
+                    <a href="{{route('tips.edit', $item->id)}}">Edit</a>
                     <a href="{{route('tips.destroy', $item->id)}}"
                         onclick = "event.preventDefault();
                         flag = confirm('bạn có chác muốn xóa không!');
@@ -31,7 +31,7 @@
                             window.location = '{{route('tips.destroy', $item->id)}}';
                         }
                         "
-                    >{{--<i class="fa fa-trash"></i>--}}Delete</a>
+                    >Delete</a>
                 </td>
             </tr>
         @endforeach
@@ -43,6 +43,5 @@
         for (var i = 0; i < str.length; i++) {
             str[i].innerHTML = str[i].innerText;
         }
-
     </script>
 @endsection

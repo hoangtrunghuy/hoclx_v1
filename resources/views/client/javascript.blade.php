@@ -34,3 +34,6 @@
 <script src="client/js/map-custom.js"></script>
 <!--===============================================================================================-->
 <script src="client/js/main.js"></script>
+
+<script src="LoginStyle/js/main.js"></script>
+<script src="LoginStyle/vendor/select2/select2.min.js"></script>

@@ -1,23 +1,13 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/','DashboardController@index')->name('dashboard.index');
+
+
 Route::resource('questions', 'QuestionController');
 
 /*<<<<<<< HEAD*/
@@ -36,10 +26,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-/*Route::get('/','Login')*/
-
 /*=======*/
-/*Route::resource('users', 'UserController');*/
 Route::group(['prefix' => 'user'],function(){
     Route::get(  '/', 'UserController@index')->name('user.index');
     Route::get(  'create', 'UserController@create')->name('user.create');
@@ -49,7 +36,7 @@ Route::group(['prefix' => 'user'],function(){
     Route::get(  'destroy/{id}', 'UserController@destroy')->name('user.destroy');
 
 });
-/*Route::get('/login','Auth.LoginController')->name('login');*/
+
 Route::group(['prefix' => 'feedback'],function(){
     Route::get('/', 'FeedbackController@index')->name('feedback.index');
 });
@@ -57,5 +44,6 @@ Route::group(['prefix' => 'feedback'],function(){
 Route::get(  'destroy/{id}', 'FeedbackController@destroy')->name('feedback.destroy');
 Route::resource('test', 'DaotaoController');
 
-
-/*>>>>>>> 867cfbc6a65d5db334f9e919759a78a42273701a*/
+Route::group(['prefix' => 'thu'],function(){
+    Route::get('/', 'TestController@index')->name('thu.index');
+});
