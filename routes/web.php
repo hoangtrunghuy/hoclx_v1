@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/','DashboardController@index')->name('dashboard.index');
+/*Route::get('/','DashboardController@index')->name('dashboard.index');*/
 Route::resource('questions', 'QuestionController');
 
 /*<<<<<<< HEAD*/
@@ -59,3 +59,7 @@ Route::resource('test', 'DaotaoController');
 
 
 /*>>>>>>> 867cfbc6a65d5db334f9e919759a78a42273701a*/
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
