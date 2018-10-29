@@ -4,14 +4,16 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('client.index');
 });
 
 /*Route::get('/','DashboardController@index')->name('dashboard.index');*/
 
+Route::get('/home', 'HomeController@index')->name('home');
+
+
 Route::resource('questions', 'QuestionController');
 
-/*<<<<<<< HEAD*/
 Route::group(['prefix' => 'tips'],function(){
     Route::get(  '/', 'TipController@index')->name('tips.index');
     Route::get(  'create', 'TipController@create')->name('tips.create');
@@ -24,8 +26,6 @@ Route::group(['prefix' => 'tips'],function(){
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 /*=======*/
 Route::group(['prefix' => 'user'],function(){
@@ -55,7 +55,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'thu'],function(){
-    Route::get('/', 'TestController@index')->name('thu.index');
+    Route::get('/', 'Client\TestController@index')->name('thu.index');
 });
 
 

@@ -17,23 +17,32 @@
 
         <form action="{{ route('questions.store') }}" method="post" role="form" >
             {{ @csrf_field() }}
-            <div class="row">
-                <div class="col-sm-6 col-lg-3 m-t-20">
-                    <input class="size6 s-txt6 p-l-20" type="text" name="name" placeholder="Your Name: *">
+            @guest
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-4 col-sm-6  m-t-20">
+                        <input class="size6 s-txt6 p-l-20" type="text" name="suburb" placeholder="Suburb: *">
+                    </div>
                 </div>
+            @else
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3 m-t-20">
+                        <input class="size6 s-txt6 p-l-20" type="text" name="name" placeholder="Your Name: *">
+                    </div>
 
-                <div class="col-sm-6 col-lg-3 m-t-20">
-                    <input class="size6 s-txt6 p-l-20" type="text" name="email" placeholder="Email: *">
-                </div>
+                    <div class="col-sm-6 col-lg-3 m-t-20">
+                        <input class="size6 s-txt6 p-l-20" type="text" name="email" placeholder="Email: *">
+                    </div>
 
-                <div class="col-sm-6 col-lg-3 m-t-20">
-                    <input class="size6 s-txt6 p-l-20" type="text" name="phone" placeholder="Phone Number: *">
-                </div>
+                    <div class="col-sm-6 col-lg-3 m-t-20">
+                        <input class="size6 s-txt6 p-l-20" type="text" name="phone" placeholder="Phone Number: *">
+                    </div>
 
-                <div class="col-sm-6 col-lg-3 m-t-20">
-                    <input class="size6 s-txt6 p-l-20" type="text" name="suburb" placeholder="Suburb: *">
+                    <div class="col-sm-6 col-lg-3 m-t-20">
+                        <input class="size6 s-txt6 p-l-20" type="text" name="suburb" placeholder="Suburb: *">
+                    </div>
                 </div>
-            </div>
+            @endguest
+
 
             <div class="flex-c-m p-t-36">
                 <!-- Button -->
