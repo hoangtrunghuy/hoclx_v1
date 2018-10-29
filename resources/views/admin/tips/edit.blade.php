@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-admin')
 
 @section('content')
     <h1>Sửa mẹo lái xe</h1>
@@ -17,7 +17,7 @@
     @if(Session::has('warning'))
         <div class="alert alert-warning"><span class="glyphicon glyphicon-ok"></span><em> {!! session('warning') !!}</em></div>
     @endif
-    <form action="{{route('tips.update',$model->id)}}" method="post">
+    <form action="{{route('tips.update',$model->id)}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="row">
             <div class="col-md-4">
@@ -35,7 +35,8 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Image</label>
-                    <input type="text" name="image" value="{{$model->image}}" class="form-control">
+                    <input type="file" name="image" value="{{$model->image}}"
+                           class="form-control">
                 </div>
             </div>
             <div class="col-md-12">

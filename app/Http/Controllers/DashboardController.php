@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tip;
 
 class DashboardController extends Controller
 {
@@ -14,6 +15,8 @@ class DashboardController extends Controller
     public function index()
     {
 
+        $data = Tip::orderBy('id','DESC')->take(4)->get();
+        return view('client.index')->with('data',$data);
     }
 
     /**

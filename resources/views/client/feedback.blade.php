@@ -24,8 +24,8 @@
                 </div>
 
                 <div class="wrap-info-person p-l-20">
-                <span class="dis-block s-txt3">{{ $item->user->user_firstName . ' ' . $item->user->user_lastName}}</span>
-                <span class="dis-block s-txt4">{{$item->user->user_adress}}</span>
+                <span class="dis-block s-txt3">{{ $item->user_firstName . ' ' . $item->user_lastName}}</span>
+                <span class="dis-block s-txt4">{{$item->user_adress}}</span>
                 </div>
                 </div>
                 </div>

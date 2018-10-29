@@ -38,6 +38,19 @@ class TipController extends Controller
     {
         $model = new Tip();
         $model->fill($request->all());
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+
+            $imageName = time() . $image->getClientOriginalName();
+
+            $path = public_path('/images');
+
+            $image->move($path, $imageName);
+
+            $model->image = 'images/'.$imageName;
+
+        }
         $flag = $model->save();
         if($flag){
             session()->flash('success','tạo mới thành công !');
@@ -90,6 +103,19 @@ class TipController extends Controller
     {
         $model = Tip::findOrFail($id);
         $model->fill($request->all());
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+
+            $imageName = time() . $image->getClientOriginalName();
+
+            $path = public_path('/images');
+
+            $image->move($path, $imageName);
+
+            $model->image = 'images/'.$imageName;
+
+        }
         $flag = $model->save();
         if($flag){
             session()->flash('success','cập nhật thành công !');
