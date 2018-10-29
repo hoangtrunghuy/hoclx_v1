@@ -14,7 +14,11 @@ class TestController extends Controller
      */
     public function index()
     {
-        return view('client.index');
+
+        $data = Tip::all();
+        // dd($data);
+        return view('client.index',compact('data'));
+
     }
 
     /**

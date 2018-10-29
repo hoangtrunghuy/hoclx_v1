@@ -95,4 +95,11 @@ class FeedbackController extends Controller
         }
         return back();
     }
+
+    public function callbackstore(Request $request){
+        $model = new Feedback();
+        $model->fill($request->all());
+        $model->save();
+        return back();
+    }
 }

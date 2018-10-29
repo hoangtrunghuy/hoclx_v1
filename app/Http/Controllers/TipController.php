@@ -38,8 +38,13 @@ class TipController extends Controller
     {
         $model = new Tip();
         $model->fill($request->all());
+<<<<<<< HEAD
 
         if ($request->hasFile('image')) {
+=======
+        if ($request->hasFile('image')) {
+
+>>>>>>> 49f008a80e942b0e8b68bf5c51ffb3c6641ea2a3
             $image = $request->file('image');
 
             $imageName = time() . $image->getClientOriginalName();
@@ -48,8 +53,12 @@ class TipController extends Controller
 
             $image->move($path, $imageName);
 
+<<<<<<< HEAD
             $model->image = 'images/'.$imageName;
 
+=======
+            $model->user_img = 'images/' . $imageName;
+>>>>>>> 49f008a80e942b0e8b68bf5c51ffb3c6641ea2a3
         }
         $flag = $model->save();
         if($flag){
