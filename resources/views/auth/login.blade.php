@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 @extends('layouts.app')
 
 @section('content')
+=======
+@include('')
+>>>>>>> afe222301549843bfcc7f424937a2349edfd817c
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

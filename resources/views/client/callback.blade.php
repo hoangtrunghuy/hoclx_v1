@@ -15,7 +15,8 @@
             </p>
         </div>
 
-        <form>
+        <form action="{{ route('questions.store') }}" method="post" role="form" >
+            {{ @csrf_field() }}
             <div class="row">
                 <div class="col-sm-6 col-lg-3 m-t-20">
                     <input class="size6 s-txt6 p-l-20" type="text" name="name" placeholder="Your Name: *">

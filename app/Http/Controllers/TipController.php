@@ -38,6 +38,18 @@ class TipController extends Controller
     {
         $model = new Tip();
         $model->fill($request->all());
+        if ($request->hasFile('image')) {
+
+            $image = $request->file('image');
+
+            $imageName = time() . $image->getClientOriginalName();
+
+            $path = public_path('/images');
+
+            $image->move($path, $imageName);
+
+            $model->user_img = 'images/' . $imageName;
+        }
         $flag = $model->save();
         if($flag){
             session()->flash('success','tạo mới thành công !');

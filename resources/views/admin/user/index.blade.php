@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-admin')
 @section('content')
     {{--<h1>Danh sách mẹo lái xe</h1>
     <a class="btn btn-primary" href="{{route('tips.create')}}">Thêm</a>

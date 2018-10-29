@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-admin')
     @section('content')
         <div class="row">
             <div class="col-lg-12">
@@ -49,7 +49,6 @@
                             </tbody>
                         </table>
                         <!-- /.table-responsive -->
-
                     </div>
                     <!-- /.panel-body -->
                 </div>

@@ -18,7 +18,7 @@ class FeedbackController extends Controller
         $data = Feedback::with('user')->get();
 
 /*        return view('admin.feedback.index', compact('data'));*/
-        return view('client.index', compact('data'));
+        return view('admin.feedback.index', compact('data'));
     }
 
     /**
@@ -93,6 +93,13 @@ class FeedbackController extends Controller
         else{
             session()->flash('warning','xóa không thành công !');
         }
+        return back();
+    }
+
+    public function callbackstore(Request $request){
+        $model = new Feedback();
+        $model->fill($request->all());
+        $model->save();
         return back();
     }
 }
