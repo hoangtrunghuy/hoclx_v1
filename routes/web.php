@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'DashboardController@index');
+Route::get('/', function (){
+    return view("client.index");
+});
 
 /*Route::get('/','DashboardController@index')->name('dashboard.index');*/
 
@@ -45,12 +47,6 @@ Route::post('callback','FeedbackController@callbackstore')->name('client.callbac
 Route::get(  'destroy/{id}', 'FeedbackController@destroy')->name('feedback.destroy');
 Route::resource('test', 'DaotaoController');
 
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'thu'],function(){
     Route::get('/', 'Client\TestController@index')->name('thu.index');
