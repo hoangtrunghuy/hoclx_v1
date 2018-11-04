@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\User;
+use App\Http\Controllers\Controller;
+use App\Tip;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class TipController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data = User::all();
-
-        return view('admin.user.index', compact('data'));
+        $data = Tip::latest()->get();
+        return view('admin.tips.index',compact('data'));
     }
 
     /**
@@ -26,24 +26,23 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        return view('admin.tips.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $model = new User();
-
+        $model = new Tip();
         $model->fill($request->all());
 
-        /*if ($request->hasFile('user_img')) {
-
-            $image = $request->file('user_img');
+        if ($request->hasFile('image')) {
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
 
             $imageName = time() . $image->getClientOriginalName();
 
@@ -51,10 +50,10 @@ class UserController extends Controller
 
             $image->move($path, $imageName);
 
-            $model->user_img = 'images/'. $imageName;
+            $model->image = 'images/'.$imageName;
 
-        }*/
-
+            $model->user_img = 'images/' . $imageName;
+        }
         $flag = $model->save();
         if($flag){
             session()->flash('success','tạo mới thành công !');
@@ -62,45 +61,65 @@ class UserController extends Controller
         else{
             session()->flash('warning','tạo mới không thành công !');
         }
-
-        return redirect(route('admin.user.index'));
-
+        return back();
+        /*$rules = [
+            'title' => 'require|min:10|max:191|unique:tips,title',
+            'discription' => 'require|min:10|max:191',
+            'image' => 'nullable',
+        ];
+        $this->validate($request,$rules);*/
+    }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $model = Tip::findOrFail($id);
+        return view('admin.tips.show',compact('model'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $model = User::findOrFail($id);
-        return view('admin.user.edit',compact('model'));
+        $model = Tip::findOrFail($id);
+
+        return view('admin.tips.edit',compact('model'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $model = User::findOrFail($id);
+        $model = Tip::findOrFail($id);
         $model->fill($request->all());
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+
+            $imageName = time() . $image->getClientOriginalName();
+
+            $path = public_path('/images');
+
+            $image->move($path, $imageName);
+
+            $model->image = 'images/'.$imageName;
+
+        }
         $flag = $model->save();
         if($flag){
             session()->flash('success','cập nhật thành công !');
@@ -114,12 +133,12 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $model = User::findOrFail($id);
+        $model = Tip::findOrFail($id);
 
         $flag = $model->delete();
         if($flag){

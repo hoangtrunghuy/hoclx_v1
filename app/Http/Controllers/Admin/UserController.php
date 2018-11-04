@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Tip;
+use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 
-class TipController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,9 @@ class TipController extends Controller
      */
     public function index()
     {
-        $data = Tip::latest()->get();
-        return view('admin.tips.index',compact('data'));
+        $data = User::all();
+
+        return view('admin.user.index', compact('data'));
     }
 
     /**
@@ -25,27 +27,24 @@ class TipController extends Controller
      */
     public function create()
     {
-        return view('admin.tips.create');
+        return view('admin.user.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $model = new Tip();
+        $model = new User();
+
         $model->fill($request->all());
-<<<<<<< HEAD
 
-        if ($request->hasFile('image')) {
-=======
-        if ($request->hasFile('image')) {
+        /*if ($request->hasFile('user_img')) {
 
->>>>>>> 49f008a80e942b0e8b68bf5c51ffb3c6641ea2a3
-            $image = $request->file('image');
+            $image = $request->file('user_img');
 
             $imageName = time() . $image->getClientOriginalName();
 
@@ -53,13 +52,10 @@ class TipController extends Controller
 
             $image->move($path, $imageName);
 
-<<<<<<< HEAD
-            $model->image = 'images/'.$imageName;
+            $model->user_img = 'images/'. $imageName;
 
-=======
-            $model->user_img = 'images/' . $imageName;
->>>>>>> 49f008a80e942b0e8b68bf5c51ffb3c6641ea2a3
-        }
+        }*/
+
         $flag = $model->save();
         if($flag){
             session()->flash('success','tạo mới thành công !');
@@ -67,64 +63,45 @@ class TipController extends Controller
         else{
             session()->flash('warning','tạo mới không thành công !');
         }
-        return back();
-        /*$rules = [
-            'title' => 'require|min:10|max:191|unique:tips,title',
-            'discription' => 'require|min:10|max:191',
-            'image' => 'nullable',
-        ];
-        $this->validate($request,$rules);*/
+
+        return redirect(route('admin.user.index'));
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $model = Tip::findOrFail($id);
-        return view('admin.tips.show',compact('model'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $model = Tip::findOrFail($id);
-
-        return view('admin.tips.edit',compact('model'));
+        $model = User::findOrFail($id);
+        return view('admin.user.edit',compact('model'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $model = Tip::findOrFail($id);
+        $model = User::findOrFail($id);
         $model->fill($request->all());
-
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-
-            $imageName = time() . $image->getClientOriginalName();
-
-            $path = public_path('/images');
-
-            $image->move($path, $imageName);
-
-            $model->image = 'images/'.$imageName;
-
-        }
         $flag = $model->save();
         if($flag){
             session()->flash('success','cập nhật thành công !');
@@ -138,12 +115,12 @@ class TipController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $model = Tip::findOrFail($id);
+        $model = User::findOrFail($id);
 
         $flag = $model->delete();
         if($flag){

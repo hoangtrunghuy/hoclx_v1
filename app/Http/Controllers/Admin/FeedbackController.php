@@ -1,20 +1,24 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Feedback;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class DaotaoController extends Controller
+class FeedbackController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
+        $data = Feedback::with('user')->get();
 
-        return view('client.index');
+        return view('admin.feedback.index', compact('data'));
     }
 
     /**
@@ -80,6 +84,22 @@ class DaotaoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Feedback::findOrFail($id);
+
+        $flag = $model->delete();
+        if($flag){
+            session()->flash('success','xóa thành công !');
+        }
+        else{
+            session()->flash('warning','xóa không thành công !');
+        }
+        return back();
+    }
+
+    public function callbackstore(Request $request){
+        $model = new Feedback();
+        $model->fill($request->all());
+        $model->save();
+        return back();
     }
 }

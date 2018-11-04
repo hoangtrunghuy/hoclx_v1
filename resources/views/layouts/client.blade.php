@@ -12,7 +12,7 @@
 
     <base href="{{ asset('') }}">
 
-@include('client.css')
+@include('client.effect.css')
 
 </head>
 <body class="animsition restyle-index">
@@ -28,7 +28,7 @@
 @yield('content')
 @include('client.footer')
 
-@include('client.javascript')
+@include('client.effect.javascript')
 
 </body>
 </html>
