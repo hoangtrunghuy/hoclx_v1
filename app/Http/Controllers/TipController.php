@@ -15,7 +15,7 @@ class TipController extends Controller
     public function index()
     {
         $data = Tip::latest()->get();
-        return view('admin.tips.index',compact('data'));
+        return view('client.tip',compact('data'));
     }
 
     /**
@@ -38,27 +38,20 @@ class TipController extends Controller
     {
         $model = new Tip();
         $model->fill($request->all());
-<<<<<<< HEAD
+
 
         if ($request->hasFile('image')) {
-=======
-        if ($request->hasFile('image')) {
 
->>>>>>> 49f008a80e942b0e8b68bf5c51ffb3c6641ea2a3
             $image = $request->file('image');
 
-            $imageName = time() . $image->getClientOriginalName();
+            $imageName = time() ."_". $image->getClientOriginalName();
 
-            $path = public_path('/images');
+            $path = public_path('images');
 
             $image->move($path, $imageName);
 
-<<<<<<< HEAD
             $model->image = 'images/'.$imageName;
 
-=======
-            $model->user_img = 'images/' . $imageName;
->>>>>>> 49f008a80e942b0e8b68bf5c51ffb3c6641ea2a3
         }
         $flag = $model->save();
         if($flag){
@@ -67,7 +60,7 @@ class TipController extends Controller
         else{
             session()->flash('warning','tạo mới không thành công !');
         }
-        return back();
+        return redirect(route('tips.index'));
         /*$rules = [
             'title' => 'require|min:10|max:191|unique:tips,title',
             'discription' => 'require|min:10|max:191',
@@ -132,7 +125,7 @@ class TipController extends Controller
         else{
             session()->flash('warning','cập nhật không thành công !');
         }
-        return back();
+        return redirect(route('tips.index'));
     }
 
     /**

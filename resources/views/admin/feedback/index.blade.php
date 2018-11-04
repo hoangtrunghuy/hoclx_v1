@@ -38,11 +38,12 @@
                                     <td class="center">
                                         <a href="{{route('feedback.destroy', $item->id)}}"
                                            onclick = "event.preventDefault();
+
                                                    flag = confirm('bạn có chác muốn xóa không!');
                                                    if(flag){
                                                    window.location = '{{route('feedback.destroy', $item->id)}}';
                                                    }
-                                                   ">Delete</a>
+                                                   "><i class="glyphicon glyphicon-trash"></i>Delete</a>
                                     </td>
                                 </tr>
                             @endforeach

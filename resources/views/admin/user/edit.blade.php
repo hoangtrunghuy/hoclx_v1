@@ -34,19 +34,19 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label>User name</label>
-                    <input type="text" name="user_name" value="{{$model->user_name}}" class="form-control">
+                    <input type="text" name="name" value="{{$model->name}}" class="form-control">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="text" name="user_email" value="{{$model->user_email}}" class="form-control">
+                    <input type="text" name="email" value="{{$model->email}}" class="form-control">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="text" name="user_password" value="{{$model->user_password}}" class="form-control">
+                    <input type="text" name="password" value="{{$model->password}}" class="form-control">
                 </div>
             </div>
             <div class="col-md-4">

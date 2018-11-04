@@ -7,7 +7,7 @@ Route::get('/', function (){
     return view("client.index");
 });
 
-/*Route::get('/','DashboardController@index')->name('dashboard.index');*/
+Route::get('admin/dashboard','DashboardController@index')->name('dashboard.index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -40,9 +40,12 @@ Route::group(['prefix' => 'user'],function(){
 
 Route::group(['prefix' => 'feedback'],function(){
     Route::get('/', 'FeedbackController@index')->name('feedback.index');
-});
 
-Route::post('callback','FeedbackController@callbackstore')->name('client.callback');
+
+});
+Route::group(['prefix' => 'callback'],function(){
+    Route::post('/', 'FeedbackController@callbackstore')->name('callback.store');
+});
 
 Route::get(  'destroy/{id}', 'FeedbackController@destroy')->name('feedback.destroy');
 Route::resource('test', 'DaotaoController');
@@ -53,3 +56,11 @@ Route::group(['prefix' => 'thu'],function(){
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('app',function (){
+   return view('layouts.app-admin');
+});

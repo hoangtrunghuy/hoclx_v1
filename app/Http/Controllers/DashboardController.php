@@ -15,8 +15,9 @@ class DashboardController extends Controller
     public function index()
     {
 
-        $data = Tip::orderBy('id','DESC')->take(4)->get();
-        return view('client.index')->with('data',$data);
+        /*$data = Tip::orderBy('id','DESC')->take(4)->get();
+        return view('client.index')->with('data',$data);*/
+        return view('layouts.app-admin');
     }
 
     /**

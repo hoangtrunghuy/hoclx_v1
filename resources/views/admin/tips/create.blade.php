@@ -35,7 +35,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Image</label>
-                    <input type="file" name="image" value="{{old('image')}}" class="form-control">
+                    <input type="file" name="image" class="form-control">
                 </div>
             </div>
             <div class="col-md-12">

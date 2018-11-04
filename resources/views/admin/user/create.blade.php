@@ -34,19 +34,19 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label>User name</label>
-                    <input type="text" name="user_name" value="{{old('user_name')}}" class="form-control">
+                    <input type="text" name="name" value="{{old('name')}}" class="form-control">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="text" name="user_email" value="{{old('user_email')}}" class="form-control">
+                    <input type="text" name="email" value="{{old('email')}}" class="form-control">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="text" name="user_password" value="{{old('user_password')}}" class="form-control">
+                    <input type="text" name="password" value="{{old('password')}}" class="form-control">
                 </div>
             </div>
             <div class="col-md-4">

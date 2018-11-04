@@ -81,9 +81,9 @@
                         <tbody>
                         @foreach($data as $item)
                             <tr>
-                                <td>{{$item->user_name}}</td>
-                                <td>{{$item->user_email}}</td>
-                                <td>{{$item->user_password}}</td>
+                                <td>{{$item->name}}</td>
+                                <td>{{$item->email}}</td>
+                                <td>{{$item->password}}</td>
                                 <td>{{$item->user_level}}</td>
                                 <td>{{$item->user_firstName}}</td>
                                 <td>{{$item->user_lastName}}</td>
@@ -92,7 +92,7 @@
                                 <td><img src="{{ asset($item->user_img) }}" alt="" width="200"></td>
                                 <td>
                                     {{--<a href="{{route('tips.show', $item->id)}}"><i class="fa fa-eye"></i></a>--}}
-                                    <a href="{{route('user.edit', $item->id)}}">Edit</a><br>
+                                    <a href="{{route('user.edit', $item->id)}}"><i class="glyphicon glyphicon-edit"></i>Edit</a><br>
                                     <a href="{{route('user.destroy', $item->id)}}"
                                        onclick = "event.preventDefault();
                                                flag = confirm('bạn có chắc muốn xóa không!');
@@ -100,7 +100,7 @@
                                                window.location = '{{route('user.destroy', $item->id)}}';
                                                }
                                                "
-                                    >Delete</a>
+                                    ><i class="glyphicon glyphicon-trash"></i>Delete</a>
                                 </td>
                             </tr>
                         @endforeach
