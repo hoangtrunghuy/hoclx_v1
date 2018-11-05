@@ -18,7 +18,11 @@ class FeedbackController extends Controller
     {
         $data = Feedback::with('user')->get();
 
-        return view('admin.feedback.index', compact('data'));
+
+        $datas = app(App\Http\Controllers\Client\InformationDrivingController)->index();
+        return view('admin.feedback.index')->with('data',$data)->with('datas',$datas);
+        //hieu
+        //hue ádasdasdassds
     }
 
     /**

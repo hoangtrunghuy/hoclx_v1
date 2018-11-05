@@ -11,7 +11,7 @@
             </div>
 
             <div class="slide-slick-1 js-slick-1">
-                @foreach($data as $item)
+                @foreach($data2 as $item)
                 <div class="slide-slick-1 js-slick-1">
                 <div class="item-slick-1">
                 <p class="para-slide-slick-1 m-lr-auto w-size1 s-txt1 txt-center p-l-40 p-r-40 p-b-25 animated">

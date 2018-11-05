@@ -15,8 +15,9 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        $data = Feedback::with('user')->get();
-        return view('client.index', compact('data'));
+        $data2 = Feedback::with('user')->get();
+
+        return view('client.index', compact('data2'));
     }
 
     /**

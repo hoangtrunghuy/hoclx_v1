@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Client;
 
-use App\Http\Controllers\Controller;
+use App\InformationDriving;
 use Illuminate\Http\Request;
-use App\Tip;
+use App\Http\Controllers\Controller;
 
-class DashboardController extends Controller
+class InformationDrivingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-
-        $data = Tip::orderBy('id','DESC')->take(4)->get();
-        return view('client.tip')->with('data',$data);
+        $data = InformationDriving::all();
+       return $data;
     }
 
     /**
