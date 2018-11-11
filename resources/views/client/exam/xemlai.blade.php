@@ -131,31 +131,50 @@
 							<img src="{{ $value->question_img }}" alt="" width="100%">
 							<ul>
 								<li>
-									<label>
-									    <input type="checkbox" class="chon" value="a" name="cau{{ $key }}_check1" />
-									    {{ $value->question->question_ansA }}
+									<label >
+									    <input type="checkbox" class="chon" value="a" name="cau{{ $key }}_check1" @if (strpos($value->user_ans, 'a') !== false) checked="checked" @endif />
+
+									    {{ $value->question->question_ansA }} 
+
+									    @if (strpos($value->question->question_answerTrue, 'a') !== false) 
+									    	<i class="fa fa-2x fa-check-circle text-success"></i>
+									    @endif
 									</label>
 								</li>
 								<li>
 									<label>
-									    <input type="checkbox" class="chon" value="b" name="cau{{ $key }}_check2" />
+									    <input type="checkbox" class="chon" value="b" name="cau{{ $key }}_check2" @if (strpos($value->user_ans, 'b') !== false) checked="checked" @endif />
+
 									    {{ $value->question->question_ansB }}
+
+									    @if (strpos($value->question->question_answerTrue, 'b') !== false) 
+									    	<i class="fa fa-2x fa-check-circle text-success"></i>
+									    @endif
 									</label>
 								</li>
 								<li>
 									<label>
-									    <input type="checkbox" class="chon" value="c" name="cau{{ $key }}_check3" />
+									    <input type="checkbox" class="chon" value="c" name="cau{{ $key }}_check3" @if (strpos($value->user_ans, 'c') !== false) checked="checked" @endif />
+
 									    {{ $value->question->question_ansC }}
+
+									    @if (strpos($value->question->question_answerTrue, 'c') !== false) 
+									    	<i class="fa fa-2x fa-check-circle text-success"></i>
+									    @endif
 									</label>
 								</li>
 								<li>
 									<label>
-									    <input type="checkbox" class="chon" value="d" name="cau{{ $key }}_check4" />
+									    <input type="checkbox" class="chon" value="d" name="cau{{ $key }}_check4" @if (strpos($value->user_ans, 'd') !== false) checked="checked" @endif />
+
 									    {{ $value->question->question_ansD }}
+
+									    @if (strpos($value->question->question_answerTrue, 'd') !== false) 
+									    	<i class="fa fa-2x fa-check-circle text-success"></i>
+									    @endif
 									</label>
 								</li>
 								<input type="text" name="cau{{ $key }}_answerTrue" value="{{ $value->question->question_answerTrue }}">
-								<input type="text" name="cau{{ $key }}_id" value="{{ $value->question->id }}">
 							</ul>	
 						</div>
 						@endforeach
@@ -177,6 +196,9 @@
 	</section>
 
 	<script  type="text/javascript" charset="utf-8" >
+		if({{ Session()->get('diem') }} != null)
+			alert('Điểm của bạn là: '+{{ Session()->get('diem') }});
+
 		function show_cau_hoi() {
 			var x = document.getElementsByClassName("noi_dung_cau_hoi");
 

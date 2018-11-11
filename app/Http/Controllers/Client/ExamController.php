@@ -22,6 +22,7 @@ class ExamController extends Controller
         $data = DB::table('exams')
         ->select('exam_id','exam_score','created_at')
         ->groupBy('exam_id')
+        ->orderBy('created_at', 'desc')
         ->get();
 
         return view('client.exam.index',compact('data'));
@@ -54,13 +55,13 @@ class ExamController extends Controller
         for ($i=1; $i < 3; $i++) {
             
             DB::table('exams')
-            ->insert([ 'user_id' => 1/* edit */, 'exam_id' => $id_ex, 'question_id' => $ly_thuyet[$i]->id ]);
+            ->insert([ 'user_id' => 1/* edit */, 'exam_id' => $id_ex, 'question_id' => $ly_thuyet[$i]->id, 'created_at' =>date('Y-m-d H:i:s') ]);
 
             DB::table('exams')
-            ->insert([ 'user_id' => 1/* edit */, 'exam_id' => $id_ex, 'question_id' => $bien_bao[$i]->id ]);
+            ->insert([ 'user_id' => 1/* edit */, 'exam_id' => $id_ex, 'question_id' => $bien_bao[$i]->id, 'created_at' =>date('Y-m-d H:i:s') ]);
 
             DB::table('exams')
-            ->insert([ 'user_id' => 1/* edit */, 'exam_id' => $id_ex, 'question_id' => $sa_hinh[$i]->id ]);
+            ->insert([ 'user_id' => 1/* edit */, 'exam_id' => $id_ex, 'question_id' => $sa_hinh[$i]->id, 'created_at' =>date('Y-m-d H:i:s') ]);
         }
 
         
@@ -93,9 +94,16 @@ class ExamController extends Controller
     {
         $data = Exam::where('exam_id', $id)->get();
 
+        return view('client.lamde',compact('data'));
+    }
+
+    public function xemlai($id)
+    {
+        $data = Exam::where('exam_id', $id)->get();
+
         Session::get('diem'); //nhận biến diem từ hàm cham bên dưới đã gửi đi để hiển thị
 
-        return view::make('client.lamde')
+        return view::make('client.exam.xemlai')
         ->with(compact('data')) //cach gửi 2 biến đi
         ->with(compact('diem')); //cach gửi 2 biến đi
     }
@@ -146,11 +154,18 @@ class ExamController extends Controller
     {
         $exam_id = $request->input('exam_id');
         $diem = 0;
-        for ($i=1; $i < 7; $i++) { 
+        for ($i=1; $i < 7; $i++) {
 
             $ans = $request->input('cau'.$i.'_answerTrue');
 
             $BL = $request->input('cau'.$i.'_check1') . $request->input('cau'.$i.'_check2') . $request->input('cau'.$i.'_check3') . $request->input('cau'.$i.'_check4');
+
+            $question_id = $request->input('cau'.$i.'_id');
+            /*dd($question_id);*/
+            DB::table('exams')
+            ->where('exam_id', '=', $exam_id)
+            ->where('question_id', '=', $question_id)
+            ->update(['user_ans' => $BL]);
 
             if ($ans == $BL) {
                 $diem++;
@@ -160,6 +175,6 @@ class ExamController extends Controller
         Exam::where('exam_id', '=', $exam_id)
         ->update(['exam_score' => $diem]);
         
-        return Redirect()->route('exams.show',$exam_id)->with( ['diem' => $diem] );
+        return Redirect()->route('xemlai',$exam_id)->with( ['diem' => $diem] );
     }
 }

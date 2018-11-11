@@ -20,6 +20,7 @@ class CreateExamsTable extends Migration
             $table->integer('exam_score')->nullable();
             $table->string('user_ans')->nullable();
             $table->timestamps();
+            $table->primary(['exam_id','question_id']);
         });
     }
 

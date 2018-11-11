@@ -10,6 +10,7 @@ class Exam extends Model
     	'user_id',
         'exam_id',
         'question_id',
+        'user_ans',
         'exam_score'
     ];
 

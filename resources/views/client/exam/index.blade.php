@@ -41,7 +41,7 @@
 							<p>staus: </p>
 						</div>
 						<div class="">
-							<a href="{{ route('exams.show',$item->exam_id) }}" title="">View Detail </a>
+							<a href="{{ route('xemlai',$item->exam_id) }}" title="">Xem Lai </a>
 							<a href="{{ route('DeleteExam',$item->exam_id) }}" title="">Delete Exam</a>
 						</div>
 					</div>
