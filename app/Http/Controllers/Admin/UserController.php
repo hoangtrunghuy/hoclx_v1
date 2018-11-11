@@ -42,11 +42,11 @@ class UserController extends Controller
 
         $model->fill($request->all());
 
-        /*if ($request->hasFile('user_img')) {
+        if ($request->hasFile('user_img')) {
 
             $image = $request->file('user_img');
 
-            $imageName = time() . $image->getClientOriginalName();
+            $imageName = time() ."_". $image->getClientOriginalName();
 
             $path = public_path('/images');
 
@@ -54,7 +54,7 @@ class UserController extends Controller
 
             $model->user_img = 'images/'. $imageName;
 
-        }*/
+        }
 
         $flag = $model->save();
         if($flag){
@@ -64,7 +64,7 @@ class UserController extends Controller
             session()->flash('warning','tạo mới không thành công !');
         }
 
-        return redirect(route('admin.user.index'));
+        return redirect(route('user.index'));
 
     }
 
@@ -109,7 +109,7 @@ class UserController extends Controller
         else{
             session()->flash('warning','cập nhật không thành công !');
         }
-        return back();
+        return redirect(route('user.index'));
     }
 
     /**

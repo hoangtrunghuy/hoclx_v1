@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Feedback;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FeedbackController extends Controller
 {
@@ -98,7 +99,8 @@ class FeedbackController extends Controller
 
     public function callbackstore(Request $request){
         $model = new Feedback();
-        $model->fill($request->all());
+        $model->feedback_content = $request->feedback_content;
+        $model->user_id = Auth::user()->id;
         $model->save();
         return back();
     }

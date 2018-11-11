@@ -1,7 +1,12 @@
 @extends('layouts.app-admin')
 
 @section('content')
-    <h1>Tạo mới 1 mẹo lái xe</h1>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Tạo mới 1 mẹo lái xe</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
     {{--@if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -35,7 +40,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Image</label>
-                    <input type="file" name="image" value="{{old('image')}}" class="form-control">
+                    <input type="file" name="image" class="form-control">
                 </div>
             </div>
             <div class="col-md-12">

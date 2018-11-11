@@ -41,18 +41,16 @@ class TipController extends Controller
         $model->fill($request->all());
 
         if ($request->hasFile('image')) {
-        if ($request->hasFile('image')) {
+
             $image = $request->file('image');
 
-            $imageName = time() . $image->getClientOriginalName();
+            $imageName = time() ."_". $image->getClientOriginalName();
 
-            $path = public_path('/images');
+            $path = public_path('images');
 
             $image->move($path, $imageName);
 
             $model->image = 'images/'.$imageName;
-
-            $model->user_img = 'images/' . $imageName;
         }
         $flag = $model->save();
         if($flag){
@@ -61,21 +59,14 @@ class TipController extends Controller
         else{
             session()->flash('warning','tạo mới không thành công !');
         }
-        return back();
-        /*$rules = [
-            'title' => 'require|min:10|max:191|unique:tips,title',
-            'discription' => 'require|min:10|max:191',
-            'image' => 'nullable',
-        ];
-        $this->validate($request,$rules);*/
-    }
+        return redirect(route('tips.index'));
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Responses
      */
     public function show($id)
     {
@@ -127,7 +118,7 @@ class TipController extends Controller
         else{
             session()->flash('warning','cập nhật không thành công !');
         }
-        return back();
+        return redirect(route('tips.index'));
     }
 
     /**

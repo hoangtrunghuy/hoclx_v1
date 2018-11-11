@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Tip;
+use App\Feedback;
+use App\InforDriving;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('client.index');
+        $data = Tip::all();
+        $data1 = Feedback::all();
+        $data2 = InforDriving::all();
+        return view('client.index',compact('data','data1','data2'));
     }
 }

@@ -15,15 +15,9 @@
             </p>
         </div>
 
-        <form action="{{ route('questions.store') }}" method="post" role="form" >
+        <form action="{{ route('client.callback') }}" method="post" role="form" >
             {{ @csrf_field() }}
             @guest
-                <div class="row">
-                    <div class="col-lg-4 col-lg-offset-4 col-sm-6  m-t-20">
-                        <input class="size6 s-txt6 p-l-20" type="text" name="suburb" placeholder="Suburb: *">
-                    </div>
-                </div>
-            @else
                 <div class="row">
                     <div class="col-sm-6 col-lg-3 m-t-20">
                         <input class="size6 s-txt6 p-l-20" type="text" name="name" placeholder="Your Name: *">
@@ -38,7 +32,15 @@
                     </div>
 
                     <div class="col-sm-6 col-lg-3 m-t-20">
-                        <input class="size6 s-txt6 p-l-20" type="text" name="suburb" placeholder="Suburb: *">
+                        <input class="size6 s-txt6 p-l-20" type="text" name="feedback_content" placeholder="content: *">
+                    </div>
+                </div>
+
+            @else
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4 m-t-20"></div>
+                    <div class="col-sm-6 col-lg-4 m-t-20">
+                        <input class="size6 s-txt6 p-l-20" type="text" name="feedback_content" placeholder="content: *">
                     </div>
                 </div>
             @endguest

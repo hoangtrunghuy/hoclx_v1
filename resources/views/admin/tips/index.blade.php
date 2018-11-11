@@ -2,16 +2,30 @@
 
 @section('content')
 
-    <h1>Danh sách mẹo lái xe</h1>
-    <a class="btn btn-primary" href="{{route('tips.create')}}">Thêm</a>
-    <div class="clearfix"></div>
-    <br>
-    <table id="myTable" class="table table-hover">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Mẹo lái xe</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <!-- DataTables Advanced Tables -->
+                    <div class="col-m-3">
+                        <a href="{{ route('tips.create') }}" title=""><i class="fa fa-plus-square"></i> Thêm</a>
+                    </div>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
         <thead>
         <th>Title</th>
         <th>Discription</th>
         <th>Image</th>
-        <th>Content</th>
+        <th>Noi Dung</th>
         <th>Action</th>
         </thead>
         <tbody>
@@ -19,11 +33,12 @@
             <tr>
                 <td>{{$item->title}}</td>
                 <td>{{$item->discription}}</td>
-                <td>{{$item->image}}</td>
+                <td><img width="100px"  src="{{$item->image}}"></td>
                 <td class="stringToHtml">{{$item->content}}</td>
                 <td>
-                    <a href="{{route('tips.show', $item->id)}}">Show</a>
-                    <a href="{{route('tips.edit', $item->id)}}">Edit</a>
+                    {{--<a href="{{route('tips.show', $item->id)}}">Show</a>--}}
+                        <a href="{{route('tips.edit', $item->id)}}"><i class="glyphicon glyphicon-edit"></i>Edit</a>
+                    <br>
                     <a href="{{route('tips.destroy', $item->id)}}"
                         onclick = "event.preventDefault();
                         flag = confirm('bạn có chác muốn xóa không!');
@@ -31,12 +46,19 @@
                             window.location = '{{route('tips.destroy', $item->id)}}';
                         }
                         "
-                    >Delete</a>
+                    ><i class="glyphicon glyphicon-trash"></i>Delete</a>
                 </td>
             </tr>
         @endforeach
         </tbody>
     </table>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
     {{--chuyen varchar sang HTML--}}
     <script>
         var str = document.getElementsByClassName('stringToHtml');
