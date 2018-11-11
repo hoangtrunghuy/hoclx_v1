@@ -3,8 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
 use App\Question;
+use File;
+use Illuminate\Support\Facades\Redirect;
+use Session;
+use View;
 
 class QuestionController extends Controller
 {
@@ -38,10 +43,23 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $model = new Question();
 
         $model->fill($request->all());
+
+        if ($request->hasFile('question_img')) {
+
+            $image = $request->file('question_img');
+
+            $imageName = time() ."_". $image->getClientOriginalName();
+
+            $path = public_path('images');
+
+            $image->move($path, $imageName);
+
+            $model->question_img = 'images/'.$imageName;
+
+        }
 
         $model->save();
 
@@ -56,7 +74,7 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -85,7 +103,29 @@ class QuestionController extends Controller
         $model = Question::find($id);
 
         $model->fill($request->all());
+        /*$old = str_replace('images',"",$model->question_img);
 
+            File::delete(public_path('images') , $old);*/
+
+        if ($request->hasFile('question_img')) {
+            /*$old = public_path("{$model->question_img}");
+                if (File::exists($old)) {
+                    unlink($old);}*/
+            /*dd($model->question_img);*/
+            
+
+            $image = $request->file('question_img');
+
+            $imageName = time() ."_". $image->getClientOriginalName();
+
+            $path = public_path('images');
+
+            $image->move($path, $imageName);
+
+            
+
+            $model->question_img = 'images/'.$imageName;
+        }
         $model->update();
 
         return redirect(route('questions.index'));
@@ -128,4 +168,6 @@ class QuestionController extends Controller
 
 
     }
+
+
 }

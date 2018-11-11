@@ -11,6 +11,11 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::resource('questions', 'Admin\QuestionController');
 
+Route::resource('exams', 'Client\ExamController');
+Route::get(  'del/{exam_id}', 'Client\ExamController@delete_exam')->name('DeleteExam');
+Route::get('exams/{id}','Client\ExamController@show')->name('LamDe');
+Route::post('exams','Client\ExamController@cham')->name('ChamBai');
+
 Route::group(['prefix' => 'tips'],function(){
     Route::get(  '/', 'Admin\TipController@index')->name('tips.index');
     Route::get(  'create', 'Admin\TipController@create')->name('tips.create');
