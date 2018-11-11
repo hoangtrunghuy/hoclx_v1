@@ -20,13 +20,13 @@
                 <!-- Block 3 -->
                 <div class="block-3 bo2">
                     <div class="wrap-pic-b3 wrap-pic-w hov5 bo2-b">
-                        <a href="{{ route('thu.index') }}"><img src="{{$item->image}}" alt="IMG-COURSE"></a>
+                        <a href="{{ route('content.index',$item->id) }}"><img width="100px" height="200px" src="{{$item->image}}" alt="IMG-COURSE"></a>
                     </div>
 
                     <div class="wrap-text-b3 p-l-20 p-r-20 p-t-16 p-b-26">
                         <div class="flex-sb-m p-b-12">
 								<span class="s-txt5">
-									Driving, Road Signs
+                                    {{$item->title}}
 								</span>
                             <span class="color1 fs-12">
 									<i class="fa fa-star" aria-hidden="true"></i>
@@ -37,8 +37,8 @@
 								</span>
                         </div>
 
-                        <a href="{{ route('thu.index') }}"><h4 class="m-txt8 hov-color-main trans-04 p-b-12">
-                                {{$item->title}}
+                        <a href="#"><h4 class="m-txt8 hov-color-main trans-04 p-b-12">
+                                {{$item->discription}}
                             </h4></a>
                         <span class="m-txt9"></span>
 

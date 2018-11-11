@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Client;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class DaotaoController extends Controller
+class CallbackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,6 @@ class DaotaoController extends Controller
      */
     public function index()
     {
-
         return view('client.index');
     }
 

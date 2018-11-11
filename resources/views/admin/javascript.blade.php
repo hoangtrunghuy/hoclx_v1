@@ -18,12 +18,21 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.ckeditor.com/4.10.1/standard/ckeditor.js"></script>
-
 <script>
-    $(document).ready( function () {
+    /*$(document).ready( function () {
         $('#myTable').DataTable();
         CKEDITOR.replace( 'content' );
-    } );
+    } );*/
+
+
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+
 </script>
+<script src="{{ asset('js/sb-admin-2.js') }}"></script>
+
 {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--}}

@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\User;
 use Illuminate\Http\Request;
+use App\InforDriving;
+use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class InforDrivingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data = User::all();
-
-        return view('admin.user.index', compact('data'));
+        $data = InforDriving::latest()->get();
+        return view('admin.infordriving.index',compact('data'));
     }
 
     /**
@@ -26,35 +26,32 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        return view('admin.infordriving.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $model = new User();
-
+        $model = new InforDriving();
         $model->fill($request->all());
 
-        if ($request->hasFile('user_img')) {
+        if ($request->hasFile('infor_drivings_image')) {
 
-            $image = $request->file('user_img');
+            $image = $request->file('infor_drivings_image');
 
             $imageName = time() ."_". $image->getClientOriginalName();
 
-            $path = public_path('/images');
+            $path = public_path('images');
 
             $image->move($path, $imageName);
 
-            $model->user_img = 'images/'. $imageName;
-
+            $model->infor_drivings_image = 'images/'.$imageName;
         }
-
         $flag = $model->save();
         if($flag){
             session()->flash('success','tạo mới thành công !');
@@ -62,45 +59,57 @@ class UserController extends Controller
         else{
             session()->flash('warning','tạo mới không thành công !');
         }
-
-        return redirect(route('user.index'));
-
+        return redirect(route('infordriving.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $model = User::findOrFail($id);
-        return view('admin.user.edit',compact('model'));
+        $model = InforDriving::findOrFail($id);
+        return view('admin.infordriving.edit',compact('model'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $model = User::findOrFail($id);
+
+       $model = InforDriving::findOrFail($id);
         $model->fill($request->all());
+
+        if ($request->hasFile('infor_drivings_image')) {
+            $image = $request->file('infor_drivings_image');
+
+            $imageName = time() . $image->getClientOriginalName();
+
+            $path = public_path('/images');
+
+            $image->move($path, $imageName);
+
+            $model->infor_drivings_image = 'images/'.$imageName;
+
+        }
         $flag = $model->save();
         if($flag){
             session()->flash('success','cập nhật thành công !');
@@ -108,19 +117,18 @@ class UserController extends Controller
         else{
             session()->flash('warning','cập nhật không thành công !');
         }
-        return redirect(route('user.index'));
+        return redirect(route('infordriving.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $model = User::findOrFail($id);
-
+        $model = InforDriving::findOrFail($id);
         $flag = $model->delete();
         if($flag){
             session()->flash('success','xóa thành công !');

@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Client;
 
 use Illuminate\Http\Request;
+use App\InforDriving; 
 use App\Http\Controllers\Controller;
 
-class TestController extends Controller
+class InforDrivingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,13 @@ class TestController extends Controller
      */
     public function index()
     {
-        return view('client.index');
+        $data = InforDriving::all();
+        return view('client.index',compact('data'));
+    }
+
+    public function inforcontent(Request $request, $id){
+        $data = InforDriving::where('id', $id)->get();
+        return view('client.inforcontent',compact('data'));
     }
 
     /**

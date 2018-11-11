@@ -1,24 +1,25 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Tip;
+use App\Feedback;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class TestController extends Controller
+class FeedbackController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
+        $data = Feedback::with('user')->get();
 
-        $data = Tip::all();
-        // dd($data);
-        return view('client.index',compact('data'));
-
+        return view('admin.feedback.index', compact('data'));
     }
 
     /**
@@ -84,6 +85,23 @@ class TestController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Feedback::findOrFail($id);
+
+        $flag = $model->delete();
+        if($flag){
+            session()->flash('success','xóa thành công !');
+        }
+        else{
+            session()->flash('warning','xóa không thành công !');
+        }
+        return back();
+    }
+
+    public function callbackstore(Request $request){
+        $model = new Feedback();
+        $model->feedback_content = $request->feedback_content;
+        $model->user_id = Auth::user()->id;
+        $model->save();
+        return back();
     }
 }

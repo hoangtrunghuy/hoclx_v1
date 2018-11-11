@@ -11,7 +11,7 @@
             </div>
 
             <div class="slide-slick-1 js-slick-1">
-                @foreach($data as $item)
+                @foreach($data1 as $item)
                 <div class="slide-slick-1 js-slick-1">
                 <div class="item-slick-1">
                 <p class="para-slide-slick-1 m-lr-auto w-size1 s-txt1 txt-center p-l-40 p-r-40 p-b-25 animated">
@@ -20,12 +20,12 @@
 
                 <div class="wrap-person m-lr-auto flex-c-m animated">
                 <div class="wrap-pic-person">
-                <img src="client/images/manh.jpg" alt="IMG-PERSON">
+                <img src="{{ $item->user->user_img }}" alt="IMG-PERSON">
                 </div>
 
                 <div class="wrap-info-person p-l-20">
-                <span class="dis-block s-txt3">{{ $item->user_firstName . ' ' . $item->user_lastName}}</span>
-                <span class="dis-block s-txt4">{{$item->user_adress}}</span>
+                <span class="dis-block s-txt3">{{$item->user->user_firstName . ' ' . $item->user->user_lastName}}</span>
+                <span class="dis-block s-txt4">{{$item->user->user_adress}}</span>
                 </div>
                 </div>
                 </div>

@@ -4,7 +4,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Mẹo lái xe</h1>
+            <h1 class="page-header">Thông tin lái xe</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -15,7 +15,7 @@
                 <div class="panel-heading">
                     <!-- DataTables Advanced Tables -->
                     <div class="col-m-3">
-                        <a href="{{ route('tips.create') }}" title=""><i class="fa fa-plus-square"></i> Thêm</a>
+                        <a href="{{ route('infordriving.create') }}" title=""><i class="fa fa-plus-square"></i> Thêm</a>
                     </div>
                 </div>
                 <!-- /.panel-heading -->
@@ -25,25 +25,27 @@
         <th>Title</th>
         <th>Discription</th>
         <th>Image</th>
-        <th>Noi Dung</th>
+        <th>Content</th>
+        <th>date</th>
         <th>Action</th>
         </thead>
         <tbody>
         @foreach($data as $item)
             <tr>
-                <td>{{$item->title}}</td>
-                <td>{{$item->discription}}</td>
-                <td><img width="100px"  src="{{$item->image}}"></td>
-                <td class="stringToHtml">{{$item->content}}</td>
+                <td>{{$item->infor_drivings_title}}</td>
+                <td>{{$item->infor_drivings_discription}}</td>
+                <td><img width="100px"  src="{{$item->infor_drivings_image}}"></td>
+                <td class="stringToHtml">{{$item->infor_drivings_content}}</td>
+                <td>{{$item->infor_drivings_date}}</td>
                 <td>
                     {{--<a href="{{route('tips.show', $item->id)}}">Show</a>--}}
-                        <a href="{{route('tips.edit', $item->id)}}"><i class="glyphicon glyphicon-edit"></i>Edit</a>
+                        <a href="{{route('infordriving.edit', $item->id)}}"><i class="glyphicon glyphicon-edit"></i>Edit</a>
                     <br>
-                    <a href="{{route('tips.destroy', $item->id)}}"
+                    <a href="{{route('infordriving.destroy', $item->id)}}"
                         onclick = "event.preventDefault();
                         flag = confirm('bạn có chác muốn xóa không!');
                         if(flag){
-                            window.location = '{{route('tips.destroy', $item->id)}}';
+                            window.location = '{{route('infordriving.destroy', $item->id)}}';
                         }
                         "
                     ><i class="glyphicon glyphicon-trash"></i>Delete</a>

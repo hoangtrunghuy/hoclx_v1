@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Client;
 
 use App\Feedback;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 
 class FeedbackController extends Controller
 {
@@ -13,13 +13,10 @@ class FeedbackController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
-        $data = Feedback::with('user')->get();
-
-/*        return view('admin.feedback.index', compact('data'));*/
-        return view('admin.feedback.index', compact('data'));
+        $data1 = Feedback::with('user')->get();
+        return view('client.index', compact('data1'));
     }
 
     /**
@@ -85,23 +82,6 @@ class FeedbackController extends Controller
      */
     public function destroy($id)
     {
-        $model = Feedback::findOrFail($id);
-
-        $flag = $model->delete();
-        if($flag){
-            session()->flash('success','xóa thành công !');
-        }
-        else{
-            session()->flash('warning','xóa không thành công !');
-        }
-        return back();
-    }
-
-    public function callbackstore(Request $request){
-        $model = new Feedback();
-        $model->feedback_content = $request->feedback_content;
-        $model->user_id = Auth::user()->id;
-        $model->save();
-        return back();
+        //
     }
 }

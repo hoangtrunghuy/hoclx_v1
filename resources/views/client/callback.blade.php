@@ -15,7 +15,7 @@
             </p>
         </div>
 
-        <form action="{{ route('callback.store') }}" method="post" role="form" >
+        <form action="{{ route('client.callback') }}" method="post" role="form" >
             {{ @csrf_field() }}
             @guest
                 <div class="row">
