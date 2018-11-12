@@ -1,0 +1,72 @@
+.bang_cau_hoi ul{
+		border: 1px solid #000;
+		margin: 20px 0 10px;
+	}
+	.bang_cau_hoi ul li{
+		display: inline-block;
+		margin: 7px;
+		padding: 8px 2px;
+	}
+	@media (max-width:1023px) {
+		.bang_cau_hoi ul li{
+			margin: 4px;
+		}
+	}
+	@media (max-width:424px) {
+		.bang_cau_hoi ul li{
+			margin: 5px;
+		}
+	}
+	.bang_cau_hoi ul li a{
+		padding: 10px;
+		border: 1px solid #000;
+	}
+	.bang_cau_hoi ul li a:hover, .prev_next a:hover{
+		background: #233785;
+		color: #fff;
+	}
+	.div_time{
+		background-color: #ff0;
+		padding: 5px;
+		box-shadow: 0px 3px #212552;
+    	border-radius: 40px;
+	}
+	.div_time input{
+		padding: 5px;
+		color: #fff;
+		background: #233785;
+		border-radius: 3px;
+	}
+	.div_time input:hover{
+		color: red;
+	}
+	.noi_dung_cau_hoi{
+		border-left: 5px solid;
+		padding-left: 10px;
+		display: none;
+	}
+	.noi_dung_cau_hoi p{
+		color: #233785;
+		margin-top: 10px;
+		font-weight: bold;
+	}
+	.noi_dung_cau_hoi h4,.noi_dung_cau_hoi img{
+		margin-bottom: 15px;
+	}
+	.noi_dung_cau_hoi label input{
+		display: inline-block;
+	}
+	.prev_next{
+		margin: 20px auto;
+	}
+	.prev_next a{
+		padding: 5px 15px;
+		font-weight: bold;
+		border: 1px solid #000;
+		border-radius: 3px;
+		margin-left: 20px;
+	}
+	.active, .dot:hover {
+	  background-color: #233785;
+	  color:#fff;
+	}

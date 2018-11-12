@@ -1,79 +1,6 @@
 @extends('layouts.client')
 @section('content')
 
-	<style>
-		.bang_cau_hoi ul{
-			border: 1px solid #000;
-			margin: 20px 0 10px;
-		}
-		.bang_cau_hoi ul li{
-			display: inline-block;
-			margin: 7px;
-			padding: 8px 2px;
-		}
-		@media (max-width:1023px) {
-			.bang_cau_hoi ul li{
-				margin: 4px;
-			}
-		}
-		@media (max-width:424px) {
-			.bang_cau_hoi ul li{
-				margin: 5px;
-			}
-		}
-		.bang_cau_hoi ul li a{
-			padding: 10px;
-			border: 1px solid #000;
-		}
-		.bang_cau_hoi ul li a:hover, .prev_next a:hover{
-			background: #233785;
-			color: #fff;
-		}
-		.div_time{
-			background-color: #ff0;
-			padding: 5px;
-		}
-		.div_time input{
-			padding: 5px;
-			color: #fff;
-			background: #233785;
-			border-radius: 3px;
-		}
-		.div_time input:hover{
-			color: red;
-		}
-		.noi_dung_cau_hoi{
-			border-left: 5px solid;
-    		padding-left: 10px;
-    		display: none;
-		}
-		.noi_dung_cau_hoi p{
-			color: #233785;
-			margin-top: 10px;
-			font-weight: bold;
-		}
-		.noi_dung_cau_hoi h4,.noi_dung_cau_hoi img{
-			margin-bottom: 15px;
-		}
-		.noi_dung_cau_hoi label input{
-			display: inline-block;
-		}
-		.prev_next{
-			margin: 20px auto;
-		}
-		.prev_next a{
-			padding: 5px 15px;
-			font-weight: bold;
-			border: 1px solid #000;
-			border-radius: 3px;
-			margin-left: 20px;
-		}
-		.active, .dot:hover {
-		  background-color: #233785;
-		  color:#fff;
-		}
-	</style>
-
 	<section style="margin: 20px 0px;">
 		<div class="container">
 			<div class="row">
@@ -117,13 +44,13 @@
 					{{ @csrf_field() }}
 						<div class="row div_time">
 							<div class="col-md-10">
-								<p>Thời gian còn lại: 15:00</p>
+								<p style="color:red;font-size: 20px;"><i class="fa fa-hourglass-half"></i> 15:00</p>
 							</div>
 							<div class="col-md-2">
 								<input type="submit" value="Nộp bài">
 							</div>
 						</div>
-						<input type="" name="exam_id" value="{{ $data[0]->exam_id }}">
+						<input type="hidden" name="exam_id" value="{{ $data[0]->exam_id }}">
 						@foreach($data as $key => $value)
 						<div class="col-md-12 noi_dung_cau_hoi" id="">
 							<p>Câu số {{ ++$key }}:</p>
@@ -154,8 +81,8 @@
 									    {{ $value->question->question_ansD }}
 									</label>
 								</li>
-								<input type="text" name="cau{{ $key }}_answerTrue" value="{{ $value->question->question_answerTrue }}">
-								<input type="text" name="cau{{ $key }}_id" value="{{ $value->question->id }}">
+								<input type="hidden" name="cau{{ $key }}_answerTrue" value="{{ $value->question->question_answerTrue }}">
+								<input type="hidden" name="cau{{ $key }}_id" value="{{ $value->question->id }}">
 							</ul>	
 						</div>
 						@endforeach

@@ -23,3 +23,5 @@
 <link rel="stylesheet" type="text/css" href="client/css/util.css">
 <link rel="stylesheet" type="text/css" href="client/css/main.css">
 <link rel="stylesheet" type="text/css" href="client/css/color.css">
+<!-- Huy css lam de -->
+<link rel="stylesheet" type="text/css" href="client/css/lamde.css">
