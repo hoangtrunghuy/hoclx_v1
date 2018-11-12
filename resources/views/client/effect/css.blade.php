@@ -23,9 +23,3 @@
 <link rel="stylesheet" type="text/css" href="client/css/util.css">
 <link rel="stylesheet" type="text/css" href="client/css/main.css">
 <link rel="stylesheet" type="text/css" href="client/css/color.css">
-
-<!-- <link rel="stylesheet" type="text/css" href="LoginStyle/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-    <link rel="stylesheet" type="text/css" href="LoginStyle/vendor/select2/select2.min.css">
-
-    <link rel="stylesheet" type="text/css" href="LoginStyle/css/util.css">
-    <link rel="stylesheet" type="text/css" href="LoginStyle/css/main.css"> -->
