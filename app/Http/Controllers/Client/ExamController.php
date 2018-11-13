@@ -94,7 +94,7 @@ class ExamController extends Controller
     {
         $data = Exam::where('exam_id', $id)->get();
 
-        return view('client.lamde',compact('data'));
+        return view('client.exam.lamde',compact('data'));
     }
 
     public function xemlai($id)

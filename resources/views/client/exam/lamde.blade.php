@@ -44,10 +44,10 @@
 					{{ @csrf_field() }}
 						<div class="row div_time">
 							<div class="col-md-10">
-								<p style="color:red;font-size: 20px;"><i class="fa fa-hourglass-half"></i> 15:00</p>
+								<p style="color:red;font-size: 20px;"><i class="fa fa-hourglass-half"></i><b id="countDown"></b></p>
 							</div>
 							<div class="col-md-2">
-								<input type="submit" value="Nộp bài">
+								<input type="submit" value="Nộp bài" id="nopbai">
 							</div>
 						</div>
 						<input type="hidden" name="exam_id" value="{{ $data[0]->exam_id }}">
@@ -141,6 +141,29 @@
 	  slides[slideIndex-1].style.display = "block";  
 	  dots[slideIndex-1].className += " active";
 	}
+</script>
+
+<script>
+//Dem gio lam bai
+// Set seconds we're count down
+var time = 20*60;
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    time--;
+    var minutes = Math.floor((time % (60 * 60)) /  60);
+    var seconds = Math.floor((time %  60) );
+    
+    document.getElementById("countDown").innerHTML = " "+minutes + ":" + seconds;
+    
+    // bao het gio va nop bai
+    if (time < 0) {
+        clearInterval(x);
+        document.getElementById("countDown").innerHTML = " Hết giờ!";
+        document.getElementById("nopbai").click();
+    }
+}, 1000);
 </script>
 
 @endsection
