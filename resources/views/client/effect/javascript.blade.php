@@ -1,4 +1,4 @@
-<script src="client/vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!--===============================================================================================-->
 <script src="client/vendor/wow/wow.min.js"></script>
 <!--===============================================================================================-->
@@ -30,10 +30,5 @@
     $('.parallax100').parallax100();
 </script>
 <!--===============================================================================================-->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
-<script src="client/js/map-custom.js"></script>
 <!--===============================================================================================-->
 <script src="client/js/main.js"></script>
-
-<script src="LoginStyle/js/main.js"></script>
-<script src="LoginStyle/vendor/select2/select2.min.js"></script>

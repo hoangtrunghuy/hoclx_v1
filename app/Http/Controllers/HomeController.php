@@ -8,21 +8,16 @@ use App\Feedback;
 use App\InforDriving;
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
+   
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
+    // if (!\Request::is('/')) { 
+    //         $this->middleware('auth');
+    //     }
+
     public function index()
     {
         $data = Tip::all();

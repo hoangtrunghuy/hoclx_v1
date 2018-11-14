@@ -8,7 +8,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="wrap-login100 p-l-50 p-r-50 p-t-10 p-b-10">
-                        <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                        <form class="form-horizontal" method="POST" action="{{ route('postLogin') }}">
                             {{ csrf_field() }}
 
                             <span class="login100-form-title p-b-55">Login</span>

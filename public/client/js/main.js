@@ -243,7 +243,7 @@
     $('body').append(
         '<div class="color-setting">' +
         '<div class="btn-show-panel">' +
-        '<img src="images/icons/color-palette.png" alt="IMG">' +
+        // '<img src="images/icons/color-palette.png" alt="IMG">' +
         '</div>' +
 
         '<div class="panel-color">' +

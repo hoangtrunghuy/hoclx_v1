@@ -3,11 +3,16 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+Auth::routes();
 
 Route::get('admin/dashboard','Admin\DashboardController@index')->name('dashboard.index');
 
 Route::get('/callback','Client\CallbackController@index')->name('clients.index');
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('login','Auth\LoginController@getLogin')->name('getLogin');
+Route::post('handle_login','Auth\LoginController@postLogin')->name('postLogin');
+
 
 Route::resource('questions', 'Admin\QuestionController');
 
@@ -18,7 +23,7 @@ Route::post('exams','Client\ExamController@cham')->name('ChamBai');
 Route::get('exams/xemlai/{id}','Client\ExamController@xemlai')->name('xemlai');
 
 Route::group(['prefix' => 'tips'],function(){
-    Route::get(  '/', 'Admin\TipController@index')->name('tips.index');
+    Route::get(  '/', 'Admin\TipController@index')->name('tips.index')->middleware('auth');
     Route::get(  'create', 'Admin\TipController@create')->name('tips.create');
     Route::post(  'store', 'Admin\TipController@store')->name('tips.store');
     Route::get(  'show/{id}', 'Admin\TipController@show')->name('tips.show');
@@ -28,7 +33,6 @@ Route::group(['prefix' => 'tips'],function(){
     
 });
 
-Auth::routes();
 
 /*=======*/
 Route::group(['prefix' => 'user'],function(){

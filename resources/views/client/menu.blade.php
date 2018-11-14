@@ -58,38 +58,45 @@
         </div>
 
         <!-- Social desktop -->
-        @guest
+        @guest 
         <div class="social">
             <!-- login -->
-            @include('client.login')
-        <!--  Sign up -->
-            @include('client.signup')
+            <form action="{{ route('login') }}">
+                <div class="login">
+                    <button type="submit" class="btn btn-success mr-xs mb-sm">Login</button>
+                </div>
+            </form>
+            <!--  Sign up -->
+            <form action="{{ route('register') }}">
+                <div class="signup" style="margin-left: 10px">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    @else
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+            {{ Auth::user()->name }} <span class="caret"></span>
+        </a>
+
+        <ul class="dropdown-menu">
+            <li>
+                <a href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                Logout
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+        </li>
+    </ul>
+</li>
+@endguest 
 
 </div>
-        @else
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                            Logout
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-                    </li>
-                </ul>
-            </li>
-        @endguest
-
 </div>
-</div>
-<script src="LoginStyle/js/main.js"></script>
-<script src="LoginStyle/vendor/select2/select2.min.js"></script>
 

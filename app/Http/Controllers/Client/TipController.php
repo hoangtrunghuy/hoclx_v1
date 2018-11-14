@@ -9,6 +9,15 @@ use App\Http\Controllers\Controller;
 class TipController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -92,4 +101,6 @@ class TipController extends Controller
     {
         //
     }
+
+
 }

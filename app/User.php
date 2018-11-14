@@ -35,4 +35,8 @@ class User extends Authenticatable
         'user_password', 'remember_token',
     ];
 
+    public function level()
+    {
+        return $this->user_level;
+    }
 }

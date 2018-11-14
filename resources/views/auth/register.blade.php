@@ -5,14 +5,35 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+               <div class="panel-heading" style="text-align: center; font-size: 20px;">
+                    <a class="" href="{{ url('/') }}">
+                        <img src="client/images/icons/logo.png" width="200px">
+                    </a>
+                </div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
+                        
+                        <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">FirstName</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="user_firstName" value="{{ old('user_firstName') }}" required autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">LastName</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="user_lastName" value="{{ old('user_lastName') }}" required autofocus>
+
+                            </div>
+                        </div>
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                            <label for="name" class="col-md-4 control-label">UserName</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -66,7 +87,11 @@
                                 <button type="submit" class="btn btn-primary">
                                     Register
                                 </button>
+                                 <a class="btn btn-link" href="{{ route('login') }}">
+                                    Login now
+                                </a>
                             </div>
+                           
                         </div>
                     </form>
                 </div>
