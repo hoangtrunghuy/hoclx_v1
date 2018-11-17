@@ -22,7 +22,7 @@ class QuestionController extends Controller
     {
         $data = Question::all();
         // dd($data);
-        return view('admin.Question.index',compact('data'));
+        return view('admin.question.index',compact('data'));
     }
 
     /**
