@@ -20,13 +20,13 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('login','Auth\LoginController@getLogin')->name('getLogin');
 Route::post('handle_login','Auth\LoginController@postLogin')->name('postLogin');
 
-Route::resource('questions', 'Admin\QuestionController');
+Route::resource('questions', 'Admin\QuestionController')->middleware('auth');
 
-Route::resource('exams', 'Client\ExamController');
-Route::get(  'del/{exam_id}', 'Client\ExamController@delete_exam')->name('DeleteExam');
-Route::get('exams/{id}','Client\ExamController@show')->name('LamDe');
-Route::post('exams','Client\ExamController@cham')->name('ChamBai');
-Route::get('exams/xemlai/{id}','Client\ExamController@xemlai')->name('xemlai');
+Route::resource('exams', 'Client\ExamController')->middleware('auth');
+Route::get(  'del/{exam_id}', 'Client\ExamController@delete_exam')->name('DeleteExam')->middleware('auth');
+Route::get('exams/{id}','Client\ExamController@show')->name('LamDe')->middleware('auth');
+Route::post('exams','Client\ExamController@cham')->name('ChamBai')->middleware('auth');
+Route::get('exams/xemlai/{id}','Client\ExamController@xemlai')->name('xemlai')->middleware('auth');
 
 Route::group(['prefix' => 'tips','middleware'=>'auth'],function(){
     Route::get(  '/', 'Admin\TipController@index')->name('tips.index');
