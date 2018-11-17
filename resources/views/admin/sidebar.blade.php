@@ -46,12 +46,12 @@
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
-            <li>
-                <a href="#"><i class="fa fa-archive fa-fw"></i> Quản lý Pages</a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-film fa-fw"></i> Quản lý Video</a>
-            </li>
+            {{--<li>--}}
+                {{--<a href=""><i class="fa fa-archive fa-fw"></i> Quản lý Pages</a>--}}
+            {{--</li>--}}
+            {{--<li>--}}
+                {{--<a href="#"><i class="fa fa-film fa-fw"></i> Quản lý Video</a>--}}
+            {{--</li>--}}
             <li>
                 <a href="{{route('tips.index')}}"><i class="fa fa-support fa-fw"></i> Quản lý Mẹo lái xe</a>
             </li>

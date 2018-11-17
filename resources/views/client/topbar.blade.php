@@ -11,12 +11,12 @@
             <div class="right-top-bar">
 							<span>
 								<i class="icon_phone" aria-hidden="true"></i>
-								<span>096843999</span>
+								<span>0968 437 320</span>
 							</span>
 
                 <span>
 								<i class="icon_pin" aria-hidden="true"></i>
-								<span>Ngo 80-Xuan Phuong-Tu Hoang-Nam Tu Liem-Ha Noi</span>
+								<span>Trường Đại học Công Nghiệp Hà Nội</span>
 							</span>
 
                 <span>

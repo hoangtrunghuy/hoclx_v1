@@ -58,44 +58,47 @@
         </div>
 
         <!-- Social desktop -->
-        @guest 
-        <div class="social">
-            <!-- login -->
-            <form action="{{ route('login') }}">
-                <div class="login">
-                    <button type="submit" class="btn btn-success mr-xs mb-sm">Login</button>
-                </div>
-            </form>
-            <!--  Sign up -->
-            <form action="{{ route('register') }}">
-                <div class="signup" style="margin-left: 10px">
-                    <button type="submit" class="btn btn-primary">Register</button>
-                </div>
-            </form>
-        </div>
+        @guest
+            <div class="social">
+                <!-- login -->
+                <form action="{{ route('login') }}">
+                    <div class="login">
+                        <button type="submit" class="btn btn-success mr-xs mb-sm">Login</button>
+                    </div>
+                </form>
+                <!--  Sign up -->
+                <form action="{{ route('register') }}">
+                    <div class="signup" style="margin-left: 10px">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </div>
+                </form>
+            </div>
 
     </div>
     @else
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-            {{ Auth::user()->name }} <span class="caret"></span>
-        </a>
-
-        <ul class="dropdown-menu">
-            <li>
-                <a href="{{ route('logout') }}"
-                onclick="event.preventDefault();
+        <div >
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true"
+                   v-pre>
+                    <img src="{{ asset(Auth::user()->user_img) }}" width="30px" height="30px"
+                         style="border-radius: 50%;">
+                </a>
+                <div class="dropdown-menu" style="margin-top: 15px;">
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
-                Logout
-            </a>
+                        Logout
+                    </a>
 
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
-        </li>
-    </ul>
-</li>
-@endguest 
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    @endguest
 
 </div>
 </div>

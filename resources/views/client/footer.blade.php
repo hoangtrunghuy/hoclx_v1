@@ -43,27 +43,27 @@
                 <ul class="contact-footer p-t-28">
                     <li>
                         <i class="fa fa-home" aria-hidden="true"></i>
-                        Minh Khai - Bắc Từ Liêm - Hà Nội
+                        Trường Đại học Công Nghiệp Hà Nội
                     </li>
 
                     <li>
                         <i class="fa fa-phone" aria-hidden="true"></i>
-                        (+84) 999 999 999
+                        (+84) 968 437 320
                     </li>
 
                     <li>
                         <i class="fa fa-fax" aria-hidden="true"></i>
-                        (+84) 999 999 999
+                        (+84) 968 437 320
                     </li>
 
                     <li>
                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                        contact@hoclaioto.org
+                        contact.hoclaixe123@gmail.com
                     </li>
 
                     <li>
                         <i class="fa fa-clock-o" aria-hidden="true"></i>
-                        thứ 2 - thứ 6  09:00 - 17:00
+                        Thứ 2 - Thứ 6  09:00 - 17:00
                     </li>
                 </ul>
             </div>
@@ -104,8 +104,13 @@
     </div>
 
     <div class="bg3 txt-center p-t-19 p-b-16">
-        <span class="s-txt10">@ 2018 dich vụ cung cấp bởi.</span>
-        <a href="#" class="dis-inline s-txt11 hov-color-white trans-04">Hoclaioto.org</a>
+        <span class="s-txt10">@ 2018 dich vụ cung cấp bởi:</span>
+        <a href="#" class="dis-inline s-txt11 hov-color-white trans-04">
+            Bùi Văn Huế.
+            Hoàng Trung Huy.
+            Nguyễn Đình Mạnh.
+            Nhóm 08-KTPM2-K10
+        </a>
     </div>
 </footer>
 

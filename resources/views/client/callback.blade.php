@@ -10,17 +10,16 @@
             </div>
 
             <p class="w-size3 m-txt11 txt-center m-lr-auto p-l-15 p-r-15">
-                Mỗi ý kiến đóng góp vàng ngọc của quý độc giả sẽ là động lực to lớn giúp cho dịch vụ của chúng tôi được
-                tốt hơn.
+                Mỗi ý kiến đóng góp vàng ngọc của quý độc giả sẽ là động lực to lớn giúp cho dịch vụ của chúng tôi được tốt hơn.
             </p>
         </div>
 
-        <form action="{{ route('client.callback') }}" method="post" role="form" >
+        <form action="/postcontact" method="POST" role="form" >
             {{ @csrf_field() }}
             @guest
                 <div class="row">
                     <div class="col-sm-6 col-lg-3 m-t-20">
-                        <input class="size6 s-txt6 p-l-20" type="text" name="name" placeholder="Your Name: *">
+                        <input class="size6 s-txt6 p-l-20" type="text" name="name" placeholder="Họ và tên: *">
                     </div>
 
                     <div class="col-sm-6 col-lg-3 m-t-20">
@@ -28,11 +27,11 @@
                     </div>
 
                     <div class="col-sm-6 col-lg-3 m-t-20">
-                        <input class="size6 s-txt6 p-l-20" type="text" name="phone" placeholder="Phone Number: *">
+                        <input class="size6 s-txt6 p-l-20" type="text" name="phone" placeholder="Số điện thoại: *">
                     </div>
 
                     <div class="col-sm-6 col-lg-3 m-t-20">
-                        <input class="size6 s-txt6 p-l-20" type="text" name="feedback_content" placeholder="content: *">
+                        <input class="size6 s-txt6 p-l-20" type="text" name="contact_content" placeholder="Góp ý: *">
                     </div>
                 </div>
 
@@ -40,7 +39,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-lg-4 m-t-20"></div>
                     <div class="col-sm-6 col-lg-4 m-t-20">
-                        <input class="size6 s-txt6 p-l-20" type="text" name="feedback_content" placeholder="content: *">
+                        <input class="size6 s-txt6 p-l-20" type="text" name="contact_content" placeholder="Góp ý: *">
                     </div>
                 </div>
             @endguest
@@ -48,8 +47,8 @@
 
             <div class="flex-c-m p-t-36">
                 <!-- Button -->
-                <button class="btn-drive m-txt1 size7 bg-main hov-color-white bo-rad-4">
-                    Submit
+                <button class="btn-drive m-txt1 size7 bg-main hov-color-white bo-rad-4" type="submit">
+                    Gửi
                 </button>
             </div>
         </form>

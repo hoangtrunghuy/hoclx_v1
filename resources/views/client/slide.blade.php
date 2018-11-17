@@ -16,7 +16,7 @@
                         data-fontsize="['50', '50', '50', '50']"
                         data-lineheight="['60', '60', '60', '60']"
                         data-height="['auto']"
-                    >WELCOME TO HOCLAIOTO.ORG</h2>
+                    >WELCOME TO hoclaixe123.com</h2>
 
                     <p class="tp-caption tp-resizeme txt2 txt-center p-l-15 p-r-15"
                        data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"x:right;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -28,8 +28,7 @@
                        data-fontsize="['18', '18', '18', '16']"
                        data-lineheight="['30', '30', '30', '30']"
                        data-height="['auto']"
-                    >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed odio sit amet nibh vulputate
-                        cursus a sit amet mauris. Morbi accumsan ipsum velit.
+                    >Lý thuyết hay, đề thi chất lượng, cập nhật thông tin lái xe nhanh, tiện lợi và chính xác nhất.
                     </p>
 
                     <div class="tp-caption tp-resizeme wrap-btn-slide"
@@ -72,7 +71,7 @@
                         data-fontsize="['50', '50', '50', '50']"
                         data-lineheight="['60', '60', '60', '60']"
                         data-height="['auto']"
-                    >WELCOME TO HOCLAIOTO.ORG</h2>
+                    >WELCOME TO hoclaixe123.com</h2>
 
                     <p class="tp-caption tp-resizeme txt2 txt-center p-l-15 p-r-15"
                        data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"y:bottom;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -127,7 +126,7 @@
                         data-fontsize="['50', '50', '50', '50']"
                         data-lineheight="['60', '60', '60', '60']"
                         data-height="['auto']"
-                    >WELCOME TO HOCLAIOTO.ORG</h2>
+                    >WELCOME TO hoclaixe123.com</h2>
 
                     <p class="tp-caption tp-resizeme txt2 txt-center p-l-15 p-r-15"
                        data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"x:500px;skX:-85px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -139,8 +138,7 @@
                        data-fontsize="['18', '18', '18', '16']"
                        data-lineheight="['30', '30', '30', '30']"
                        data-height="['auto']"
-                    >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed odio sit amet nibh vulputate
-                        cursus a sit amet mauris. Morbi accumsan ipsum velit.
+                    >Giúp bạn vượt qua kỳ thi sát hạch một cách dễ dàng.
                     </p>
 
                     <div class="tp-caption tp-resizeme wrap-btn-slide"

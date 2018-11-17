@@ -2,7 +2,7 @@
 <html lang="{{ app()->getLocale() }}">
 
 <head>
-
+    <link rel="shortcut icon" type="image/x-icon" href="client/images/icons/favicon.png" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,8 +10,7 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    {{--<title>SB Admin 2 - Bootstrap Admin Theme</title>--}}
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{  'hoclaixe123.com' }}</title>
     <base href="{{ asset('') }}">
 
     @include('admin.css')

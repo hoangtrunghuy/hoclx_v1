@@ -43,7 +43,7 @@ class LoginController extends Controller
     public function getLogin(){
         return view('auth.login');
     }
-    public function  postLogin(Request $request){
+    public function postLogin(Request $request){
         $login =[
             'email' => $request->email,
             'password' => $request->password,

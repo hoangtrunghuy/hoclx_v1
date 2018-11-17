@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -28,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -51,7 +53,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'user_firstName' => 'required|string|max:255',
             'user_lastName' => 'required|string|max:255',
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -71,6 +73,30 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'user_level'=> 0,
+            'user_status'=> 0,
+            'user_img'=>'client/images/Person-icon-grey1.jpg',
         ]);
+    }
+    public function get_xacnhan(){
+        return view('auth.register');
+    }
+    public function post_xacnhan(Request $request){
+        $random = rand(100000,999999);
+        $data = [
+            'email'=>$request->email,
+            'random'=>$random,
+        ];
+        Mail::send('emails.maxacnhan',$data,function ($message)use($data) {
+            $message->from('contact.hoclaixe123@gmail.com','Verification');
+            $message->to($data['email']);
+        });
+        return redirect()->route('trangxacnhan');
+    }
+    public function getma(Request $request){
+        $data = [
+            'maxacnhan' =>$request->maxacnhan,
+        ];
+
     }
 }
