@@ -81,14 +81,14 @@
                         <div class="wrap-para-b1 p-l-50 p-r-20 m-tt-20">
                             <p class="s-txt1">
                                 Thi sát hạch hạng C: Tổng số 30 câu hỏi, trả lời trong 20 phút.
-                                Thi đạt nếu số câu trả lời đúng >= 26 / 30 câu.
+                                Thi đạt nếu số câu trả lời đúng >= 28 / 30 câu.
                             </p>
                         </div>
 
                         <div class="wrap-more-b1 p-l-50 p-t-10">
                             <a href="#" class="s-txt1 hov-color-white m-tt-10">
                                 <i class="fa fa-caret-right fs-16 trans-04" aria-hidden="true"></i>
-                                <span class=" trans-04">Read More</span>
+                                <span class=" trans-04">BẮT ĐẦU</span>
                             </a>
                         </div>
                     </div>
@@ -115,15 +115,15 @@
 
                         <div class="wrap-para-b1 p-l-50 p-r-20 m-tt-20 ">
                             <p class="s-txt1">
-                                Phasellus lorem enim, luctus ut velit eget, convallis egestas eros. Sed ornare ligula
-                                eget tortor tempor, quis porta tellus dictum
+                                Thi sát hạch hạng D: Tổng số 30 câu hỏi, trả lời trong 20 phút.
+                                Thi đạt nếu số câu trả lời đúng >= 28 / 30 câu.
                             </p>
                         </div>
 
                         <div class="wrap-more-b1 p-l-50 p-t-10">
                             <a href="#" class="s-txt1 hov-color-white m-tt-10">
                                 <i class="fa fa-caret-right fs-16 trans-04" aria-hidden="true"></i>
-                                <span class=" trans-04">Read More</span>
+                                <span class=" trans-04">BẮT ĐẦU</span>
                             </a>
                         </div>
                     </div>
@@ -147,15 +147,15 @@
 
                         <div class="wrap-para-b1 p-l-37 p-r-20 m-tt-20">
                             <p class="s-txt1">
-                                Phasellus lorem enim, luctus ut velit eget, convallis egestas eros. Sed ornare ligula
-                                eget tortor tempor, quis porta tellus dictum
+                                Thi sát hạch hạng E: Tổng số 30 câu hỏi, trả lời trong 20 phút.
+                                Thi đạt nếu số câu trả lời đúng >= 28 / 30 câu.
                             </p>
                         </div>
 
                         <div class="wrap-more-b1 p-l-37 p-t-10">
                             <a href="#" class="s-txt1 hov-color-white m-tt-10">
                                 <i class="fa fa-caret-right fs-16 trans-04" aria-hidden="true"></i>
-                                <span class=" trans-04">Read More</span>
+                                <span class=" trans-04">BẮT ĐẦU</span>
                             </a>
                         </div>
                     </div>
@@ -179,15 +179,15 @@
 
                         <div class="wrap-para-b1 p-l-50 p-r-20 m-tt-20">
                             <p class="s-txt1">
-                                Phasellus lorem enim, luctus ut velit eget, convallis egestas eros. Sed ornare ligula
-                                eget tortor tempor, quis porta tellus dictum
+                                Thi sát hạch hạng F: Tổng số 30 câu hỏi, trả lời trong 20 phút.
+                                Thi đạt nếu số câu trả lời đúng >= 28 / 30 câu.
                             </p>
                         </div>
 
                         <div class="wrap-more-b1 p-l-50 p-t-10">
                             <a href="#" class="s-txt1 hov-color-white m-tt-10">
                                 <i class="fa fa-caret-right fs-16 trans-04" aria-hidden="true"></i>
-                                <span class=" trans-04">Read More</span>
+                                <span class=" trans-04">BẮT ĐẦU</span>
                             </a>
                         </div>
                     </div>

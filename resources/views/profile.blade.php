@@ -11,6 +11,19 @@
 					<h6 class="text-center huy-text-style"><b>{{Auth::user()->name}}</b></h6>
 					<br><p class="text-center">{{Auth::user()->email}}</p>
 				</div>
+				<ul>
+					<li class="">
+						<a href="">Thông tin chung</a>
+					</li>
+					<li class="">
+						<a href="">Ảnh đại diện</a>
+					</li>
+					<li class="">
+						<a href="">Tài khoản</a>
+					</li>
+
+				</ul>
+
 			</div>
 		</div>
 		<div class="col-md-10">
