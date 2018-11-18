@@ -116,12 +116,14 @@ class TipController extends Controller
         }
         $flag = $model->save();
         if($flag){
-            session()->flash('success','cập nhật thành công !');
+            session()->flash('success','Cập nhật thành công !');
         }
         else{
-            session()->flash('warning','cập nhật không thành công !');
+            session()->flash('warning','Cập nhật không thành công !');
         }
         return redirect(route('tips.index'));
+
+
     }
 
     /**

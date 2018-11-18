@@ -75,4 +75,8 @@ Route::get('verify/{id}/{token}','verify_email@get_xacnhan');
 
 Route::get('asd','verify_email@email_verify')->name('asd');
 
+Route::group(['prefix' => 'profile', 'middleware'=>'auth'],function (){
+    Route::get('edit/{id}','ProfileController@index')->name('profile.edit');
+    Route::post('update/{id}','ProfileController@update')->name('profile.update');
+});
 Auth::routes();

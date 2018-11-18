@@ -102,6 +102,19 @@ class UserController extends Controller
     {
         $model = User::findOrFail($id);
         $model->fill($request->all());
+        if ($request->hasFile('user_img')) {
+
+            $image = $request->file('user_img');
+
+            $imageName = time() ."_". $image->getClientOriginalName();
+
+            $path = public_path('/images');
+
+            $image->move($path, $imageName);
+
+            $model->user_img = 'images/'. $imageName;
+
+        }
         $flag = $model->save();
         if($flag){
             session()->flash('success','cập nhật thành công !');

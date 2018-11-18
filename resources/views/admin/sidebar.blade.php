@@ -56,7 +56,7 @@
                 <a href="{{route('tips.index')}}"><i class="fa fa-support fa-fw"></i> Quản lý Mẹo lái xe</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-car fa-fw"></i> Quản lý tin tức lái xe</a>
+                <a href="{{route('infordriving.index')}}"><i class="fa fa-car fa-fw"></i> Quản lý tin tức lái xe</a>
             </li>
         </ul>
     </div>

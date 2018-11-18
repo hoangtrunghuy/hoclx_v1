@@ -15,7 +15,7 @@ class InforDrivingController extends Controller
      */
     public function index()
     {
-        $data = InforDriving::latest()->get();
+        $data = InforDriving::all();
         return view('admin.infordriving.index',compact('data'));
     }
 

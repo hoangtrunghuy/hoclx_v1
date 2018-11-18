@@ -19,7 +19,7 @@
 								</span>   --}}
 
 								<span>
-									{{$item->infor_drivings_date}}
+									{{$item->updated_at}}
 									<span class="m-l-4 m-r-9">|</span>
 								</span> 
 
