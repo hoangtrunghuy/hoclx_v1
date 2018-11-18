@@ -28,7 +28,7 @@
                        data-fontsize="['18', '18', '18', '16']"
                        data-lineheight="['30', '30', '30', '30']"
                        data-height="['auto']"
-                    >Lý thuyết hay, đề thi chất lượng, cập nhật thông tin lái xe nhanh, tiện lợi và chính xác nhất.
+                    >Phía trước tay lái là cả sự sống và ước mơ, xin hãy lái xe bằng cả trái tim. Học lái xe giỏi xây dựng tương lai.
                     </p>
 
                     <div class="tp-caption tp-resizeme wrap-btn-slide"
@@ -83,8 +83,8 @@
                        data-fontsize="['18', '18', '18', '16']"
                        data-lineheight="['30', '30', '30', '30']"
                        data-height="['auto']"
-                    >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed odio sit amet nibh vulputate
-                        cursus a sit amet mauris. Morbi accumsan ipsum velit.
+                    >Lý thuyết hay, đề thi chất lượng, cập nhật thông tin lái xe nhanh, tiện lợi và chính xác nhất.
+                            Giúp bạn vượt qua kỳ thi sát hạch một cách dễ dàng.
                     </p>
 
                     <div class="tp-caption tp-resizeme wrap-btn-slide"
@@ -138,7 +138,7 @@
                        data-fontsize="['18', '18', '18', '16']"
                        data-lineheight="['30', '30', '30', '30']"
                        data-height="['auto']"
-                    >Giúp bạn vượt qua kỳ thi sát hạch một cách dễ dàng.
+                    >Hãy đến với chúng tôi hoclaixe123.com.
                     </p>
 
                     <div class="tp-caption tp-resizeme wrap-btn-slide"

@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Client;
+namespace App\Http\Controllers;
 
-use App\Feedback;
+use App\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
-class FeedbackController extends Controller
+class verify_email extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +16,45 @@ class FeedbackController extends Controller
      */
     public function index()
     {
+        //
+    }
+    public function email_verify(){
+        $status = Auth::user()->user_status;
+        if($status != 1){
+            $id = Auth::user()->id;
+            $token = Auth::user()->remember_token;
+            $email = Auth::user()->email;
+            $username = Auth::user()->name;
+            $data =[
+                'name'=>$username,
+                'email' => $email,
+                'id' => $id,
+                'token' => $token
+            ];
+            Mail::send('emails.maxacnhan',$data,function ($message)use($data) {
+                $message->from('contact.hoclaixe123@gmail.com','Verification');
+                $message->to($data['email']);
+            });
+            return redirect()->route('home');
+//            ->with('success', 'Vui lòng kiểm tra email')
+        }
+        return redirect()->route('home')->with('error', 'Tài khoản đã được xác minh');
 
-        $data1 = Feedback::with('user')->get();
-        return $data1;
-        return view('client.index', compact('data1'));
+
+    }
+    public function get_xacnhan($id,$token){
+        $user = User::find($id);
+
+        if($user->remember_token == $token)
+        {
+            $user->user_status = 1;
+            $user->save();
+            return view('emails.success');
+        }
+
+
+        else
+            return view('emails.failed');
     }
 
     /**

@@ -19,7 +19,6 @@ class CreateInforDrivingsTable extends Migration
             $table->longtext('infor_drivings_discription');
             $table->string('infor_drivings_image');
             $table->longtext('infor_drivings_content');
-            $table->date('infor_drivings_date');
             $table->timestamps();
         });
     }

@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                
+
                 <div class="panel-heading" style="text-align: center; font-size: 20px;">
                     <a class="" href="{{ url('/') }}">
                         <img src="client/images/icons/logo.png" width="200px">

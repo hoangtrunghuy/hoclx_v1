@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Tip;
+use App\Http\Controllers\Auth;
+
 use Illuminate\Http\Request;
 
 class TipController extends Controller
@@ -24,6 +26,7 @@ class TipController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         return view('admin.tips.create');
@@ -113,12 +116,14 @@ class TipController extends Controller
         }
         $flag = $model->save();
         if($flag){
-            session()->flash('success','cập nhật thành công !');
+            session()->flash('success','Cập nhật thành công !');
         }
         else{
-            session()->flash('warning','cập nhật không thành công !');
+            session()->flash('warning','Cập nhật không thành công !');
         }
         return redirect(route('tips.index'));
+
+
     }
 
     /**

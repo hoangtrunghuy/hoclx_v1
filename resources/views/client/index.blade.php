@@ -1,5 +1,6 @@
 @extends('layouts.client')
 @section('content')
+
     @include('client.slide')
     @include('client.loaidethi')
     @include('client.feedback')

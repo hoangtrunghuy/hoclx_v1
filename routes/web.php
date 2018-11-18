@@ -22,7 +22,7 @@ Route::post('handle_login','Auth\LoginController@postLogin')->name('postLogin');
 
 Route::resource('questions', 'Admin\QuestionController')->middleware('auth');
 
-Route::resource('exams', 'Client\ExamController')->middleware('auth');
+Route::resource('exams', 'Client\ExamController')->middleware('auth')->middleware('auth');
 Route::get(  'del/{exam_id}', 'Client\ExamController@delete_exam')->name('DeleteExam')->middleware('auth');
 Route::get('exams/{id}','Client\ExamController@show')->name('LamDe')->middleware('auth');
 Route::post('exams','Client\ExamController@cham')->name('ChamBai')->middleware('auth');
@@ -71,5 +71,12 @@ Route::get('clients/infordriving','Client\InforDrivingController@index')->name('
 Route::get('inforcontent/{id}','client\InforDrivingController@inforcontent')->name('inforcontent.index');
 
 Route::get('clients/feedback','Client\FeedbackController@index')->name('clients.feedback');
+Route::get('verify/{id}/{token}','verify_email@get_xacnhan');
 
+Route::get('asd','verify_email@email_verify')->name('asd');
+
+Route::group(['prefix' => 'profile', 'middleware'=>'auth'],function (){
+    Route::get('edit/{id}','ProfileController@index')->name('profile.edit');
+    Route::post('update/{id}','ProfileController@update')->name('profile.update');
+});
 Auth::routes();

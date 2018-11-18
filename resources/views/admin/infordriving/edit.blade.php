@@ -25,29 +25,22 @@
     <form action="{{route('infordriving.update',$model->id)}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label>Title</label>
                     <input type="text" name="infor_drivings_title" value="{{$model->infor_drivings_title}}" class="form-control">
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label>Discription</label>
                     <input type="text" name="infor_drivings_discription" value="{{$model->infor_drivings_discription}}" class="form-control">
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label>Image</label>
                     <input type="file" name="infor_drivings_image" value="{{$model->infor_drivings_image}}"
-                           class="form-control">
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label>date</label>
-                    <input type="date" name="infor_drivings_date" value="{{$model->infor_drivings_date}}"
                            class="form-control">
                 </div>
             </div>
