@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Tip;
+use App\Http\Controllers\Auth;
+
 use Illuminate\Http\Request;
 
 class TipController extends Controller
@@ -24,6 +26,7 @@ class TipController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         return view('admin.tips.create');

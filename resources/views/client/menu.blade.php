@@ -7,7 +7,7 @@
         </a>
 
         <!-- Menu desktop -->
-        <div class="menu-desktop">
+        <div class="menu-desktop" id="root">
             <ul class="main-menu">
                 <li>
                     <a href="index.html">Trang Chủ</a>
@@ -54,8 +54,27 @@
                 <li class="respon-sub-menu">
                     <a href="contact.html">Liên Hệ</a>
                 </li>
+                @auth
+                    <input type="hidden" id="status_acc" value="{{Auth::user()->user_status}}" \>
+
+
+                    {{--<a href="{{ route('asd') }}">Verify</a>--}}
+                    <a href="{{ route('asd') }}" class="btn btn-success mr-xs mb-sm">Xác thực</a>
+
+                    <script>
+                        var s =document.getElementById('status_acc');
+                        if(s.value == 1)
+                        {
+                            document.getElementById('verify_field').remove();
+                        }
+
+
+                    </script>
+                @endauth
+
             </ul>
         </div>
+        <br />
 
         <!-- Social desktop -->
         @guest
@@ -77,7 +96,7 @@
     </div>
     @else
         <div >
-            <div class="dropdown">
+            <div class="dropdown" style="margin-left: 10px;">
                 <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true"
                    v-pre>
                     <img src="{{ asset(Auth::user()->user_img) }}" width="30px" height="30px"
@@ -101,5 +120,21 @@
     @endguest
 
 </div>
-</div>
+<div id="message">@include('emails.messeage')</div>
+<script>
+    var s =document.getElementById('status_acc');
+    if(s.value == 0)
+    {
+        var root = document.getElementById("message");
+        root.setAttribute('class','alert alert-success');
+
+        var para = document.createElement("p");
+        var node = document.createTextNode("Vui lòng kiểm tra email để xác thực tài khoản");
+        para.appendChild(node);
+
+        //container.appendChild(para);
+        root.appendChild(para);
+    }
+
+</script>
 

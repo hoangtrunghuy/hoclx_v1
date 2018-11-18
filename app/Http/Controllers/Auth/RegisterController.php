@@ -39,6 +39,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+
         $this->middleware('guest');
     }
 
@@ -78,15 +79,22 @@ class RegisterController extends Controller
             'user_img'=>'client/images/Person-icon-grey1.jpg',
         ]);
     }
-    public function get_xacnhan(){
-        return view('auth.register');
+    public function get_xacnhan($id,$token){
+        $check = User::where('id',$id)->select('remember_token');
+        if($check == $token)
+            return view('auth.register');
+        else
+            return view('');
     }
-    public function post_xacnhan(Request $request){
-        $random = rand(100000,999999);
-        $data = [
-            'email'=>$request->email,
-            'random'=>$random,
+    public function email_verify(){
+        return 350;
+        $id = Auth::user()->id;
+        $token =Auth::user()->remember_token;
+        $data =[
+            'id' => $id,
+            'token' => $token
         ];
+        return $data;
         Mail::send('emails.maxacnhan',$data,function ($message)use($data) {
             $message->from('contact.hoclaixe123@gmail.com','Verification');
             $message->to($data['email']);
