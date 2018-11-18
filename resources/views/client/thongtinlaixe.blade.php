@@ -24,7 +24,7 @@
                                     {{$item->infor_drivings_title}}
                                 </h4></a>
 
-                            <span class="s-txt7">{{$item->infor_drivings_date}} </span>
+                            <span class="s-txt7">{{$item->updated_at}} </span>
                             <a href="{{ route('inforcontent.index',$item->id) }}" class="dis-inline s-txt8 hov-color-main">Pro Tips</a>
 
                             <p class="s-txt2 p-t-11 p-b-22">

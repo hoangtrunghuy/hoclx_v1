@@ -10,8 +10,7 @@ class InforDriving extends Model
         'infor_drivings_title',
         'infor_drivings_discription',
         'infor_drivings_image',
-        'infor_drivings_content',
-        'infor_drivings_date'
+        'infor_drivings_content'
     ];
     	
 }

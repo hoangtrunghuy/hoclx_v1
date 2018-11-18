@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
-
+namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
-use App\Tip;
+use App\User;
 use Illuminate\Http\Request;
-
-class TipController extends Controller
+use Illuminate\Support\Facades\Hash;
+use Auth;
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,7 @@ class TipController extends Controller
      */
     public function index()
     {
-        $data = Tip::latest()->get();
-        return view('admin.tips.index',compact('data'));
+        return view('profile');
     }
 
     /**
@@ -26,7 +25,7 @@ class TipController extends Controller
      */
     public function create()
     {
-        return view('admin.tips.create');
+        //
     }
 
     /**
@@ -37,41 +36,18 @@ class TipController extends Controller
      */
     public function store(Request $request)
     {
-        $model = new Tip();
-        $model->fill($request->all());
-
-        if ($request->hasFile('image')) {
-
-            $image = $request->file('image');
-
-            $imageName = time() ."_". $image->getClientOriginalName();
-
-            $path = public_path('images');
-
-            $image->move($path, $imageName);
-
-            $model->image = 'images/'.$imageName;
-        }
-        $flag = $model->save();
-        if($flag){
-            session()->flash('success','tạo mới thành công !');
-        }
-        else{
-            session()->flash('warning','tạo mới không thành công !');
-        }
-        return redirect(route('tips.index'));
+        //
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Responses
+     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $model = Tip::findOrFail($id);
-        return view('admin.tips.show',compact('model'));
+        //
     }
 
     /**
@@ -82,9 +58,7 @@ class TipController extends Controller
      */
     public function edit($id)
     {
-        $model = Tip::findOrFail($id);
-
-        return view('admin.tips.edit',compact('model'));
+        //
     }
 
     /**
@@ -94,13 +68,23 @@ class TipController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
     public function update(Request $request, $id)
     {
-        $model = Tip::findOrFail($id);
-        $model->fill($request->all());
+        $model = User::findOrFail($id);
 
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
+        if(Hash::check($request->old_password,$model->password)){
+            $model->password = Hash::make($request->password);
+            $flag = $model->save();
+
+        }else{
+            echo "Nhap lai mat khau cu";
+        
+        }
+       $model->fill($request->all());
+
+        if ($request->hasFile('user_img')) {
+            $image = $request->file('user_img');
 
             $imageName = time() . $image->getClientOriginalName();
 
@@ -108,20 +92,18 @@ class TipController extends Controller
 
             $image->move($path, $imageName);
 
-            $model->image = 'images/'.$imageName;
+            $model->user_img = 'images/'.$imageName;
 
         }
-        $flag = $model->save();
+       
         if($flag){
             session()->flash('success','Cập nhật thành công !');
         }
         else{
             session()->flash('warning','Cập nhật không thành công !');
         }
-        return redirect(route('tips.index'));
-
-
-    }
+        return back();
+        }
 
     /**
      * Remove the specified resource from storage.
@@ -131,15 +113,6 @@ class TipController extends Controller
      */
     public function destroy($id)
     {
-        $model = Tip::findOrFail($id);
-
-        $flag = $model->delete();
-        if($flag){
-            session()->flash('success','xóa thành công !');
-        }
-        else{
-            session()->flash('warning','xóa không thành công !');
-        }
-        return back();
+        //
     }
 }

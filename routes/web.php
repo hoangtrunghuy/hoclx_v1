@@ -72,4 +72,8 @@ Route::get('inforcontent/{id}','client\InforDrivingController@inforcontent')->na
 
 Route::get('clients/feedback','Client\FeedbackController@index')->name('clients.feedback');
 
+Route::group(['prefix' => 'profile', 'middleware'=>'auth'],function (){
+    Route::get('edit/{id}','ProfileController@index')->name('profile.edit');
+    Route::post('update/{id}','ProfileController@update')->name('profile.update');
+});
 Auth::routes();

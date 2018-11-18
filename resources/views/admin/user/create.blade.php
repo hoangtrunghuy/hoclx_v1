@@ -28,7 +28,7 @@
    @endif
     {{--1 : de dang file
     2 : form phai de enctype="multipart/form-data"--}}
-    <form action="{{route('user.store')}}" method="post">
+    <form action="{{route('user.store')}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="row">
             <div class="col-md-4">
