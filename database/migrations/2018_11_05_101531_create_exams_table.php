@@ -17,7 +17,9 @@ class CreateExamsTable extends Migration
             $table->integer('user_id');
             $table->string('exam_id');
             $table->integer('question_id');
+            $table->string('exam_type');
             $table->integer('exam_score')->nullable();
+            $table->string('exam_status')->nullable();
             $table->string('user_ans')->nullable();
             $table->timestamps();
             $table->primary(['exam_id','question_id']);

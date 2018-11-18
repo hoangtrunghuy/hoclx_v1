@@ -9,6 +9,7 @@ use DB;
 use App\Question;
 use Session;
 use View;
+use Auth;
 
 class ExamController extends Controller
 {
@@ -19,13 +20,21 @@ class ExamController extends Controller
      */
     public function index()
     {
+        $user_id = Auth::user()->id;
+
         $data = DB::table('exams')
-        ->select('exam_id','exam_score','created_at')
+        ->select('*')
+        ->where('user_id', '=', $user_id)
         ->groupBy('exam_id')
         ->orderBy('created_at', 'desc')
         ->get();
 
-        return view('client.exam.index',compact('data'));
+        
+        Session::get('diem'); //nhận biến diem từ hàm cham bên dưới đã gửi đi để hiển thị
+
+        return view::make('client.exam.index')
+        ->with(compact('data')) //cach gửi 2 biến đi
+        ->with(compact('diem')); //cach gửi 2 biến đi
     }
 
     /**
@@ -33,9 +42,13 @@ class ExamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $id_ex = 'ex'.time();
+
+        $user_id = Auth::user()->id;
+
+        $ex_type = $request->exam_type;
         
         $ly_thuyet = Question::inRandomOrder()
             ->select('id')
@@ -55,13 +68,13 @@ class ExamController extends Controller
         for ($i=1; $i < 3; $i++) {
             
             DB::table('exams')
-            ->insert([ 'user_id' => 1/* edit */, 'exam_id' => $id_ex, 'question_id' => $ly_thuyet[$i]->id, 'created_at' =>date('Y-m-d H:i:s') ]);
+            ->insert([ 'user_id' => $user_id, 'exam_id' => $id_ex, 'question_id' => $ly_thuyet[$i]->id, 'exam_type' =>$ex_type, 'created_at' =>date('Y-m-d H:i:s') ]);
 
             DB::table('exams')
-            ->insert([ 'user_id' => 1/* edit */, 'exam_id' => $id_ex, 'question_id' => $bien_bao[$i]->id, 'created_at' =>date('Y-m-d H:i:s') ]);
+            ->insert([ 'user_id' => $user_id, 'exam_id' => $id_ex, 'question_id' => $bien_bao[$i]->id, 'exam_type' =>$ex_type, 'created_at' =>date('Y-m-d H:i:s') ]);
 
             DB::table('exams')
-            ->insert([ 'user_id' => 1/* edit */, 'exam_id' => $id_ex, 'question_id' => $sa_hinh[$i]->id, 'created_at' =>date('Y-m-d H:i:s') ]);
+            ->insert([ 'user_id' => $user_id, 'exam_id' => $id_ex, 'question_id' => $sa_hinh[$i]->id, 'exam_type' =>$ex_type, 'created_at' =>date('Y-m-d H:i:s') ]);
         }
 
         
@@ -101,11 +114,7 @@ class ExamController extends Controller
     {
         $data = Exam::where('exam_id', $id)->get();
 
-        Session::get('diem'); //nhận biến diem từ hàm cham bên dưới đã gửi đi để hiển thị
-
-        return view::make('client.exam.xemlai')
-        ->with(compact('data')) //cach gửi 2 biến đi
-        ->with(compact('diem')); //cach gửi 2 biến đi
+        return view('client.exam.xemlai',compact('data'));
     }
 
     /**
@@ -153,6 +162,7 @@ class ExamController extends Controller
     public function cham(Request $request)
     {
         $exam_id = $request->input('exam_id');
+        $exam_type = $request->input('exam_type');
         $diem = 0;
         for ($i=1; $i < 7; $i++) {
 
@@ -171,10 +181,20 @@ class ExamController extends Controller
                 $diem++;
             }
         }
+
+        if($exam_type = 'b1' && $diem > 25 || $exam_type = 'b2' && $diem > 25){
+            Exam::where('exam_id', '=', $exam_id)
+            ->update(['exam_score' => $diem,'exam_status' => 'Đạt']);
+        }elseif($exam_type = 'c' && $diem > 27 || $exam_type = 'd' && $diem > 27 || $exam_type = 'e' && $diem > 27 || $exam_type = 'f' && $diem > 27){
+            Exam::where('exam_id', '=', $exam_id)
+            ->update(['exam_score' => $diem,'exam_status' => 'Đạt']);
+        }else{
+            Exam::where('exam_id', '=', $exam_id)
+            ->update(['exam_score' => $diem,'exam_status' => 'Không Đạt']);
+        }
         
-        Exam::where('exam_id', '=', $exam_id)
-        ->update(['exam_score' => $diem]);
         
-        return Redirect()->route('xemlai',$exam_id)->with( ['diem' => $diem] );
+        
+        return Redirect()->route('exams.index')->with( ['diem' => $diem] );
     }
 }
