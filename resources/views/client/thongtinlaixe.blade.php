@@ -28,7 +28,7 @@
                             <a href="{{ route('inforcontent.index',$item->id) }}" class="dis-inline s-txt8 hov-color-main">Pro Tips</a>
 
                             <p class="s-txt2 p-t-11 p-b-22">
-                                {{$item->infor_drivings_discription}}
+                                {{str_limit($item->infor_drivings_discription,40,"...")}}
                             </p>
 
                             <div class="wrap-btn-b4 flex-w">

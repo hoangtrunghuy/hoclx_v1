@@ -29,6 +29,7 @@
         $('#dataTables-example').DataTable({
             responsive: true
         });
+        CKEDITOR.replace( 'content' );
     });
 
 </script>
