@@ -15,11 +15,18 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function edit_profile()
+    {
+        return view('profile.edit-profile');
+    }
+    public function edit_image()
+    {
+        return view('profile.edit-image');
+    }
+    public function edit_account()
     {
         return view('profile.edit-account');
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -70,7 +77,22 @@ class ProfileController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
+    public function updateProfile(Request $request, $id)
+    {
+        $model = User::findOrFail($id);
 
+        $model->fill($request->all());
+
+        $flag = $model->save();
+
+        if ($flag) {
+            session()->flash('success', 'Cập nhật thành công !');
+        } else {
+            session()->flash('warning', 'Cập nhật không thành công !');
+        }
+        return back();
+
+    }
     public function updateAccount(Request $request, $id)
     {
         $model = User::findOrFail($id);

@@ -52,7 +52,7 @@
                 </li>
 
                 <li class="respon-sub-menu">
-                    <a href="contact.html">Liên Hệ</a>
+                    <a href="{{ route('getLienhe') }}">Liên Hệ</a>
                 </li>
                 @auth
                     <input type="hidden" id="status_acc" value="{{Auth::user()->user_status}}" \>
@@ -103,7 +103,7 @@
                          style="border-radius: 50%;">
                 </a>
                 <div class="dropdown-menu" style="margin-top: 15px;">
-                    <a class="dropdown-item" href="{{route('profile.edit',Auth::user()->id)}}">Profile</a>
+                    <a class="dropdown-item" href="{{route('user.edit.profile')}}">Profile</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">

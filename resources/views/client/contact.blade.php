@@ -10,23 +10,23 @@
 							LIÊN HỆ
 						</h3>
 
-						<form id="contact-form" class="flex-w flex-sb validate-form" method="POST" action="/post_xacnhan" name="contact" >
+						<form id="contact-form" class="flex-w flex-sb validate-form" method="POST" action="/post-contact" name="contact" >
 							{{ csrf_field() }}
-							{{--<div class=" size25 w-full-lg m-b-20 validate-input" data-validate = "Name is required">--}}
-								{{--<input class="s-txt31 size-full cl-ph-1 bo6 input-focus-1 bo-rad-2 p-l-18 p-r-18" type="text" name="name" placeholder="Họ và tên">--}}
-							{{--</div>--}}
+							<div class=" size25 w-full-lg m-b-20 validate-input" data-validate = "Name is required">
+								<input class="s-txt31 size-full cl-ph-1 bo6 input-focus-1 bo-rad-2 p-l-18 p-r-18" type="text" name="name" placeholder="Họ và tên">
+							</div>
 
 							<div class=" size25 w-full-lg m-b-20 validate-input" data-validate = "Valid email is: ex@abc.xyz">
 								<input class="s-txt31 size-full cl-ph-1 bo6 input-focus-1 bo-rad-2 p-l-18 p-r-18" type="text" name="email" placeholder="Email">
 							</div>
 
-							{{--<div class=" size25 w-full-lg m-b-20">--}}
-								{{--<input class="s-txt31 size-full cl-ph-1 bo6 input-focus-1 bo-rad-2 p-l-18 p-r-18" type="text" name="phone" placeholder="Số điện thoại">--}}
-							{{--</div>--}}
+							<div class=" size25 w-full-lg m-b-20">
+								<input class="s-txt31 size-full cl-ph-1 bo6 input-focus-1 bo-rad-2 p-l-18 p-r-18" type="text" name="phone" placeholder="Số điện thoại">
+							</div>
 
-							<!-- <div class="w-full m-b-20 validate-input" data-validate = "Message is required">
-								<textarea class="s-txt31 size22 cl-ph-1 bo6 input-focus-1 bo-rad-2 p-l-18 p-r-18 p-t-12" name="msg" placeholder="Ghóp ý"></textarea>
-							</div> -->
+							<div class="w-full m-b-20 validate-input" data-validate = "Message is required">
+								<textarea class="s-txt31 size22 cl-ph-1 bo6 input-focus-1 bo-rad-2 p-l-18 p-r-18 p-t-12" name="contact_content" placeholder="Ghóp ý"></textarea>
+							</div>
 
 							<div>
 								<!-- Button -->

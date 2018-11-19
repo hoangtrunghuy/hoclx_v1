@@ -22,7 +22,7 @@
                         <li><a href="#">Ôn lý thuyết</a></li>
                         <li><a href="#">Luyện đề</a></li>
                         <li><a href="#">Giới thiệu</a></li>
-                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="{{ route('getLienhe') }}">Liên hệ</a></li>
                     </ul>
 
                     <ul class="col-right">
@@ -30,7 +30,7 @@
                         <li><a href="#">Lái xe hôm nay</a></li>
                         <li><a href="#">Cộng đồng</a></li>
                         <li><a href="#">Đánh giá</a></li>
-                        <li><a href="#">Đóng góp ý kiến</a></li>
+                        <li><a href="{{ route('getLienhe') }}">Đóng góp ý kiến</a></li>
                     </ul>
                 </div>
             </div>

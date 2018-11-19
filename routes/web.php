@@ -54,13 +54,12 @@ Route::group(['prefix' => 'feedback', 'middleware'=>'RoleMiddleware'],function (
     Route::get('/', 'Admin\FeedbackController@index')->name('feedback.index');
     Route::get(  'destroy/{id}', 'Admin\FeedbackController@destroy')->name('feedback.destroy');
 });
-
 //End Route admin
 
 //Start Route client
 
 Route::get('contact', 'Client\ContactController@get_lienhe')->name('getLienhe');
-Route::post('postcontact', 'Client\ContactController@post_lienhe')->name('postLienhe');
+Route::post('post-contact', 'Client\ContactController@post_lienhe')->name('postLienhe');
 
 Route::get('/callback','Client\CallbackController@index')->name('clients.index');
 
@@ -82,11 +81,16 @@ Route::get('verify/{id}/{token}','verify_email@get_xacnhan');
 Route::get('asd','verify_email@email_verify')->name('asd');
 
 Route::group(['prefix' => 'profile', 'middleware'=>'auth'],function (){
-    Route::get('edit/{id}','ProfileController@index')->name('profile.edit');
-    Route::post('update/{id}','ProfileController@update')->name('profile.update');
-    Route::post('update-imgage/{id}','ProfileController@updateImgage')->name('profile.update.image');
-    Route::post('update-account/{id}','ProfileController@updateAccount')->name('profile.update.account');
+
+    Route::get('user-edit-profile','ProfileController@edit_profile')->name('user.edit.profile');
+    Route::get('user-edit-image','ProfileController@edit_image')->name('user.edit.image');
+    Route::get('user-edit-account','ProfileController@edit_account')->name('user.edit.account');
+
+    Route::post('user-imgage/{id}','ProfileController@updateImgage')->name('user.update.image');
+    Route::post('user-profile/{id}','ProfileController@updateProfile')->name('user.update.profile');
+    Route::post('user-account/{id}','ProfileController@updateAccount')->name('user.update.account');
 });
+
 
 //End Route client
 Auth::routes();

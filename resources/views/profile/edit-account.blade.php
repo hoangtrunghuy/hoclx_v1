@@ -5,25 +5,27 @@
             <div class="col-md-2">
                 <div class="form-group form-control border-primary">
                     <div class="form-group">
-                        <img width="150" src="{{Auth::user()->user_img}}" alt="" class="mx-auto d-block img-circle rounded-circle">
+                        <img width="150" src="{{Auth::user()->user_img}}" alt=""
+                             class="mx-auto d-block img-circle rounded-circle">
                     </div>
                     <div class="form-group">
-                        <h6 class="text-center huy-text-style"><b>{{Auth::user()->name}}</b></h6>
-                        <br><p class="text-center">{{Auth::user()->email}}</p>
+                        <h6 class="text-center huy-text-style">
+                            <b>{{Auth::user()->user_firstName. ' ' .Auth::user()->user_lastName}}</b></h6>
                     </div>
-                    <ul>
-                        <li class="">
-                            <a href="">Thông tin chung</a>
-                        </li>
-                        <li class="">
-                            <a href="">Ảnh đại diện</a>
-                        </li>
-                        <li class="">
-                            <a href="">Tài khoản</a>
-                        </li>
+                    <div class="menu-profile">
+                        <ul>
+                            <li class="">
+                                <a href="{{ route('user.edit.profile') }}">Thông tin chung</a>
+                            </li>
+                            <li class="">
+                                <a href="{{ route('user.edit.image') }}">Ảnh đại diện</a>
+                            </li>
+                            <li class="">
+                                <a class="active" href="{{ route('user.edit.account') }}">Tài khoản</a>
+                            </li>
 
-                    </ul>
-
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="col-md-10">
@@ -34,27 +36,35 @@
                 </div>
                 <div class="form-group form-control border-primary">
                     <div class="col-md-8 mx-auto pt-3 pb-3">
-                        <form action="{{route('profile.update.account',Auth::user()->id)}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('user.update.account',Auth::user()->id)}}" method="post"
+                              enctype="multipart/form-data">
                             {{csrf_field()}}
                             @if(Session::has('success'))
-                                <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('success') !!}</em></div>
+                                <div class="alert alert-success"><span
+                                            class="glyphicon glyphicon-ok"></span><em> {!! session('success') !!}</em>
+                                </div>
                             @endif
                             @if(Session::has('warning'))
-                                <div class="alert alert-warning"><span class="glyphicon glyphicon-ok"></span><em> {!! session('warning') !!}</em></div>
+                                <div class="alert alert-warning"><span
+                                            class="glyphicon glyphicon-ok"></span><em> {!! session('warning') !!}</em>
+                                </div>
                         @endif
-                            <!-- edit password-->
+                        <!-- edit password-->
                             <div class="row form-group form-control">
                                 <div class="form-group">
-                                    <h5 >Đổi Mật Khẩu:</h5>
+                                    <h5>Đổi Mật Khẩu:</h5>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="old_password" placeholder="Nhập mật khẩu cũ" class="form-control">
+                                    <input type="text" name="old_password" placeholder="Nhập mật khẩu cũ"
+                                           class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="password" name="password" placeholder="Nhập mật khẩu mới" class="form-control">
+                                    <input type="text" id="password" name="password" placeholder="Nhập mật khẩu mới"
+                                           class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="confirm_password" name="confirm_password" placeholder="Nhập lại mật khẩu mới" class="form-control">
+                                    <input type="text" id="confirm_password" name="confirm_password"
+                                           placeholder="Nhập lại mật khẩu mới" class="form-control">
                                 </div>
                             </div>
                             <!-- button save -->
@@ -72,8 +82,8 @@
         var password = document.getElementById("password")
             , confirm_password = document.getElementById("confirm_password");
 
-        function validatePassword(){
-            if(password.value != confirm_password.value) {
+        function validatePassword() {
+            if (password.value != confirm_password.value) {
                 confirm_password.setCustomValidity("Passwords Don't Match");
             } else {
                 confirm_password.setCustomValidity('');
