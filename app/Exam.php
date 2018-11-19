@@ -10,8 +10,10 @@ class Exam extends Model
     	'user_id',
         'exam_id',
         'question_id',
+        'exam_type',
         'user_ans',
-        'exam_score'
+        'exam_score',
+        'exam_status'
     ];
 
     public function question()

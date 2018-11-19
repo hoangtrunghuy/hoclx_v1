@@ -51,6 +51,7 @@
 							</div>
 						</div>
 						<input type="hidden" name="exam_id" value="{{ $data[0]->exam_id }}">
+						<input type="hidden" name="exam_type" value="{{ $data[0]->exam_type }}">
 						@foreach($data as $key => $value)
 						<div class="col-md-12 noi_dung_cau_hoi" id="">
 							<p>Câu số {{ ++$key }}:</p>

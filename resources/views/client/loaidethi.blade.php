@@ -5,7 +5,7 @@
                 <!-- Block 1 -->
                 <div class="block-1">
                     <div class="wrap-pic-b1 wrap-pic-w">
-                        <img src="client/images/b11.jpg" alt="IMG-FEATURE">
+                        <img src="client/images/b1.jpg" alt="IMG-FEATURE">
                     </div>
 
                     <div class="wrap-text-b1 bg-main op-09 trans-05 ">

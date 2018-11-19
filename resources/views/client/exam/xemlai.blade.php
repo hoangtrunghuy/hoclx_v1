@@ -122,8 +122,7 @@
 	</section>
 
 	<script  type="text/javascript" charset="utf-8" >
-		if({{ Session()->get('diem') }} != null)
-			alert('Điểm của bạn là: '+{{ Session()->get('diem') }});
+		
 
 		function show_cau_hoi() {
 			var x = document.getElementsByClassName("noi_dung_cau_hoi");
