@@ -120,21 +120,21 @@
     @endguest
 
 </div>
-<div id="message">@include('emails.messeage')</div>
-<script>
-    var s =document.getElementById('status_acc');
-    if(s.value == 0)
-    {
-        var root = document.getElementById("message");
-        root.setAttribute('class','alert alert-success');
+{{--<div id="message">@include('emails.messeage')</div>--}}
+{{--<script>--}}
+    {{--var s =document.getElementById('status_acc');--}}
+    {{--if(s.value == 0)--}}
+    {{--{--}}
+        {{--var root = document.getElementById("message");--}}
+        {{--root.setAttribute('class','alert alert-success');--}}
 
-        var para = document.createElement("p");
-        var node = document.createTextNode("Vui lòng kiểm tra email để xác thực tài khoản");
-        para.appendChild(node);
+        {{--var para = document.createElement("p");--}}
+        {{--var node = document.createTextNode("Vui lòng kiểm tra email để xác thực tài khoản");--}}
+        {{--para.appendChild(node);--}}
 
-        //container.appendChild(para);
-        root.appendChild(para);
-    }
+        {{--//container.appendChild(para);--}}
+        {{--root.appendChild(para);--}}
+    {{--}--}}
 
-</script>
+{{--</script>--}}
 

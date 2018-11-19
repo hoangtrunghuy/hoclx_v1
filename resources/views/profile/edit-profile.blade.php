@@ -13,13 +13,13 @@
 				</div>
 				<ul>
 					<li class="">
-						<a href="">Thông tin chung</a>
+						<a href="{{ route('profile.update') }}">Thông tin chung</a>
 					</li>
 					<li class="">
-						<a href="">Ảnh đại diện</a>
+						<a href="{{ route('profile.update.image') }}">Ảnh đại diện</a>
 					</li>
 					<li class="">
-						<a href="">Tài khoản</a>
+						<a href="{{ route('profile.update.account') }}">Tài khoản</a>
 					</li>
 
 				</ul>

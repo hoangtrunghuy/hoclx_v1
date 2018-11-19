@@ -17,7 +17,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('profile');
+        return view('profile.edit-account');
     }
 
     /**
@@ -71,21 +71,8 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function update(Request $request, $id)
+    public function updateAccount(Request $request, $id)
     {
-
-//        if ($request->hasFile('user_img')) {
-////            $image = $request->file('user_img');
-////
-////            $imageName = time() . $image->getClientOriginalName();
-////
-////            $path = public_path('/images');
-////
-////            $image->move($path, $imageName);
-////
-////            $model->user_img = 'images/'.$imageName;
-////
-////        }
         $model = User::findOrFail($id);
         if (!empty($request->old_password)) {
             if (Hash::check($request->old_password, $model->password)) {
@@ -97,9 +84,8 @@ class ProfileController extends Controller
                     session()->flash('warning', 'Cập nhật không thành công !');
                 }
 
-            } else {    
-                session()->flash('success', 'Cập nhật không thành công !');
-
+            } else {
+                session()->flash('success', 'Mật khẩu cũ không đúng!');
             }
             $model->fill($request->all());
             return back();
@@ -117,5 +103,30 @@ class ProfileController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function updateImgage(Request $request, $id)
+    {
+        $model = User::findOrFail($id);
+        $model->fill($request->all());
+
+        if ($request->hasFile('user_img')) {
+            $image = $request->file('user_img');
+
+            $imageName = time() . $image->getClientOriginalName();
+
+            $path = public_path('/images');
+            $image->move($path, $imageName);
+
+            $model->user_img = 'images/' . $imageName;
+
+        }
+        $flag = $model->save();
+        if ($flag) {
+            session()->flash('success', 'Cập nhật thành công !');
+        } else {
+            session()->flash('warning', 'Cập nhật không thành công !');
+        }
+        return back();
     }
 }

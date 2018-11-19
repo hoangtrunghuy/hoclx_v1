@@ -13,10 +13,10 @@
                 Mỗi ý kiến đóng góp vàng ngọc của quý độc giả sẽ là động lực to lớn giúp cho dịch vụ của chúng tôi được tốt hơn.
             </p>
         </div>
-
+        @guest
         <form action="/postcontact" method="POST" role="form" >
-            {{ @csrf_field() }}
-            @guest
+                {{ @csrf_field() }}
+
                 <div class="row">
                     <div class="col-sm-6 col-lg-3 m-t-20">
                         <input class="size6 s-txt6 p-l-20" type="text" name="name" placeholder="Họ và tên: *">
@@ -34,23 +34,33 @@
                         <input class="size6 s-txt6 p-l-20" type="text" name="contact_content" placeholder="Góp ý: *">
                     </div>
                 </div>
+                <div class="flex-c-m p-t-36">
+                    <!-- Button -->
+                    <button class="btn-drive m-txt1 size7 bg-main hov-color-white bo-rad-4" type="submit">
+                        Gửi
+                    </button>
+                </div>
 
             @else
+                <form action="{{ route('callbackstore') }}" method="POST" role="form" >
+                    {{ @csrf_field() }}
                 <div class="row">
                     <div class="col-sm-6 col-lg-4 m-t-20"></div>
                     <div class="col-sm-6 col-lg-4 m-t-20">
-                        <input class="size6 s-txt6 p-l-20" type="text" name="contact_content" placeholder="Góp ý: *">
+                        <input class="size6 s-txt6 p-l-20" type="text" name="feedback_content" placeholder="Góp ý: *">
                     </div>
                 </div>
+                    <div class="flex-c-m p-t-36">
+                        <!-- Button -->
+                        <button class="btn-drive m-txt1 size7 bg-main hov-color-white bo-rad-4" type="submit">
+                            Gửi
+                        </button>
+                    </div>
+                </form>
             @endguest
 
 
-            <div class="flex-c-m p-t-36">
-                <!-- Button -->
-                <button class="btn-drive m-txt1 size7 bg-main hov-color-white bo-rad-4" type="submit">
-                    Gửi
-                </button>
-            </div>
+
         </form>
     </div>
 </section>
