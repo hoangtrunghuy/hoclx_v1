@@ -9,6 +9,7 @@ Route::get('trangxacnhan', function () {
 })->name('trangxacnhan');
 
 
+
 Route::get('contact', 'Client\ContactController@get_lienhe')->name('getLienhe');
 Route::post('postcontact', 'Client\ContactController@post_lienhe')->name('postLienhe');
 
@@ -21,6 +22,8 @@ Route::get('login','Auth\LoginController@getLogin')->name('getLogin');
 Route::post('handle_login','Auth\LoginController@postLogin')->name('postLogin');
 
 Route::resource('questions', 'Admin\QuestionController')->middleware('auth');
+
+Route::get('ly-thuyet','Admin\QuestionController@lythuyet')->name('lythuyet');
 
 Route::resource('exams', 'Client\ExamController')->middleware('auth')->middleware('auth');
 Route::get(  'del/{exam_id}', 'Client\ExamController@delete_exam')->name('DeleteExam')->middleware('auth');

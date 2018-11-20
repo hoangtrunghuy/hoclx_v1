@@ -25,6 +25,13 @@ class QuestionController extends Controller
         return view('admin.question.index',compact('data'));
     }
 
+    public function lythuyet()
+    {
+        $data = Question::all();
+        // dd($data);
+        return view('client.lythuyet',compact('data'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -32,7 +39,7 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        return view('admin.Question.create');
+        return view('admin.question.create');
     }
 
     /**

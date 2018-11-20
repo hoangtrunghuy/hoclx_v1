@@ -1,4 +1,4 @@
-<section class="bgwhite p-t-75 p-b-90">
+<section class="bgwhite p-t-75 p-b-90" id="tip">
     <div class="container">
         <div class="p-b-10">
             <div class="p-b-24">

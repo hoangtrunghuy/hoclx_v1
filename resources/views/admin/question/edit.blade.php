@@ -17,7 +17,7 @@
                             <div class="row">
                                 <div class="col-lg-2"></div>
                                 <div class="col-lg-8">
-                                    <form action="{{ route('questions.update',$model->id) }}" method="post" role="form"> 
+                                    <form action="{{ route('questions.update',$model->id) }}" method="post" role="form" enctype="multipart/form-data"> 
                                     {{ @csrf_field() }}
                                     {{ method_field('PUT') }}
                                         <div class="form-group">
@@ -38,7 +38,7 @@
                                         <div class="form-group">
                                         	<img src="{{ $model->question_img }}" alt=""/>
                                             <label>Chèn ảnh</label>
-                                            <input type="file">
+                                            <input type="file" name="question_img">
                                         </div>
                                         <div class="form-group">
                                             <label>
