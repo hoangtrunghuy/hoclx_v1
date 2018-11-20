@@ -1,3 +1,90 @@
+<div class="wrap-header-mobile">
+    <!-- Logo moblie -->        
+    <a href="" class="logo-mobile">
+        <img src="client/images/icons/logo.png" alt="IMG-LOGO">
+    </a>
+    <!-- Button show menu -->
+    <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </div>
+
+</div>
+<!-- Menu Mobile -->
+<div class="menu-mobile">
+    <ul class="topbar-mobile">
+        <li class="bo1-b p-t-8 p-b-8">
+            <div class="left-top-bar p-l-7">
+                <form action="" method="">
+                    <input type="text" name="">
+                    <input type="submit" name="" value="Tìm Kiếm">
+                </form>
+            </div>
+        </li>
+
+        <li class="right-top-bar bo1-b p-t-8 p-b-8">
+            <span>
+                <i class="icon_phone" aria-hidden="true"></i>
+                <span>1-800-123-6889</span>
+            </span>
+        </li>
+
+        <li class="right-top-bar bo1-b p-t-8 p-b-8">
+            <span>
+                <i class="icon_pin" aria-hidden="true"></i>
+                <span>Xuân Phương - Nam Từ Liêm - Hà Nội</span>
+            </span>
+        </li>
+
+        <li class="right-top-bar bo1-b p-t-8 p-b-8">
+            <span>
+                <i class="icon_clock" aria-hidden="true"></i>
+                <span>09:30 am – 06:00 pm</span>
+            </span>
+        </li>
+    </ul>
+
+    <ul class="main-menu-m bg-main">
+        <li class="bg-main">
+             <a href="{{ route('home') }}">Trang Chủ</a>
+            <span class="arrow-mFain-menu-m">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </span>
+        </li>
+
+        <li class="bg-main">
+            <a href="{{ route('lythuyet') }}">Ôn Lý Thuyết</a>
+            <span class="arrow-main-menu-m">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </span>
+        </li>
+
+        <li class="bg-main">
+            <a href="{{ route('exams.index') }}">Luyện Đề</a>
+        </li>
+
+        <li class="bg-main">
+           <a href="#feed">Đánh Giá</a>
+        </li>
+
+        <li class="bg-main">
+            <a href="#tip">Cộng Đồng</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Thảo luận</a></li>
+                        <li><a href="#">Đặt câu hỏi cho Cộng Đồng</a></li>
+                    </ul>
+        </li>
+
+        <li class="bg-main">
+             <a href="{{ route('about-us') }}">Giới Thiệu</a>
+        </li>
+
+        <li class="bg-main">
+            <a href="{{ route('getLienhe') }}">Liên Hệ</a>
+        </li>
+    </ul>
+</div>
 <section class="slider" style="background: #000;">
     <div class="rev_slider_wrapper fullwidthbanner-container rs1-revo">
         <div id="rev_slider_1" class="rev_slider fullwidthabanner" data-version="5.4.5" style="display:none">

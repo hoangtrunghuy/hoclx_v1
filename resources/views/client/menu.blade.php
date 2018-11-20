@@ -20,10 +20,6 @@
 
                 <li>
                     <a href="{{ route('exams.index') }}">Luyện Đề</a>
-                    <!-- <ul class="sub-menu">
-                        <li><a href="null.php">Luyện đề mẫu</a></li>
-                        <li><a href="#">Bốc đề tự động</a></li>
-                    </ul> -->
                 </li>
 
                 <li>
@@ -39,7 +35,7 @@
                 </li>
 
                 <li class="respon-sub-menu">
-                    <a href="#">Giới Thiệu</a>
+                    <a href="{{ route('about-us') }}">Giới Thiệu</a>
                 </li>
 
                 <li class="respon-sub-menu">
@@ -111,6 +107,7 @@
     @endguest
 
 </div>
+
 <!-- <div id="message">@include('emails.messeage')</div>
 <script>
     var s =document.getElementById('status_acc');
@@ -128,3 +125,4 @@
     }
 
 </script> -->
+

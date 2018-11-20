@@ -9,6 +9,11 @@ Route::get('trangxacnhan', function () {
 })->name('trangxacnhan');
 
 
+Route::get('about', function () {
+    return view('client.about');
+})->name('about-us');
+
+
 Route::get('contact', 'Client\ContactController@get_lienhe')->name('getLienhe');
 Route::post('postcontact', 'Client\ContactController@post_lienhe')->name('postLienhe');
 
@@ -33,6 +38,7 @@ Route::post('exams','Client\ExamController@cham')->name('ChamBai')->middleware('
 Route::get('exams/xemlai/{id}','Client\ExamController@xemlai')->name('xemlai')->middleware('auth');
 
 Route::resource('questions', 'Admin\QuestionController')->middleware('RoleMiddleware');
+
 
 Route::group(['prefix' => 'tips','middleware'=>'RoleMiddleware'],function(){
     Route::get(  '/', 'Admin\TipController@index')->name('tips.index');
