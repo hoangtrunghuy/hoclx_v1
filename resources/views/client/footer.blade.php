@@ -21,7 +21,7 @@
                         <li><a href="#">Trang Chủ</a></li>
                         <li><a href="#">Ôn lý thuyết</a></li>
                         <li><a href="#">Luyện đề</a></li>
-                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="{{ route('about-us') }}">Giới thiệu</a></li>
                         <li><a href="{{ route('getLienhe') }}">Liên hệ</a></li>
                     </ul>
 

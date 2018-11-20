@@ -4,9 +4,18 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
+Route::get('checkckediter', function () {
+    return view('test_ckediter');
+})->name('checkckediter');
+
+
 Route::get('trangxacnhan', function () {
     return view('emails.trangxacnhan');
 })->name('trangxacnhan');
+
+Route::get('about', function () {
+    return view('client.about');
+})->name('about-us');
 
 Route::get('/', 'HomeController@index')->name('home');
 

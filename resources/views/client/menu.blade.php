@@ -48,7 +48,7 @@
                 </li>
 
                 <li class="respon-sub-menu">
-                    <a href="about.html">Giới Thiệu</a>
+                    <a href="{{ route('about-us') }}">Giới Thiệu</a>
                 </li>
 
                 <li class="respon-sub-menu">
