@@ -20,10 +20,6 @@
 
                 <li>
                     <a href="{{ route('exams.index') }}">Luyện Đề</a>
-                    <!-- <ul class="sub-menu">
-                        <li><a href="null.php">Luyện đề mẫu</a></li>
-                        <li><a href="#">Bốc đề tự động</a></li>
-                    </ul> -->
                 </li>
 
                 <li>
@@ -39,19 +35,11 @@
                 </li>
 
                 <li class="respon-sub-menu">
-<<<<<<< HEAD
                     <a href="{{ route('about-us') }}">Giới Thiệu</a>
-=======
-                    <a href="#">Giới Thiệu</a>
->>>>>>> f22622e4c7e52baa837041ca61eb414098ea003c
                 </li>
 
                 <li class="respon-sub-menu">
-<<<<<<< HEAD
-                    <a href="#">Liên Hệ</a>
-=======
                     <a href="{{ route('getLienhe') }}">Liên Hệ</a>
->>>>>>> 375b4ea7f3f64ef6ba91b2aed0f4a8e82715b8c3
                 </li>
                 @auth
                     <input type="hidden" id="status_acc" value="{{Auth::user()->user_status}}" \>
