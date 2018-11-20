@@ -20,30 +20,32 @@
                         </div>
 
                         <div class="wrap-text-b4 p-t-23">
-                            <a href="{{ route('inforcontent.index',$item->id) }}"><h4 class="m-txt8 hov-color-main trans-04 m-b-10">
-                                    {{$item->infor_drivings_title}}
-                                </h4></a>
+                            <a title="{{$item->infor_drivings_title}}" href="{{ route('inforcontent.index',$item->id) }}"><h4 class="m-txt8 hov-color-main trans-04 m-b-10">
+                                {{str_limit($item->infor_drivings_title,40,"...")}}
+                            </h4></a>
 
                             <span class="s-txt7">{{$item->updated_at}} </span>
                             <a href="{{ route('inforcontent.index',$item->id) }}" class="dis-inline s-txt8 hov-color-main">Pro Tips</a>
-
-                            <p class="s-txt2 p-t-11 p-b-22">
-                                {{str_limit($item->infor_drivings_discription,40,"...")}}
+                            
+                            <p>
+                                <a title="{{$item->infor_drivings_discription}}" class="s-txt2 p-t-11 p-b-22">
+                                    {{str_limit($item->infor_drivings_discription,40,"...")}}
+                                </a>
                             </p>
 
                             <div class="wrap-btn-b4 flex-w">
                                 <!-- Button -->
                                 <a href="{{ route('inforcontent.index',$item->id) }}"
                                    class="btn-drive m-txt10 size8 bo3 bg1 hov-color-white bo-rad-4">
-                                    Xem chi tiết
-                                </a>
-                            </div>
+                                   Xem chi tiết
+                               </a>
+                           </div>
 
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
+                       </div>
+                   </div>
+               </div>
+               @endforeach
+           </div>
+       </div>
+   </div>
 </section>

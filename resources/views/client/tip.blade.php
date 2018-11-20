@@ -25,9 +25,9 @@
 
                     <div class="wrap-text-b3 p-l-20 p-r-20 p-t-16 p-b-26">
                         <div class="flex-sb-m p-b-12">
-								<span class="s-txt5">
+								<a title="{{$item->title}}" href="{{ route('content.index',$item->id) }}" class="s-txt5">
                                     {{str_limit($item->title,40,"...")}}
-								</span>
+								</a>
                             <span class="color1 fs-12">
 									<i class="fa fa-star" aria-hidden="true"></i>
 									<i class="fa fa-star" aria-hidden="true"></i>
@@ -37,7 +37,7 @@
 								</span>
                         </div>
 
-                        <a href="#"><h4 class="m-txt8 hov-color-main trans-04 p-b-12">
+                        <a title="{{$item->discription}}" href="{{ route('content.index',$item->id) }}"><h4 class="m-txt8 hov-color-main trans-04 p-b-12">
                                 {{str_limit($item->discription,20,"...")}}
                             </h4></a>
                         <span class="m-txt9"></span>
@@ -68,10 +68,10 @@
 
         <div class="flex-c-m p-t-46">
             <!-- Button -->
-            {{-- <a href="#" class="btn-drive m-txt1 size5 bg2 hov-color-white bo-rad-4">
+            <a href="#" class="btn-drive m-txt1 size5 bg2 hov-color-white bo-rad-4">
                 Xem tất cả
                 <i class="fa fa-chevron-right m-l-9 fs-14" aria-hidden="true"></i>
-            </a> --}}
+            </a>
         </div>
     </div>
 </section>
