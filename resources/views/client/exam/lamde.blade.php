@@ -42,7 +42,7 @@
 				<div class="col-md-8">
 					<form action="{{ route('ChamBai') }}" method="post"> 
 					{{ @csrf_field() }}
-						<div class="row div_time">
+						<div class="row div_time shadow-lg">
 							<div class="col-md-10">
 								<p style="color:red;font-size: 20px;"><i class="fa fa-hourglass-half"></i><b id="countDown"></b></p>
 							</div>
@@ -165,6 +165,19 @@ var x = setInterval(function() {
         document.getElementById("nopbai").click();
     }
 }, 1000);
+</script>
+<script type="text/javascript" charset="utf-8">
+	/*window.onbeforeunload = function (e) {
+	  var message = "Your confirmation message goes here.",
+	  e = e || window.event;
+	  // For IE and Firefox
+	  if (e) {
+	    e.returnValue = message;
+	  }
+
+	  // For Safari
+	  return message;
+	};*/
 </script>
 
 @endsection

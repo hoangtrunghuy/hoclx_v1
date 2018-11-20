@@ -34,7 +34,7 @@
                                     <td>{{ $item->id}}</td>
                                 <!-- <td>{{ $item->question_type}}</td> -->
                                     <td>{{ $item->question_content}}</td>
-                                    <td><img width="300px" src="{{ $item->question_img}}"/></td>
+                                    <td><img width="100px" src="{{ $item->question_img}}"/></td>
                                     <td class="center">
                                         <ul>
                                             <li>{{ $item->question_ansA}}</li>

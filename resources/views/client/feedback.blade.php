@@ -1,4 +1,4 @@
-<section class="testimonial">
+<section class="testimonial" id="feed">
     <div class="wrap-testimonial parallax100 bg-overlay-3 p-t-75 p-b-80"
          {{--style="background-image: url('images/testimonial-bg-01.jpg');"--}}>
         <div class="wrap-slide-slick-1">

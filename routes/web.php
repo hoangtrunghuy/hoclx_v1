@@ -8,6 +8,17 @@ Route::get('trangxacnhan', function () {
     return view('emails.trangxacnhan');
 })->name('trangxacnhan');
 
+Route::get('about', function () {
+    return view('client.about');
+})->name('about-us');
+
+Route::get('contact', 'Client\ContactController@get_lienhe')->name('getLienhe');
+Route::post('postcontact', 'Client\ContactController@post_lienhe')->name('postLienhe');
+
+Route::get('admin/dashboard','Admin\DashboardController@index')->name('dashboard.index');
+
+Route::get('/callback','Client\CallbackController@index')->name('clients.index');
+
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('login','Auth\LoginController@getLogin')->name('getLogin');
@@ -16,7 +27,16 @@ Route::post('handle_login','Auth\LoginController@postLogin')->name('postLogin');
 //Route admin
 Route::get('admin/dashboard','Admin\DashboardController@index')->name('dashboard.index')->middleware('RoleMiddleware');
 
+Route::get('ly-thuyet','Admin\QuestionController@lythuyet')->name('lythuyet');
+
+Route::resource('exams', 'Client\ExamController')->middleware('auth')->middleware('auth');
+Route::get(  'del/{exam_id}', 'Client\ExamController@delete_exam')->name('DeleteExam')->middleware('auth');
+Route::get('exams/{id}','Client\ExamController@show')->name('LamDe')->middleware('auth');
+Route::post('exams','Client\ExamController@cham')->name('ChamBai')->middleware('auth');
+Route::get('exams/xemlai/{id}','Client\ExamController@xemlai')->name('xemlai')->middleware('auth');
+
 Route::resource('questions', 'Admin\QuestionController')->middleware('RoleMiddleware');
+
 
 Route::group(['prefix' => 'tips','middleware'=>'RoleMiddleware'],function(){
     Route::get(  '/', 'Admin\TipController@index')->name('tips.index');

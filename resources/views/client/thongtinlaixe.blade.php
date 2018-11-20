@@ -1,4 +1,4 @@
-<section class="bgwhite p-t-75 p-b-90">
+<section class="bgwhite p-t-75 p-b-90" id="thong-tin-lai-xe">
     <div class=" p-b-10">
         <div class="p-b-24">
             <h3 class="m-txt4 txt-center p-b-8 respon1">

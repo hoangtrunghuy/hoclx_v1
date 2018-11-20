@@ -1,10 +1,118 @@
+<div class="wrap-header-mobile">
+    <!-- Logo moblie -->        
+    <a href="index-2.html" class="logo-mobile">
+        <img src="client/images/icons/logo.png" alt="IMG-LOGO">
+    </a>
+    <!-- Button show menu -->
+    <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </div>
+
+</div>
+<!-- Menu Mobile -->
+<div class="menu-mobile">
+    <ul class="topbar-mobile">
+        <li class="bo1-b p-t-8 p-b-8">
+            <div class="left-top-bar p-l-7">
+                <form action="" method="">
+                    <input type="text" name="">
+                    <input type="submit" name="" value="Tìm Kiếm">
+                </form>
+            </div>
+        </li>
+
+        <li class="right-top-bar bo1-b p-t-8 p-b-8">
+            <span>
+                <i class="icon_phone" aria-hidden="true"></i>
+                <span>1-800-123-6889</span>
+            </span>
+        </li>
+
+        <li class="right-top-bar bo1-b p-t-8 p-b-8">
+            <span>
+                <i class="icon_pin" aria-hidden="true"></i>
+                <span>Ngo 80-Xuan Phuong-Tu Hoang-Nam Tu Liem-Ha Noi</span>
+            </span>
+        </li>
+
+        <li class="right-top-bar bo1-b p-t-8 p-b-8">
+            <span>
+                <i class="icon_clock" aria-hidden="true"></i>
+                <span>09:30 am – 06:00 pm</span>
+            </span>
+        </li>
+    </ul>
+
+    <ul class="main-menu-m bg-main">
+        <li class="bg-main">
+            <a href="index.html">Trang Chủ</a>
+            <span class="arrow-mFain-menu-m">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </span>
+        </li>
+
+        <li class="bg-main">
+            <a href="course-list.html">Courses</a>
+            <ul class="sub-menu-m">
+                <li><a href="course-list.html">Course List</a></li>
+                <li><a href="course-grid.html">Course Grid</a></li>
+                <li><a href="course-detail.html">Course Detail</a></li>
+            </ul>
+            <span class="arrow-main-menu-m">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </span>
+        </li>
+
+        <li class="bg-main">
+            <a href="about-team.html">Teachers</a>
+        </li>
+
+        <li class="bg-main">
+            <a href="#">Pages</a>
+            <ul class="sub-menu-m">
+                <li><a href="photo-gallery.html">Photo Gallery</a></li>
+            </ul>
+            <span class="arrow-main-menu-m">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </span>
+        </li>
+
+        <li class="bg-main">
+            <a href="blog.html">Blog</a>
+            <ul class="sub-menu-m">
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog-single.html">Blog Single</a></li>
+            </ul>
+            <span class="arrow-main-menu-m">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </span>
+        </li>
+
+        <li class="bg-main">
+            <a href="about.html">About</a>
+            <ul class="sub-menu-m">
+                <li><a href="about.html">About</a></li>
+                <li><a href="about-team.html">About Team Member</a></li>
+            </ul>
+            <span class="arrow-main-menu-m">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </span>
+        </li>
+
+        <li class="bg-main">
+            <a href="contact.html">Contact</a>
+        </li>
+    </ul>
+</div>
 <section class="slider" style="background: #000;">
     <div class="rev_slider_wrapper fullwidthbanner-container rs1-revo">
         <div id="rev_slider_1" class="rev_slider fullwidthabanner" data-version="5.4.5" style="display:none">
             <ul>
                 <!-- Slide 1 -->
                 <li data-transition="fade">
-                    {{--<img src="client/images/kkk.gif" alt="IMG-SLIDE" class="rev-slidebg">--}}
+                    <img src="client/images/testimonial-bg-01.jpg" alt="IMG-SLIDE" class="rev-slidebg">
 
                     <h2 class="tp-caption tp-resizeme txt1 txt-center p-l-15 p-r-15"
                         data-frames='[{"delay":500,"speed":1500,"frame":"0","from":"x:left;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -16,7 +124,7 @@
                         data-fontsize="['50', '50', '50', '50']"
                         data-lineheight="['60', '60', '60', '60']"
                         data-height="['auto']"
-                    >WELCOME TO hoclaixe123.com</h2>
+                    >hoclaixe123.com</h2>
 
                     <p class="tp-caption tp-resizeme txt2 txt-center p-l-15 p-r-15"
                        data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"x:right;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -59,7 +167,7 @@
 
                 <!-- Slide 2 -->
                 <li data-transition="fade">
-                    {{--<img src="client/images/kkk.gif" alt="IMG-SLIDE" class="rev-slidebg">--}}
+                    <img src="client/images/slide-04.jpg" alt="IMG-SLIDE" class="rev-slidebg">
 
                     <h2 class="tp-caption tp-resizeme txt1 txt-center p-l-15 p-r-15"
                         data-frames='[{"delay":500,"speed":1500,"frame":"0","from":"y:top;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -71,7 +179,7 @@
                         data-fontsize="['50', '50', '50', '50']"
                         data-lineheight="['60', '60', '60', '60']"
                         data-height="['auto']"
-                    >WELCOME TO hoclaixe123.com</h2>
+                    >hoclaixe123.com</h2>
 
                     <p class="tp-caption tp-resizeme txt2 txt-center p-l-15 p-r-15"
                        data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"y:bottom;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -114,7 +222,7 @@
 
                 <!-- Slide 3 -->
                 <li data-transition="fade">
-                    {{--<img src="client/images/kkk.gif" alt="IMG-SLIDE" class="rev-slidebg">--}}
+                    <img src="client/images/testimonial-bg-01.jpg" alt="IMG-SLIDE" class="rev-slidebg">
 
                     <h2 class="tp-caption tp-resizeme txt1 txt-center p-l-15 p-r-15"
                         data-frames='[{"delay":500,"speed":1500,"frame":"0","from":"x:-500px;skX:85px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -126,7 +234,7 @@
                         data-fontsize="['50', '50', '50', '50']"
                         data-lineheight="['60', '60', '60', '60']"
                         data-height="['auto']"
-                    >WELCOME TO hoclaixe123.com</h2>
+                    >hoclaixe123.com</h2>
 
                     <p class="tp-caption tp-resizeme txt2 txt-center p-l-15 p-r-15"
                        data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"x:500px;skX:-85px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'

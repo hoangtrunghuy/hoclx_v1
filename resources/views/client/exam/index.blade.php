@@ -72,7 +72,7 @@
 	                            <h5 class="s-txt1">Điểm thi: <font size="8" color="red">{{ $item->exam_score }}</font></h5>
 								<span class="s-txt1">Ngày thi: {{ $item->created_at }}</span>
 							@if( $item->exam_status == 'Đạt' )
-								<p class="s-txt1">Trạng thái: <font size="5" color="green">{{ $item->exam_status }}</font></p>
+								<p class="s-txt1">Trạng thái: <font size="5" color="#1ef104">{{ $item->exam_status }}</font></p>
 							@else
 								<p class="s-txt1">Trạng thái: <font size="5" color="red">{{ $item->exam_status }}</font></p>
 							@endif

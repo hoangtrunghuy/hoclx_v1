@@ -25,7 +25,7 @@
 							</div>
 
 							<div class="w-full m-b-20 validate-input" data-validate = "Message is required">
-								<textarea class="s-txt31 size22 cl-ph-1 bo6 input-focus-1 bo-rad-2 p-l-18 p-r-18 p-t-12" name="contact_content" placeholder="Ghóp ý"></textarea>
+								<textarea class="s-txt31 size22 cl-ph-1 bo6 input-focus-1 bo-rad-2 p-l-18 p-r-18 p-t-12" name="contact_content" placeholder="Góp ý"></textarea>
 							</div>
 
 							<div>
@@ -54,7 +54,7 @@
 
 							<li class="s-txt32 rs2-color p-b-10">
 								<i class="m-r-5 fa fa-phone" aria-hidden="true"></i>
-								0968437320
+								0968 437 320
 							</li>
 
 							<li class="s-txt32 rs2-color p-b-10">
