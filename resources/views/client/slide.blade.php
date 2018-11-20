@@ -1,6 +1,6 @@
 <div class="wrap-header-mobile">
     <!-- Logo moblie -->        
-    <a href="index-2.html" class="logo-mobile">
+    <a href="" class="logo-mobile">
         <img src="client/images/icons/logo.png" alt="IMG-LOGO">
     </a>
     <!-- Button show menu -->
@@ -33,7 +33,7 @@
         <li class="right-top-bar bo1-b p-t-8 p-b-8">
             <span>
                 <i class="icon_pin" aria-hidden="true"></i>
-                <span>Ngo 80-Xuan Phuong-Tu Hoang-Nam Tu Liem-Ha Noi</span>
+                <span>Xuân Phương - Nam Từ Liêm - Hà Nội</span>
             </span>
         </li>
 
@@ -47,62 +47,41 @@
 
     <ul class="main-menu-m bg-main">
         <li class="bg-main">
-            <a href="index.html">Trang Chủ</a>
+             <a href="{{ route('home') }}">Trang Chủ</a>
             <span class="arrow-mFain-menu-m">
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
             </span>
         </li>
 
         <li class="bg-main">
-            <a href="course-list.html">Courses</a>
-            <ul class="sub-menu-m">
-                <li><a href="course-list.html">Course List</a></li>
-                <li><a href="course-grid.html">Course Grid</a></li>
-                <li><a href="course-detail.html">Course Detail</a></li>
-            </ul>
+            <a href="{{ route('lythuyet') }}">Ôn Lý Thuyết</a>
             <span class="arrow-main-menu-m">
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
             </span>
         </li>
 
         <li class="bg-main">
-            <a href="about-team.html">Teachers</a>
+            <a href="{{ route('exams.index') }}">Luyện Đề</a>
         </li>
 
         <li class="bg-main">
-            <a href="#">Pages</a>
-            <ul class="sub-menu-m">
-                <li><a href="photo-gallery.html">Photo Gallery</a></li>
-            </ul>
-            <span class="arrow-main-menu-m">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </span>
+           <a href="#feed">Đánh Giá</a>
         </li>
 
         <li class="bg-main">
-            <a href="blog.html">Blog</a>
-            <ul class="sub-menu-m">
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="blog-single.html">Blog Single</a></li>
-            </ul>
-            <span class="arrow-main-menu-m">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </span>
+            <a href="#tip">Cộng Đồng</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Thảo luận</a></li>
+                        <li><a href="#">Đặt câu hỏi cho Cộng Đồng</a></li>
+                    </ul>
         </li>
 
         <li class="bg-main">
-            <a href="about.html">About</a>
-            <ul class="sub-menu-m">
-                <li><a href="about.html">About</a></li>
-                <li><a href="about-team.html">About Team Member</a></li>
-            </ul>
-            <span class="arrow-main-menu-m">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </span>
+             <a href="{{ route('about-us') }}">Giới Thiệu</a>
         </li>
 
         <li class="bg-main">
-            <a href="contact.html">Contact</a>
+            <a href="{{ route('getLienhe') }}">Liên Hệ</a>
         </li>
     </ul>
 </div>
