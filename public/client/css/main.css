@@ -88,7 +88,34 @@ Input, textarea : 15px/1.7 'Roboto-Regular', Arial, sans-serif;
 .slick-slide {
   outline: none;
 }
+.menu-profile{
+  margin-top: 40px;
+}
+ .menu-profile ul {
+   list-style-type: none;
+   margin: -12px;
+   padding: 0;
+   width: 168px;
+   background-color: #ffffff;
+ }
 
+.menu-profile li a {
+  display: block;
+  color: #0a0c0d;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+.menu-profile li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.menu-profile li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
 
 
 /*//////////////////////////////////////////////////////////////////
