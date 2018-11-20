@@ -18,34 +18,19 @@
 
                 <div class="wrap-link-footer p-t-28">
                     <ul class="col-left">
-<<<<<<< HEAD
                         <li><a href="#">Trang Chủ</a></li>
                         <li><a href="#">Ôn lý thuyết</a></li>
                         <li><a href="#">Luyện đề</a></li>
                         <li><a href="{{ route('about-us') }}">Giới thiệu</a></li>
-=======
-                        <li><a href="{{ route('home') }}">Trang Chủ</a></li>
-                        <li><a href="{{ route('lythuyet') }}">Ôn lý thuyết</a></li>
-                        <li><a href="{{ route('exams.index') }}">Luyện đề</a></li>
-                        <li><a href="#">Giới thiệu</a></li>
->>>>>>> f22622e4c7e52baa837041ca61eb414098ea003c
                         <li><a href="{{ route('getLienhe') }}">Liên hệ</a></li>
                     </ul>
 
                     <ul class="col-right">
-<<<<<<< HEAD
-                        <li><a href="#tip">Mẹo lái xe an toàn</a></li>
-                        <li><a href="#thong-tin-lai-xe">Lái xe hôm nay</a></li>
-                        <li><a href="#feed">Cộng đồng</a></li>
-                        <li><a href="#feed">Đánh giá</a></li>
-                        <li><a href="#feed">Đóng góp ý kiến</a></li>
-=======
                         <li><a href="#">Mẹo lái xe an toàn</a></li>
                         <li><a href="#">Lái xe hôm nay</a></li>
                         <li><a href="#">Cộng đồng</a></li>
                         <li><a href="#">Đánh giá</a></li>
                         <li><a href="{{ route('getLienhe') }}">Đóng góp ý kiến</a></li>
->>>>>>> 375b4ea7f3f64ef6ba91b2aed0f4a8e82715b8c3
                     </ul>
                 </div>
             </div>
