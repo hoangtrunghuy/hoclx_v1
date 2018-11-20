@@ -2,7 +2,7 @@
     <div class="limiter-menu-desktop">
 
         <!-- Logo desktop -->
-        <a href="index.html" class="logo">
+        <a href="{{ route('home') }}" class="logo">
             <img src="client/images/icons/logo.png" alt="IMG-LOGO">
         </a>
 
@@ -10,55 +10,54 @@
         <div class="menu-desktop" id="root">
             <ul class="main-menu">
                 <li>
-                    <a href="index.html">Trang Chủ</a>
+                    <a href="{{ route('home') }}">Trang Chủ</a>
 
                 </li>
 
                 <li>
-                    <a href="course-list.html">Ôn Lý Thuyết</a>
-                    <ul class="sub-menu">
-                        <li><a href="course-list.html">Hạng B1</a></li>
-                        <li><a href="course-list.html">Hạng B2</a></li>
-                        <li><a href="course-list.html">Hạng C</a></li>
-                        <li><a href="course-list.html">Hạng D</a></li>
-                        <li><a href="course-list.html">Hạng E</a></li>
-                        <li><a href="course-list.html">Hạng F</a></li>
-
-                    </ul>
+                    <a href="{{ route('lythuyet') }}">Ôn Lý Thuyết</a>
                 </li>
 
                 <li>
-                    <a href="about-team.html">Luyện Đề</a>
-                    <ul class="sub-menu">
+                    <a href="{{ route('exams.index') }}">Luyện Đề</a>
+                    <!-- <ul class="sub-menu">
                         <li><a href="null.php">Luyện đề mẫu</a></li>
                         <li><a href="#">Bốc đề tự động</a></li>
-                    </ul>
+                    </ul> -->
                 </li>
 
                 <li>
-                    <a href="#">Đánh Giá</a>
+                    <a href="#feed">Đánh Giá</a>
                 </li>
 
                 <li>
-                    <a href="blog.html">Cộng Đồng</a>
+                    <a href="#tip">Cộng Đồng</a>
                     <ul class="sub-menu">
-                        <li><a href="blog.html">Thảo luận</a></li>
-                        <li><a href="blog-single.html">Đặt câu hỏi cho Cộng Đồng</a></li>
+                        <li><a href="#">Thảo luận</a></li>
+                        <li><a href="#">Đặt câu hỏi cho Cộng Đồng</a></li>
                     </ul>
                 </li>
 
                 <li class="respon-sub-menu">
+<<<<<<< HEAD
                     <a href="{{ route('about-us') }}">Giới Thiệu</a>
+=======
+                    <a href="#">Giới Thiệu</a>
+>>>>>>> f22622e4c7e52baa837041ca61eb414098ea003c
                 </li>
 
                 <li class="respon-sub-menu">
+<<<<<<< HEAD
+                    <a href="#">Liên Hệ</a>
+=======
                     <a href="{{ route('getLienhe') }}">Liên Hệ</a>
+>>>>>>> 375b4ea7f3f64ef6ba91b2aed0f4a8e82715b8c3
                 </li>
                 @auth
                     <input type="hidden" id="status_acc" value="{{Auth::user()->user_status}}" \>
 
 
-                    {{--<a href="{{ route('asd') }}">Verify</a>--}}
+                    <!--<a href="{{ route('asd') }}">Verify</a>
                     <a href="{{ route('asd') }}" class="btn btn-success mr-xs mb-sm">Xác thực</a>
 
                     <script>
@@ -69,7 +68,7 @@
                         }
 
 
-                    </script>
+                    </script> -->
                 @endauth
 
             </ul>
@@ -120,6 +119,25 @@
     @endguest
 
 </div>
+<<<<<<< HEAD
+<!-- <div id="message">@include('emails.messeage')</div>
+<script>
+    var s =document.getElementById('status_acc');
+    if(s.value == 0)
+    {
+        var root = document.getElementById("message");
+        root.setAttribute('class','alert alert-success');
+
+        var para = document.createElement("p");
+        var node = document.createTextNode("Vui lòng kiểm tra email để xác thực tài khoản");
+        para.appendChild(node);
+
+        //container.appendChild(para);
+        root.appendChild(para);
+    }
+
+</script> -->
+=======
 {{--<div id="message">@include('emails.messeage')</div>--}}
 {{--<script>--}}
     {{--var s =document.getElementById('status_acc');--}}
@@ -137,4 +155,5 @@
     {{--}--}}
 
 {{--</script>--}}
+>>>>>>> 375b4ea7f3f64ef6ba91b2aed0f4a8e82715b8c3
 

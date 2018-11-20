@@ -17,7 +17,7 @@
                             <div class="row">
                                 <div class="col-lg-2"></div>
                                 <div class="col-lg-8">
-                                    <form action="{{ route('questions.store') }}" method="post" role="form" > 
+                                    <form action="{{ route('questions.store') }}" method="post" role="form" enctype="multipart/form-data"> 
                                     {{ @csrf_field() }}
                                         <div class="form-group">
                                             <label>Chọn loại câu hỏi</label>
@@ -36,29 +36,29 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Chèn ảnh</label>
-                                            <input type="file">
+                                            <input type="file" name="question_img">
                                         </div>
                                         <div class="form-group">
                                             <label>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Chọn Là Đúng
+                                                <input type="checkbox" name="optionsRadios" value="a">Chọn Là Đúng
                                             </label>
                                             <input class="form-control" placeholder="Nhập đáp án A" name="question_ansA" required>
                                         </div>
                                         <div class="form-group">
                                             <label>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Chọn Là Đúng
+                                                <input type="checkbox" name="optionsRadios" value="b">Chọn Là Đúng
                                             </label>
                                             <input class="form-control" placeholder="Nhập đáp án B" name="question_ansB" required>
                                         </div>
                                         <div class="form-group">
                                             <label>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Chọn Là Đúng
+                                                <input type="checkbox" name="optionsRadios" value="c">Chọn Là Đúng
                                             </label>
                                             <input class="form-control" placeholder="Nhập đáp án C" name="question_ansC">
                                         </div>
                                         <div class="form-group">
                                             <label>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Chọn Là Đúng
+                                                <input type="checkbox" name="optionsRadios" value="d">Chọn Là Đúng
                                             </label>
                                             <input class="form-control" placeholder="Nhập đáp án D" name="question_ansD">
                                             <input class="form-control" placeholder="Nhập key đáp án" name="question_answerTrue">

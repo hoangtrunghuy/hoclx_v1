@@ -112,7 +112,7 @@
             <ul>
                 <!-- Slide 1 -->
                 <li data-transition="fade">
-                    {{--<img src="client/images/kkk.gif" alt="IMG-SLIDE" class="rev-slidebg">--}}
+                    <img src="client/images/testimonial-bg-01.jpg" alt="IMG-SLIDE" class="rev-slidebg">
 
                     <h2 class="tp-caption tp-resizeme txt1 txt-center p-l-15 p-r-15"
                         data-frames='[{"delay":500,"speed":1500,"frame":"0","from":"x:left;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -124,7 +124,7 @@
                         data-fontsize="['50', '50', '50', '50']"
                         data-lineheight="['60', '60', '60', '60']"
                         data-height="['auto']"
-                    >WELCOME TO hoclaixe123.com</h2>
+                    >hoclaixe123.com</h2>
 
                     <p class="tp-caption tp-resizeme txt2 txt-center p-l-15 p-r-15"
                        data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"x:right;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -167,7 +167,7 @@
 
                 <!-- Slide 2 -->
                 <li data-transition="fade">
-                    {{--<img src="client/images/kkk.gif" alt="IMG-SLIDE" class="rev-slidebg">--}}
+                    <img src="client/images/slide-04.jpg" alt="IMG-SLIDE" class="rev-slidebg">
 
                     <h2 class="tp-caption tp-resizeme txt1 txt-center p-l-15 p-r-15"
                         data-frames='[{"delay":500,"speed":1500,"frame":"0","from":"y:top;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -179,7 +179,7 @@
                         data-fontsize="['50', '50', '50', '50']"
                         data-lineheight="['60', '60', '60', '60']"
                         data-height="['auto']"
-                    >WELCOME TO hoclaixe123.com</h2>
+                    >hoclaixe123.com</h2>
 
                     <p class="tp-caption tp-resizeme txt2 txt-center p-l-15 p-r-15"
                        data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"y:bottom;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -222,7 +222,7 @@
 
                 <!-- Slide 3 -->
                 <li data-transition="fade">
-                    {{--<img src="client/images/kkk.gif" alt="IMG-SLIDE" class="rev-slidebg">--}}
+                    <img src="client/images/testimonial-bg-01.jpg" alt="IMG-SLIDE" class="rev-slidebg">
 
                     <h2 class="tp-caption tp-resizeme txt1 txt-center p-l-15 p-r-15"
                         data-frames='[{"delay":500,"speed":1500,"frame":"0","from":"x:-500px;skX:85px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -234,7 +234,7 @@
                         data-fontsize="['50', '50', '50', '50']"
                         data-lineheight="['60', '60', '60', '60']"
                         data-height="['auto']"
-                    >WELCOME TO hoclaixe123.com</h2>
+                    >hoclaixe123.com</h2>
 
                     <p class="tp-caption tp-resizeme txt2 txt-center p-l-15 p-r-15"
                        data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"x:500px;skX:-85px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
