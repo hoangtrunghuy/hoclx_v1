@@ -26,19 +26,11 @@
                     </ul>
 
                     <ul class="col-right">
-<<<<<<< HEAD
-                        <li><a href="#tip">Mẹo lái xe an toàn</a></li>
-                        <li><a href="#thong-tin-lai-xe">Lái xe hôm nay</a></li>
-                        <li><a href="#feed">Cộng đồng</a></li>
-                        <li><a href="#feed">Đánh giá</a></li>
-                        <li><a href="#feed">Đóng góp ý kiến</a></li>
-=======
                         <li><a href="#">Mẹo lái xe an toàn</a></li>
                         <li><a href="#">Lái xe hôm nay</a></li>
                         <li><a href="#">Cộng đồng</a></li>
                         <li><a href="#">Đánh giá</a></li>
                         <li><a href="{{ route('getLienhe') }}">Đóng góp ý kiến</a></li>
->>>>>>> 375b4ea7f3f64ef6ba91b2aed0f4a8e82715b8c3
                     </ul>
                 </div>
             </div>

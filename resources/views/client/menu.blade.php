@@ -43,11 +43,7 @@
                 </li>
 
                 <li class="respon-sub-menu">
-<<<<<<< HEAD
-                    <a href="#">Liên Hệ</a>
-=======
                     <a href="{{ route('getLienhe') }}">Liên Hệ</a>
->>>>>>> 375b4ea7f3f64ef6ba91b2aed0f4a8e82715b8c3
                 </li>
                 @auth
                     <input type="hidden" id="status_acc" value="{{Auth::user()->user_status}}" \>
@@ -115,7 +111,6 @@
     @endguest
 
 </div>
-<<<<<<< HEAD
 <!-- <div id="message">@include('emails.messeage')</div>
 <script>
     var s =document.getElementById('status_acc');
@@ -133,23 +128,3 @@
     }
 
 </script> -->
-=======
-{{--<div id="message">@include('emails.messeage')</div>--}}
-{{--<script>--}}
-    {{--var s =document.getElementById('status_acc');--}}
-    {{--if(s.value == 0)--}}
-    {{--{--}}
-        {{--var root = document.getElementById("message");--}}
-        {{--root.setAttribute('class','alert alert-success');--}}
-
-        {{--var para = document.createElement("p");--}}
-        {{--var node = document.createTextNode("Vui lòng kiểm tra email để xác thực tài khoản");--}}
-        {{--para.appendChild(node);--}}
-
-        {{--//container.appendChild(para);--}}
-        {{--root.appendChild(para);--}}
-    {{--}--}}
-
-{{--</script>--}}
->>>>>>> 375b4ea7f3f64ef6ba91b2aed0f4a8e82715b8c3
-

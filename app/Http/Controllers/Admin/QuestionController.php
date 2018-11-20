@@ -94,7 +94,7 @@ class QuestionController extends Controller
     {
         $model = Question::find($id);
 
-        return view('admin.Question.edit',compact('model'));
+        return view('admin.question.edit',compact('model'));
 
     }
 
