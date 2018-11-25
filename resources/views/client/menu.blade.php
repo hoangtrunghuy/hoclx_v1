@@ -23,17 +23,17 @@
                 </li>
 
                 <li>
-                    <a href="#feed">Đánh Giá</a>
+                    <a href="{{ route('home') }}#feed">Đánh Giá</a>
                 </li>
 
-                <li>
+                <!-- <li>
                     <a href="#tip">Cộng Đồng</a>
                     <ul class="sub-menu">
                         <li><a href="#">Thảo luận</a></li>
                         <li><a href="#">Đặt câu hỏi cho Cộng Đồng</a></li>
                     </ul>
                 </li>
-
+ -->
                 <li class="respon-sub-menu">
                     <a href="{{ route('about-us') }}">Giới Thiệu</a>
                 </li>

@@ -18,19 +18,20 @@
 
                 <div class="wrap-link-footer p-t-28">
                     <ul class="col-left">
-                        <li><a href="#">Trang Chủ</a></li>
-                        <li><a href="#">Ôn lý thuyết</a></li>
-                        <li><a href="#">Luyện đề</a></li>
+                        <li><a href="{{ route('home') }}">Trang Chủ</a></li>
+                        <li><a href="{{ route('lythuyet') }}">Ôn lý thuyết</a></li>
+                        <li><a href="{{ route('exams.index') }}">Luyện đề</a></li>
                         <li><a href="{{ route('about-us') }}">Giới thiệu</a></li>
-                        <li><a href="{{ route('getLienhe') }}">Liên hệ</a></li>
+                        
                     </ul>
 
                     <ul class="col-right">
-                        <li><a href="#">Mẹo lái xe an toàn</a></li>
-                        <li><a href="#">Lái xe hôm nay</a></li>
-                        <li><a href="#">Cộng đồng</a></li>
-                        <li><a href="#">Đánh giá</a></li>
+                        <li><a href="{{ route('home') }}#tip">Mẹo lái xe an toàn</a></li>
+                        <li><a href="{{ route('home') }}#thong-tin-lai-xe">Tin lái xe hôm nay</a></li>
+                        <!-- <li><a href="#">Cộng đồng</a></li>
+                        <li><a href="#">Đánh giá</a></li> -->
                         <li><a href="{{ route('getLienhe') }}">Đóng góp ý kiến</a></li>
+                        <li><a href="{{ route('getLienhe') }}">Liên hệ</a></li>
                     </ul>
                 </div>
             </div>

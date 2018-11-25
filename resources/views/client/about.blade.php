@@ -21,14 +21,14 @@
                     </div>
 
                     <h2 class="m-txt6 respon1">
-                        About Us
+                        VÀI ĐIỀU VỀ CHÚNG TÔI
                     </h2>
                 </div>
 
                 <div class="p-t-10 p-b-10">
                     <!-- Button -->
-                    <a href="#" class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03">
-                        Get in touch
+                    <a href="{{ route('getLienhe') }}" class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03">
+                        Liên Lạc Với Chúng Tôi
                         <i class="fa fa-chevron-right m-l-9 fs-14" aria-hidden="true"></i>
                     </a>
                 </div>
