@@ -116,5 +116,3 @@ Route::group(['prefix' => 'profile', 'middleware'=>'auth'],function (){
 
 //End Route client
 Auth::routes();
-
-Route::get('hs','Admin\QuestionController@hs')->name('hs');
