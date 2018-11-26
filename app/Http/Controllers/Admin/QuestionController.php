@@ -178,7 +178,7 @@ class QuestionController extends Controller
 
 
 
-    public function hs()
+    /*public function hs()
     {
         $data = Question::all();
         
@@ -195,11 +195,8 @@ class QuestionController extends Controller
         }
         $ok = 'oke';
 
-        //$replaced = preg_replace_array('/154[0-9]+/', ['',''], $string);
-        
-        //dd($replaced);
         return view('hs',compact('ok'));
-    }
+    }*/
 
 
 }
