@@ -21,14 +21,14 @@
                     </div>
 
                     <h2 class="m-txt6 respon1">
-                        About Us
+                        VÀI ĐIỀU VỀ CHÚNG TÔI
                     </h2>
                 </div>
 
                 <div class="p-t-10 p-b-10">
                     <!-- Button -->
-                    <a href="#" class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03">
-                        Get in touch
+                    <a href="{{ route('getLienhe') }}" class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03">
+                        Liên Lạc Với Chúng Tôi
                         <i class="fa fa-chevron-right m-l-9 fs-14" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -76,7 +76,7 @@
                 <div class="col-md-6 p-b-30">
                     <div class="wrap-pic-w pos-relative m-t-15">
                         <div class="">
-                            <img src="{{asset('client/images/b1.jpg')}}" width="10" alt="IMG" >
+                            <img src="{{asset('client/images/icons/logo.png')}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
                 </div>
 
                 <div class="slide-slick-6 js-slick-6">
-                    <div class="item-slick-6" data-thumb="{{asset('client/images/b1.jpg')}}">
+                    <div class="item-slick-6" data-thumb="{{asset('client/images/hue.jpg')}}">
                         <div class="content-item-slick-6">
                             <span class="xl-txt1 float-l p-r-5 dis-block h-full pos1">“</span>
                             <p class="para-slide-slick-6 s-txt1 txt-center p-t-12 p-b-22 animated">
@@ -107,13 +107,13 @@
 
                             <div class="wrap-person-slick-6 animated">
                                 <div class="txt-center">
-                                    <span class="s-txt16 m-r-15">Mr.Hoàng Quang Huy</span>
+                                    <span class="s-txt16 m-r-15">Mr.Tăng Hoàng Hà</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="item-slick-6" data-thumb="{{asset('client/images/b1.jpg')}}">
+                    <div class="item-slick-6" data-thumb="{{asset('client/images/huy.jpg')}}">
                         <div class="content-item-slick-6">
                             <span class="xl-txt1 float-l p-r-5 dis-block h-full pos1">“</span>
                             <p class="para-slide-slick-6 s-txt1 txt-center p-t-12 p-b-22 animated">
@@ -123,8 +123,7 @@
 
                             <div class="wrap-person-slick-6 animated">
                                 <div class="txt-center">
-                                    <span class="s-txt16 m-r-15">Mr.Bùi Văn Huế</span>
-                                    <span class="s-txt11">CEO Finanace Theme Group</span>
+                                    <span class="s-txt16 m-r-15">Mr.Văn Phát Đạt</span>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +150,7 @@
                     <!-- Block 5 -->
                     <div class="block-5">
                         <div class="wrap-pic-b5 wrap-pic-w hov5 bo2">
-                            <img src="http://graph.facebook.com/100008010943881/picture?type=square">
+                            <img src="{{asset('client/images/hue.jpg')}}" alt="">
                         </div>
 
                         <div class="wrap-text-b5 p-t-28">
@@ -190,7 +189,7 @@
                     <!-- Block 5 -->
                     <div class="block-5">
                         <div class="wrap-pic-b5 wrap-pic-w hov5 bo2">
-                            <img src="http://graph.facebook.com/100005752419402/picture?type=square" alt="" >
+                            <img src="{{asset('client/images/huy.jpg')}}" alt="">
                         </div>
 
                         <div class="wrap-text-b5 p-t-28">
@@ -228,7 +227,7 @@
                     <!-- Block 5 -->
                     <div class="block-5">
                         <div class="wrap-pic-b5 wrap-pic-w hov5 bo2">
-                            <img width="20" src="http://graph.facebook.com/100028206723106/picture?type=square" alt="">
+                            <img src="{{asset('client/images/manh.jpg')}}" alt="">
                         </div>
 
                         <div class="wrap-text-b5 p-t-28">

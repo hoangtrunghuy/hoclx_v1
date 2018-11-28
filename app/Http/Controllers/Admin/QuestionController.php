@@ -94,7 +94,7 @@ class QuestionController extends Controller
     {
         $model = Question::find($id);
 
-        return view('admin.Question.edit',compact('model'));
+        return view('admin.question.edit',compact('model'));
 
     }
 
@@ -177,4 +177,28 @@ class QuestionController extends Controller
     }
 
 
+
+    /*public function hs()
+    {
+        $data = Question::all();
+        
+        foreach ($data as $value) {
+            $string = $value->question_img; 
+            if (strpos($string, 'images/154') !== false) {
+                $re1 = preg_replace("/154[0-9]+/", '', $string);
+                $replaced = preg_replace("/_+/", '', $re1);
+                //dd($value->id);
+
+                Question::where('id', '=', $value->id)
+                ->update(['question_img' => $replaced]);
+            }
+        }
+        $ok = 'oke';
+
+        return view('hs',compact('ok'));
+    }*/
+
+
 }
+
+

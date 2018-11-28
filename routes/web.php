@@ -8,9 +8,11 @@ Route::get('trangxacnhan', function () {
     return view('emails.trangxacnhan');
 })->name('trangxacnhan');
 
+
 Route::get('about', function () {
     return view('client.about');
 })->name('about-us');
+
 
 Route::get('contact', 'Client\ContactController@get_lienhe')->name('getLienhe');
 Route::post('postcontact', 'Client\ContactController@post_lienhe')->name('postLienhe');
