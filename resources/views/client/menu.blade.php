@@ -44,7 +44,6 @@
                 @auth
                     <input type="hidden" id="status_acc" value="{{Auth::user()->user_status}}" \>
 
-
                     <!--<a href="{{ route('asd') }}">Verify</a>
                     <a href="{{ route('asd') }}" class="btn btn-success mr-xs mb-sm">Xác thực</a>
 
@@ -54,8 +53,6 @@
                         {
                             document.getElementById('verify_field').remove();
                         }
-
-
                     </script> -->
                 @endauth
 
@@ -90,13 +87,16 @@
                          style="border-radius: 50%;">
                 </a>
                 <div class="dropdown-menu" style="margin-top: 15px;">
+                    <a class="dropdown-item" href="{{route('user.edit.profile')}}">{{ (Auth::user()->name)}}</a>
+                    @if(Auth::user()->user_level==1)
+                        <a class="dropdown-item" href="{{route('dashboard.index')}}">Trang quản trị</a>
+                    @endif
                     <a class="dropdown-item" href="{{route('user.edit.profile')}}">Profile</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                         Logout
                     </a>
-
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form>
@@ -107,7 +107,6 @@
     @endguest
 
 </div>
-<<<<<<< HEAD
 <!-- <div id="message">@include('emails.messeage')</div>
 <script>
     var s =document.getElementById('status_acc');
@@ -125,23 +124,3 @@
     }
 
 </script> -->
-=======
-{{--<div id="message">@include('emails.messeage')</div>--}}
-{{--<script>--}}
-    {{--var s =document.getElementById('status_acc');--}}
-    {{--if(s.value == 0)--}}
-    {{--{--}}
-        {{--var root = document.getElementById("message");--}}
-        {{--root.setAttribute('class','alert alert-success');--}}
-
-        {{--var para = document.createElement("p");--}}
-        {{--var node = document.createTextNode("Vui lòng kiểm tra email để xác thực tài khoản");--}}
-        {{--para.appendChild(node);--}}
-
-        {{--//container.appendChild(para);--}}
-        {{--root.appendChild(para);--}}
-    {{--}--}}
-
-{{--</script>--}}
->>>>>>> 375b4ea7f3f64ef6ba91b2aed0f4a8e82715b8c3
-

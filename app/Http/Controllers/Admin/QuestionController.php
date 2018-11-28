@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Question;
 use File;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Session;
 use View;
@@ -27,9 +28,8 @@ class QuestionController extends Controller
 
     public function lythuyet()
     {
-        $data = Question::all();
-        // dd($data);
-        return view('client.lythuyet',compact('data'));
+        $data = Question::paginate(10);
+        return view("client.lythuyet")->with('data',$data);
     }
 
     /**

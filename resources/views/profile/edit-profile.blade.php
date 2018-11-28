@@ -15,13 +15,13 @@
                     <div class="menu-profile">
                         <ul>
                             <li class="">
-                                <a href="{{ route('user.edit.profile') }}">Thông tin chung</a>
+                                <a class="active" href="{{ route('user.edit.profile') }}">Thông tin chung</a>
                             </li>
                             <li class="">
                                 <a href="{{ route('user.edit.image') }}">Ảnh đại diện</a>
                             </li>
                             <li class="">
-                                <a class="active" href="{{ route('user.edit.account') }}">Tài khoản</a>
+                                <a  href="{{ route('user.edit.account') }}">Tài khoản</a>
                             </li>
 
                         </ul>
