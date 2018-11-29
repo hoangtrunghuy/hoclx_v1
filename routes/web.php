@@ -117,6 +117,8 @@ Route::group(['prefix' => 'profile', 'middleware'=>'auth'],function (){
     Route::post('user-account/{id}','ProfileController@updateAccount')->name('user.update.account');
 });
 
+//auto goi y tim kiem
+/*Route::post('autocomplete/fetch', 'Client\AutocompleteController@fetch')->name('autocomplete.fetch');*/
 
 //End Route client
 Auth::routes();
