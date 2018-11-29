@@ -1,4 +1,4 @@
-<section class="bg3 p-t-75 p-b-90">
+<section class="bg3 p-t-75 p-b-90" id="gop-y">
     <div class="container">
         <div class=" p-b-22">
             <div class="p-b-24">

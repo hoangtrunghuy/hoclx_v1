@@ -6,17 +6,17 @@
 <!-- Metis Menu Plugin JavaScript -->
 <script src="{{'admin/vendor/metisMenu/metisMenu.min.js'}}"></script>
 
-<!-- Morris Charts JavaScript -->
-<script src="{{'admin/vendor/raphael/raphael.min.js'}}"></script>
-<script src="{{'admin/vendor/morrisjs/morris.min.js'}}"></script>
-<script src="{{'admin/data/morris-data.js'}}"></script>
+<!-- DataTables JavaScript -->
+    <script src="{{'admin/vendor/datatables/js/jquery.dataTables.min.js'}}"></script>
+    <script src="{{'admin/vendor/datatables-plugins/dataTables.bootstrap.min.js'}}"></script>
+    <script src="{{'admin/vendor/datatables-responsive/dataTables.responsive.js'}}"></script>
 
 <!-- Custom Theme JavaScript -->
 <script src="{{'admin/dist/js/sb-admin-2.js'}}"></script>
 
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<!-- <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
 
 <script type="text/javascript" src="ckeditor/ckeditor.js"> </script>
 <script type="text/javascript" src="ckfinder/ckfinder.js"> </script>
@@ -30,4 +30,4 @@
     });
 
 </script>
-<script src="{{ asset('js/sb-admin-2.js') }}"></script>
+

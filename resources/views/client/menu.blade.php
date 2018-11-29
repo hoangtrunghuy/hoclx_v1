@@ -23,7 +23,7 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('home') }}#feed">Đánh Giá</a>
+                    <a href="{{ route('home') }}#gop-y">Đánh Giá</a>
                 </li>
 
                 <!-- <li>
@@ -107,28 +107,4 @@
     @endguest
 
 </div>
-<<<<<<< HEAD
-=======
 
->>>>>>> 2a5519b7cc8b674fe589875467ba0c40ebd19142
-<!-- <div id="message">@include('emails.messeage')</div>
-<script>
-    var s =document.getElementById('status_acc');
-    if(s.value == 0)
-    {
-        var root = document.getElementById("message");
-        root.setAttribute('class','alert alert-success');
-
-        var para = document.createElement("p");
-        var node = document.createTextNode("Vui lòng kiểm tra email để xác thực tài khoản");
-        para.appendChild(node);
-
-        //container.appendChild(para);
-        root.appendChild(para);
-    }
-
-</script> -->
-<<<<<<< HEAD
-=======
-
->>>>>>> 2a5519b7cc8b674fe589875467ba0c40ebd19142

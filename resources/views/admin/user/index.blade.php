@@ -40,7 +40,6 @@
                                 <td>{{ $item->id }}</td>
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->email}}</td>
-                                {{--<td>{{$item->password}}</td>--}}
                                 <td>{{$item->user_level}}</td>
                                 <td>{{$item->user_firstName}}</td>
                                 <td>{{$item->user_lastName}}</td>

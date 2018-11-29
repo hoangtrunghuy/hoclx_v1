@@ -36,12 +36,12 @@ Route::get('exams/{id}','Client\ExamController@show')->name('LamDe')->middleware
 Route::post('exams','Client\ExamController@cham')->name('ChamBai')->middleware('auth');
 Route::get('exams/xemlai/{id}','Client\ExamController@xemlai')->name('xemlai')->middleware('auth');
 
-<<<<<<< HEAD
-Route::resource('questions', 'Admin\QuestionController')->middleware('RoleMiddleware');
-Route::get('questions/del/{id}', 'Admin\QuestionController@delete_qs')->name('DeleteQuestion')->middleware('RoleMiddleware');
-=======
+
+
 Route::resource('questions', 'Admin\QuestionController')->middleware('RoleMiddleware')->middleware('auth');
->>>>>>> 7c5560330030dd2ebea13fd3c7cc34a8c2c95c81
+Route::get('questions/del/{id}', 'Admin\QuestionController@delete_qs')->name('DeleteQuestion')->middleware('RoleMiddleware')->middleware('auth');
+
+
 
 
 Route::group(['prefix' => 'tips','middleware'=>'RoleMiddleware','middleware'=>'auth'],function(){
