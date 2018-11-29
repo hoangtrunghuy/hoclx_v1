@@ -41,7 +41,7 @@
 				</div>
 				<div class="col-md-8">
 					
-					<div class="row div_time">
+					<div class="row div_time shadow-lg">
 						<div class="col-md-10">
 							<b style="color:red;font-size: 20px;">Hết giờ! </b>
 						</div>
@@ -54,7 +54,7 @@
 					<div class="col-md-12 noi_dung_cau_hoi" id="">
 						<p>Câu số {{ ++$key }}:</p>
 						<h4>{{ $value->question->question_content }}</h4>
-						<img src="{{ $value->question_img }}" alt="" width="100%">
+						<img src="{{ $value->question->question_img }}" alt="" width="100%">
 						<ul>
 							<li>
 								<label >

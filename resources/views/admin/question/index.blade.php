@@ -46,7 +46,7 @@
                                     <td class="center">
                                         <a href="{{ route('questions.edit',$item->id) }}" title="">Edit</a>
 
-                                        <a href="{{ route('questions.destroy',$item->id) }}" class="destroy"  title="">Delete</a>
+                                        <a href="{{ route('DeleteQuestion',$item->id) }}" class="destroy"  title="">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach

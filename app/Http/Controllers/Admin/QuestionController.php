@@ -49,7 +49,7 @@ class QuestionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {dd($request);
         $model = new Question();
 
         $model->fill($request->all());
@@ -174,6 +174,13 @@ class QuestionController extends Controller
         ));
 
 
+    }
+
+    public function delete_qs($id)
+    {
+        $deletedRows = Question::where('id', $id)->delete();
+        
+        return redirect(route('questions.index'));
     }
 
 

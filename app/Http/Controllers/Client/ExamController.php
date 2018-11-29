@@ -65,7 +65,7 @@ class ExamController extends Controller
             ->where('question_type', '=', 3)
             ->get();
 
-        for ($i=1; $i < 3; $i++) {
+        for ($i=1; $i < 11; $i++) {
             
             DB::table('exams')
             ->insert([ 'user_id' => $user_id, 'exam_id' => $id_ex, 'question_id' => $ly_thuyet[$i]->id, 'exam_type' =>$ex_type, 'created_at' =>date('Y-m-d H:i:s') ]);
@@ -164,7 +164,7 @@ class ExamController extends Controller
         $exam_id = $request->input('exam_id');
         $exam_type = $request->input('exam_type');
         $diem = 0;
-        for ($i=1; $i < 7; $i++) {
+        for ($i=1; $i < 31; $i++) {
 
             $ans = $request->input('cau'.$i.'_answerTrue');
 

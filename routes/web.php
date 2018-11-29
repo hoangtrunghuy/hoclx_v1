@@ -38,6 +38,7 @@ Route::post('exams','Client\ExamController@cham')->name('ChamBai')->middleware('
 Route::get('exams/xemlai/{id}','Client\ExamController@xemlai')->name('xemlai')->middleware('auth');
 
 Route::resource('questions', 'Admin\QuestionController')->middleware('RoleMiddleware');
+Route::get('questions/del/{id}', 'Admin\QuestionController@delete_qs')->name('DeleteQuestion')->middleware('RoleMiddleware');
 
 
 Route::group(['prefix' => 'tips','middleware'=>'RoleMiddleware'],function(){

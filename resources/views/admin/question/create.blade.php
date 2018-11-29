@@ -65,6 +65,8 @@
                                         </div>
                                         <button type="submit" class="btn btn-default" name="">Lưu</button>
                                         <button type="reset" class="btn btn-default">Hủy bỏ</button>
+                                        <button type="button" class="btn btn-default" onclick="kkk(this.form)">tttt</button>
+
                                     </form>
                                 </div>
                                 
@@ -79,4 +81,21 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+            <script type="text/javascript" charset="utf-8" >
+                function kkk(form) {
+                    with(form){
+                        var ans = '';
+                        if(optionsRadios[0].checked)
+                            ans = ans + optionsRadios[0].value;
+                        if(optionsRadios[1].checked)
+                            ans = ans + optionsRadios[1].value;
+                        if(optionsRadios[2].checked)
+                            ans = ans + optionsRadios[2].value;
+                        if(optionsRadios[3].checked)
+                            ans = ans + optionsRadios[3].value;
+
+                        question_answerTrue.value = ans;
+                    }
+                }
+            </script>
     @endsection
