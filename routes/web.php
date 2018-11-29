@@ -17,7 +17,6 @@ Route::get('about', function () {
 Route::get('contact', 'Client\ContactController@get_lienhe')->name('getLienhe');
 Route::post('postcontact', 'Client\ContactController@post_lienhe')->name('postLienhe');
 
-Route::get('admin/dashboard','Admin\DashboardController@index')->name('dashboard.index');
 
 Route::get('/callback','Client\CallbackController@index')->name('clients.index');
 
@@ -27,21 +26,25 @@ Route::get('login','Auth\LoginController@getLogin')->name('getLogin');
 Route::post('handle_login','Auth\LoginController@postLogin')->name('postLogin');
 
 //Route admin
-Route::get('admin/dashboard','Admin\DashboardController@index')->name('dashboard.index')->middleware('RoleMiddleware');
+Route::get('admin/dashboard','Admin\DashboardController@index')->name('dashboard.index')->middleware('RoleMiddleware')->middleware('auth');
 
 Route::get('ly-thuyet','Admin\QuestionController@lythuyet')->name('lythuyet');
 
 Route::resource('exams', 'Client\ExamController')->middleware('auth')->middleware('auth');
-Route::get(  'del/{exam_id}', 'Client\ExamController@delete_exam')->name('DeleteExam')->middleware('auth');
+Route::get(  'del/{exam_id}', 'Client\ExamController@delete_exam')->name('DeleteExam')->middleware('auth')->middleware('auth');
 Route::get('exams/{id}','Client\ExamController@show')->name('LamDe')->middleware('auth');
 Route::post('exams','Client\ExamController@cham')->name('ChamBai')->middleware('auth');
 Route::get('exams/xemlai/{id}','Client\ExamController@xemlai')->name('xemlai')->middleware('auth');
 
+<<<<<<< HEAD
 Route::resource('questions', 'Admin\QuestionController')->middleware('RoleMiddleware');
 Route::get('questions/del/{id}', 'Admin\QuestionController@delete_qs')->name('DeleteQuestion')->middleware('RoleMiddleware');
+=======
+Route::resource('questions', 'Admin\QuestionController')->middleware('RoleMiddleware')->middleware('auth');
+>>>>>>> 7c5560330030dd2ebea13fd3c7cc34a8c2c95c81
 
 
-Route::group(['prefix' => 'tips','middleware'=>'RoleMiddleware'],function(){
+Route::group(['prefix' => 'tips','middleware'=>'RoleMiddleware','middleware'=>'auth'],function(){
     Route::get(  '/', 'Admin\TipController@index')->name('tips.index');
     Route::get(  'create', 'Admin\TipController@create')->name('tips.create');
     Route::post(  'store', 'Admin\TipController@store')->name('tips.store');
@@ -52,7 +55,7 @@ Route::group(['prefix' => 'tips','middleware'=>'RoleMiddleware'],function(){
 
 });
 
-Route::group(['prefix' => 'user','middleware'=>'RoleMiddleware'],function(){
+Route::group(['prefix' => 'user','middleware'=>'RoleMiddleware','middleware'=>'auth'],function(){
     Route::get(  '/', 'Admin\UserController@index')->name('user.index');
     Route::get(  'create', 'Admin\UserController@create')->name('user.create');
     Route::post(  'store', 'Admin\UserController@store')->name('user.store');
@@ -62,7 +65,7 @@ Route::group(['prefix' => 'user','middleware'=>'RoleMiddleware'],function(){
 
 });
 
-Route::group(['prefix'=>'infordriving', 'middleware'=>'RoleMiddleware'],function(){
+Route::group(['prefix'=>'infordriving', 'middleware'=>'RoleMiddleware','middleware'=>'auth'],function(){
     Route::get(  '/', 'Admin\InforDrivingController@index')->name('infordriving.index');
     Route::get(  'create', 'Admin\InforDrivingController@create')->name('infordriving.create');
     Route::post(  'store', 'Admin\InforDrivingController@store')->name('infordriving.store');
@@ -73,7 +76,7 @@ Route::group(['prefix'=>'infordriving', 'middleware'=>'RoleMiddleware'],function
 
 Route::post('/callback', 'Admin\FeedbackController@callbackstore')->name('callbackstore');
 
-Route::group(['prefix' => 'feedback', 'middleware'=>'RoleMiddleware'],function (){
+Route::group(['prefix' => 'feedback', 'middleware'=>'RoleMiddleware','middleware'=>'auth'],function (){
     Route::get('/', 'Admin\FeedbackController@index')->name('feedback.index');
     Route::get(  'destroy/{id}', 'Admin\FeedbackController@destroy')->name('feedback.destroy');
 });
