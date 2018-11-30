@@ -22,7 +22,7 @@
                         <thead>
                         <tr>
                             <th>STT</th>
-                            <th>Name</th>
+                            <!-- <th>Name</th> -->
                             <th>Email</th>
                             {{--<th>Password</th>--}}
                             <th>Level</th>
@@ -38,9 +38,9 @@
                         @foreach($data as $item)
                             <tr>
                                 <td>{{ $item->id }}</td>
-                                <td>{{$item->name}}</td>
+                                <!-- <td>{{$item->name}}</td> -->
                                 <td>{{$item->email}}</td>
-                                <td>{{$item->user_level}}</td>
+                                <td>@if ($item->user_level ==0) User @endif @if ($item->user_level ==1) Admin @endif</td>
                                 <td>{{$item->user_firstName}}</td>
                                 <td>{{$item->user_lastName}}</td>
                                 <td>{{$item->user_birth}}</td>

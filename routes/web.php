@@ -118,8 +118,12 @@ Route::group(['prefix' => 'profile', 'middleware'=>'auth'],function (){
     Route::post('user-profile/{id}','ProfileController@updateProfile')->name('user.update.profile');
     Route::post('user-account/{id}','ProfileController@updateAccount')->name('user.update.account');
 });
+//xem trang ca nhan bat ky ai
+Route::get(  'profile/{id}', 'ProfileController@show')->name('show.user');
+
 Route::get('get-reset-password','Auth\ResetPasswordController@getResetPassword')->name('get.reset.password');
 Route::post('post-reset-password','Auth\ResetPasswordController@forgotPassword')->name('post.reset.password');
+
 
 //auto goi y tim kiem
 /*Route::post('autocomplete/fetch', 'Client\AutocompleteController@fetch')->name('autocomplete.fetch');*/

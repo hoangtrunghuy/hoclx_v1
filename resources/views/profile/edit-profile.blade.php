@@ -62,35 +62,40 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-5">
+                                            <label>Tên:</label>
                                             <input type="text" name="user_firstName" placeholder="First Name"
                                                    value="{{Auth::user()->user_firstName}}" class="form-control">
                                         </div>
                                         <div class="col-md-7">
+                                            <label>Họ:</label>
                                             <input type="text" name="user_lastName" placeholder="Last Name"
                                                    value="{{Auth::user()->user_lastName}}" class="form-control">
                                         </div>
                                     </div>
                                 </div>
+                                <!-- <div class="form-group">
+                                    <label>Username:</label>
+                                    <input type="text" name="name" placeholder="Username" value="{{Auth::user()->name}}" class="form-control">
+                                </div> -->
                                 <div class="form-group">
-                                    <input type="text" name="name" placeholder="Username" value="{{Auth::user()->name}}"
-                                           class="form-control">
-                                </div>
-                                <div class="form-group">
+                                    <label>Email:</label>
                                     <input type="text" name="email" placeholder="Email" value="{{Auth::user()->email}}"
                                            class="form-control">
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label>Giới Tính:</label>
                                     <select class="form-control" name="">
                                         <option value="1">Nam</option>
                                         <option value="2">Nữ</option>
                                     </select>
-                                </div>
+                                </div> -->
                                 <div class="form-group">
-                                    <input type="text" name="user_birth" placeholder="Ngày Sinh"
+                                    <label>Ngày Sinh:</label>
+                                    <input type="date" name="user_birth" placeholder="Ngày Sinh"
                                            value="{{Auth::user()->user_birth}}" class="form-control">
                                 </div>
                                 <div class="form-group">
+                                    <label>Địa Chỉ:</label>
                                     <input type="text" name="user_adress" placeholder="Địa Chỉ"
                                            value="{{Auth::user()->user_adress}}" class="form-control">
                                 </div>

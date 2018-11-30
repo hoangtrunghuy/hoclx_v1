@@ -5,7 +5,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="{{route('home')}}"><i class="fa fa-arrow-circle-left"></i> Hoclaixe123.com</a>
+    <a class="navbar-brand" target="blank" href="{{route('home')}}"><i class="fa fa-arrow-circle-left"></i> Hoclaixe123.com</a>
 </div>
 <!-- /.navbar-header -->
 
