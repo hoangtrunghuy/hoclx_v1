@@ -142,7 +142,7 @@ class InforDrivingController extends Controller
     {
         $model = new InforDriving();
 
-        include('C:\xampp\htdocs\hoclx_v1_1\resources\views\auto\simple_html_dom.php');
+        include('../vendor/autosaving/simple_html_dom.php');
 
         $html = file_get_html("https://vnexpress.net/tin-tuc/oto-xe-may");
 
