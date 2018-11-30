@@ -49,7 +49,7 @@ class QuestionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {dd($request);
+    {
         $model = new Question();
 
         $model->fill($request->all());

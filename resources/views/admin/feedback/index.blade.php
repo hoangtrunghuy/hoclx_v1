@@ -32,8 +32,8 @@
                             @foreach($data as $item)
                                 <tr class="odd gradeX">
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->user->user_firstName . ' ' . $item->user->user_lastName}}</td>
-                                    <td>{{ $item->user->user_img}}</td>
+                                    <td><a target="blank" href="{{ route('show.user',$item->id) }}" title="">{{ $item->user->user_firstName . ' ' . $item->user->user_lastName}}</a></td>
+                                    <td><img src="{{ $item->user->user_img}}" class="mx-auto d-block img-circle rounded-circle" alt=""></td>
                                     <td>{{ $item->feedback_content}}</td>
                                     <td class="center">
                                         <a href="{{route('feedback.destroy', $item->id)}}"

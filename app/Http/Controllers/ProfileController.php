@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Auth;
+use DB;
 
 class ProfileController extends Controller
 {
@@ -56,7 +57,13 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = DB::table('users')
+        ->select('*')
+        ->where('id', '=', $id)
+        ->get();
+
+        return view('profile')
+        ->with(compact('data'));
     }
 
     /**

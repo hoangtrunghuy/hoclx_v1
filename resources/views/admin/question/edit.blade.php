@@ -2,7 +2,7 @@
     @section('content')
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Thêm câu hỏi</h1>
+                    <h1 class="page-header">Sửa câu hỏi</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -42,31 +42,31 @@
                                         </div>
                                         <div class="form-group">
                                             <label>
-                                                <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1" checked>Chọn Là Đúng
+                                                <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="a" @if (strpos($model->question_answerTrue, 'a')!==false) checked="checked" @endif >Đáp án đúng
                                             </label>
                                             <input class="form-control" placeholder="Nhập đáp án A" value="{{ $model->question_ansA }}" name="question_ansA" required>
                                         </div>
                                         <div class="form-group">
                                             <label>
-                                                <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1" >Chọn Là Đúng
+                                                <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="b" @if (strpos($model->question_answerTrue, 'b')!==false) checked="checked" @endif >Đáp án đúng
                                             </label>
                                             <input class="form-control" placeholder="Nhập đáp án B" value="{{ $model->question_ansB }}" name="question_ansB" required>
                                         </div>
                                         <div class="form-group">
                                             <label>
-                                                <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1" >Chọn Là Đúng
+                                                <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="c" @if (strpos($model->question_answerTrue, 'c')!==false) checked="checked" @endif >Đáp án đúng
                                             </label>
                                             <input class="form-control" placeholder="Nhập đáp án C" value="{{ $model->question_ansC }}" name="question_ansC">
                                         </div>
                                         <div class="form-group">
                                             <label>
-                                                <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1" >Chọn Là Đúng
+                                                <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="d" @if (strpos($model->question_answerTrue, 'd')!==false) checked="checked" @endif >Đáp án đúng
                                             </label>
                                             <input class="form-control" placeholder="Nhập đáp án D" value="{{ $model->question_ansD }}" name="question_ansD">
-                                            <input class="form-control" placeholder="Nhập key đáp án" name="question_answerTrue">
+                                            <input class="form-control" type="hidden" name="question_answerTrue">
                                         </div>
-                                        <button type="submit" class="btn btn-default" name="">Lưu</button>
-                                        <button type="reset" class="btn btn-default">Hủy bỏ</button>
+                                        <button type="submit" class="btn btn-default" onclick="add_Key_Ans(this.form)" name="">Lưu</button>
+                                        <button type="reset" class="btn btn-default" onclick="location.href='{{route('questions.index')}}'">Hủy bỏ</button>
                                     </form>
                                 </div>
                                 
@@ -81,4 +81,21 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+            <script type="text/javascript" charset="utf-8" >
+                function add_Key_Ans(form) {
+                    with(form){
+                        var ans = '';
+                        if(optionsRadios[0].checked)
+                            ans = ans + optionsRadios[0].value;
+                        if(optionsRadios[1].checked)
+                            ans = ans + optionsRadios[1].value;
+                        if(optionsRadios[2].checked)
+                            ans = ans + optionsRadios[2].value;
+                        if(optionsRadios[3].checked)
+                            ans = ans + optionsRadios[3].value;
+
+                        question_answerTrue.value = ans;
+                    }
+                }
+            </script>
 @endsection
