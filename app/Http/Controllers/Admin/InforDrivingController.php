@@ -138,4 +138,35 @@ class InforDrivingController extends Controller
         }
         return back();
     }
+    public function autosave(Request $request)
+    {
+        $model = new InforDriving();
+
+        include('C:\xampp\htdocs\hoclx_v1_1\resources\views\auto\simple_html_dom.php');
+
+        $html = file_get_html("https://vnexpress.net/tin-tuc/oto-xe-may");
+
+        $link_list = array();
+        foreach($html->find('div.sub_featured ul.scrollbar-inner li a') as $element)
+        {
+            //array_push($link_list,$element->href);
+            $href = $element->href;
+            if(!strpos($href,'box_comment')){
+                // echo $href.'<br />';
+                $article = file_get_html($href);
+                $content =  $article->find('section.sidebar_1');
+                $nodes  = $content[0]->children();
+                $title = $nodes[1]->plaintext;
+                $description = $nodes[2]->plaintext;
+                $content = $nodes[3]->__tostring();
+//                $nodes[0]->first_child()->plaintext.'<hr />';
+                $model->infor_drivings_title = $title;
+                $model->infor_drivings_discription = $description;
+                $model->infor_drivings_image = 'images/1542537249thongtin4.jpg';
+                $model->infor_drivings_content = $content;
+                $model->save();
+            }
+        }
+        return redirect(route('infordriving.index'));
+    }
 }

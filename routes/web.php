@@ -72,6 +72,8 @@ Route::group(['prefix'=>'infordriving', 'middleware'=>'RoleMiddleware','middlewa
     Route::get(  'edit/{id}', 'Admin\InforDrivingController@edit')->name('infordriving.edit');
     Route::post(  'update/{id}', 'Admin\InforDrivingController@update')->name('infordriving.update');
     Route::get(  'destroy/{id}', 'Admin\InforDrivingController@destroy')->name('infordriving.destroy');
+    Route::get(  'auto-save', 'Admin\InforDrivingController@autosave')->name('infordriving.autosave');
+
 });
 
 Route::post('/callback', 'Admin\FeedbackController@callbackstore')->name('callbackstore');
