@@ -26,7 +26,7 @@ class ContactController extends Controller
 
         Mail::send('emails.blanks', $data, function ($message) use ($data) {
             $message->from($data['email'], $data['name'])->subject('Contact');
-            $message->to('contact.hoclaixe123@gmail.com');
+            $message->to('contact.hoclaixe123@gmail.com','Contact');
         });
         return redirect()->back();
     }
