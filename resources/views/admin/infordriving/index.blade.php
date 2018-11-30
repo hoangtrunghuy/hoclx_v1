@@ -16,6 +16,7 @@
                 <!-- DataTables Advanced Tables -->
                 <div class="col-m-3">
                     <a href="{{ route('infordriving.create') }}" title=""><i class="fa fa-plus-square"></i> Thêm</a>
+                    <button type="reset" style="margin-left: 50px;" class="btn btn-success" onclick="location.href='{{route('infordriving.autosave')}}'">Auto Saving</button>
                 </div>
             </div>
             <!-- /.panel-heading -->
