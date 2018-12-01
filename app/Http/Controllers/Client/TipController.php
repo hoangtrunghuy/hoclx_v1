@@ -30,7 +30,14 @@ class TipController extends Controller
     {
             /*$model = Tip::findOrFail($id);*/
             $data = Tip::where('id', $id)->get();
-            return view('client.tipcontent',compact('data'));
+            return view('client.tips.tipcontent',compact('data'));
+    }
+
+    public function index_all()
+    {
+        $data = Tip::all();
+        return view('client.tips.tips-all',compact('data'));
+
     }
 
     /**

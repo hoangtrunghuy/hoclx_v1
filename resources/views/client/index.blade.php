@@ -3,7 +3,7 @@
     @include('client.slide')
     @include('client.loaidethi')
     @include('client.feedback')
-    @include('client.tip')
+    @include('client.tips.tip')
     @include('client.callback')
     @include('client.thongtinlaixe')
 @endsection

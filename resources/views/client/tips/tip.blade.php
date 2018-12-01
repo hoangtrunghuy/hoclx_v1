@@ -68,7 +68,7 @@
 
         <div class="flex-c-m p-t-46">
             <!-- Button -->
-            <a href="#" class="btn-drive m-txt1 size5 bg2 hov-color-white bo-rad-4">
+            <a href="{{ route('content.index.all') }}" class="btn-drive m-txt1 size5 bg2 hov-color-white bo-rad-4">
                 Xem tất cả
                 <i class="fa fa-chevron-right m-l-9 fs-14" aria-hidden="true"></i>
             </a>
