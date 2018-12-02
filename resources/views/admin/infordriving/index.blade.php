@@ -4,6 +4,7 @@
 
 <div class="row">
     <div class="col-lg-12">
+        @include('emails.messeage')
         <h1 class="page-header">Thông tin lái xe</h1>
     </div>
     <!-- /.col-lg-12 -->

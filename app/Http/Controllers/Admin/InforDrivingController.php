@@ -70,7 +70,7 @@ class InforDrivingController extends Controller
      */
     public function show($id)
     {
-        
+
     }
 
     /**
@@ -95,30 +95,30 @@ class InforDrivingController extends Controller
     public function update(Request $request, $id)
     {
 
-       $model = InforDriving::findOrFail($id);
-        $model->fill($request->all());
+     $model = InforDriving::findOrFail($id);
+     $model->fill($request->all());
 
-        if ($request->hasFile('infor_drivings_image')) {
-            $image = $request->file('infor_drivings_image');
+     if ($request->hasFile('infor_drivings_image')) {
+        $image = $request->file('infor_drivings_image');
 
-            $imageName = time() . $image->getClientOriginalName();
+        $imageName = time() . $image->getClientOriginalName();
 
-            $path = public_path('/images');
+        $path = public_path('/images');
 
-            $image->move($path, $imageName);
+        $image->move($path, $imageName);
 
-            $model->infor_drivings_image = 'images/'.$imageName;
+        $model->infor_drivings_image = 'images/'.$imageName;
 
-        }
-        $flag = $model->save();
-        if($flag){
-            session()->flash('success','cập nhật thành công !');
-        }
-        else{
-            session()->flash('warning','cập nhật không thành công !');
-        }
-        return redirect(route('infordriving.index'));
     }
+    $flag = $model->save();
+    if($flag){
+        session()->flash('success','cập nhật thành công !');
+    }
+    else{
+        session()->flash('warning','cập nhật không thành công !');
+    }
+    return redirect(route('infordriving.index'));
+}
 
     /**
      * Remove the specified resource from storage.
@@ -140,33 +140,49 @@ class InforDrivingController extends Controller
     }
     public function autosave(Request $request)
     {
-        $model = new InforDriving();
+
 
         include('../vendor/autosaving/simple_html_dom.php');
 
         $html = file_get_html("https://vnexpress.net/tin-tuc/oto-xe-may");
 
         $link_list = array();
-        foreach($html->find('div.sub_featured ul.scrollbar-inner li a') as $element)
+        $count =0;
+        $link_list  = $html->find('ul#list_sub_featured li a');
+        // foreach ($link_list as $l) {
+        //    echo $l->href;
+        //    echo "<br>";
+        // }
+        foreach( $link_list as $element)
         {
             //array_push($link_list,$element->href);
+            $img = [
+            'images/1542537249thongtin4.jpg',
+            'images/random_img_ttlx_5.jpg',
+            'images/random_img_ttlx_4.jpg',
+            'images/random_img_ttlx_3.jpg',
+            'images/random_img_ttlx_2.jpg',
+            'images/random_img_ttlx_1.jpg'
+            ];
             $href = $element->href;
-            if(!strpos($href,'box_comment')){
+            if(strpos($href,'box_comment')){
                 // echo $href.'<br />';
+                $model = new InforDriving();
                 $article = file_get_html($href);
-                $content =  $article->find('section.sidebar_1');
-                $nodes  = $content[0]->children();
+                $contents =  $article->find('section.sidebar_1');
+                $nodes  = $contents[0]->children();
                 $title = $nodes[1]->plaintext;
                 $description = $nodes[2]->plaintext;
                 $content = $nodes[3]->__tostring();
 //                $nodes[0]->first_child()->plaintext.'<hr />';
                 $model->infor_drivings_title = $title;
                 $model->infor_drivings_discription = $description;
-                $model->infor_drivings_image = 'images/1542537249thongtin4.jpg';
+                $model->infor_drivings_image = $img[rand(0,5)];
                 $model->infor_drivings_content = $content;
                 $model->save();
+                $count++;
             }
         }
-        return redirect(route('infordriving.index'));
+        return redirect(route('infordriving.index'))->with('success','Đã thêm '.$count.' tin');
     }
 }
