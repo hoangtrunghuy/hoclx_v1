@@ -101,6 +101,7 @@ Route::get('clients/tip','Client\TipController@index')->name('client.tip');
 Route::get('tipcontent/{id}','Client\TipController@index1')->name('content.index');
 Route::get('tip-all-content','Client\TipController@index_all')->name('content.index.all');
 
+
 Route::get('clients/infordriving','Client\InforDrivingController@index')->name('client.infordriving');
 Route::get('inforcontent/{id}','Client\InforDrivingController@inforcontent')->name('inforcontent.index');
 

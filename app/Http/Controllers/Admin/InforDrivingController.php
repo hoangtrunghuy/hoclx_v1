@@ -140,19 +140,13 @@ class InforDrivingController extends Controller
     }
     public function autosave(Request $request)
     {
-
-
         include('../vendor/autosaving/simple_html_dom.php');
-
         $html = file_get_html("https://vnexpress.net/tin-tuc/oto-xe-may");
-
+    
         $link_list = array();
         $count =0;
         $link_list  = $html->find('ul#list_sub_featured li a');
-        // foreach ($link_list as $l) {
-        //    echo $l->href;
-        //    echo "<br>";
-        // }
+        
         foreach( $link_list as $element)
         {
             //array_push($link_list,$element->href);

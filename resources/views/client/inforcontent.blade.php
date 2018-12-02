@@ -1,75 +1,98 @@
 @extends('layouts.client')
+<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=602300516877402&autoLogAppEvents=1';
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 @section('content')
 @foreach($data as $item)
 <section class="p-t-65 p-b-45">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-lg-9 p-b-50">
-					<div class="p-r-40 p-r-0-lg">
-						<!-- Content Detail -->
-						<div class="p-b-48">
-							<h3 class="m-txt21 p-b-25">
-								{{$item->infor_drivings_title}}
-							</h3>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-10 col-md-4 col-lg-3 m-lr-auto p-b-50">
+				<div class="block-5">
+					<aside>
+						<h4 class="entry-title">FACEBOOK</h4>
+						<br>
+						<!--Facebook page-->
+						<div class="fb-page" data-href="https://www.facebook.com/bay.tam.chuc.company/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bay.tam.chuc.company/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bay.tam.chuc.company/">Tổng Cục Công Ty Phần Mềm Bảy Tám Chục</a></blockquote></div>
 
-							<div class="flex-w flex-m s-txt29 bo2-b p-b-15">
-								{{-- <span>
-									by Tammy Ramos
-									<span class="m-l-4 m-r-9">|</span>
-								</span>   --}}
+					</aside>
 
-								<span>
-									{{$item->updated_at}}
-									<span class="m-l-4 m-r-9">|</span>
-								</span> 
+					<div class="wrap-text-b5 p-t-28">
+						<div class="p-t-45">
+							<h4 class="m-txt24 p-b-13">
+								Liên hệ
+							</h4>
 
-								{{-- <span>
-									Driving
-									<span class="m-l-4 m-r-9">|</span>
-								</span>   --}}
-
-								{{-- <span>
-									3 Comments
-								</span>
- --}}							</div>
-							
-								<div class="stringToHtml">
-									{{$item->infor_drivings_content}}
-								</div>
-							</div>
-
-							<!-- <div class="bg1 flex-w p-l-30 p-r-30 p-t-30 p-b-40">
-								<div class="wrap-pic-w w-size15 m-r-30 m-b-10">
-									<img src="images/avatar-01.jpg" alt="IMG">
-								</div>
-
-								<div class="w-size16 w-full-sm m-b-10">
-									<span class="m-txt16">
-										Tammy Ramos
+							<ul>
+								<li class="dis-flex p-t-11">
+									<span class="w-size9">
+										<i class="fa fa-map-marker fs-14 color6" aria-hidden="true"></i>
 									</span>
 
-									<p class="s-txt2 w-size17 p-t-9">
-										Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. 
-									</p>
-								</div>
-							</div> -->
+									<span class="s-txt2 w-size10">
+										Địa chỉ: Ngõ 80 - Xuân Phương - Nam Từ Liêm - Hà Nội
+									</span>
+								</li>
+
+								<li class="dis-flex p-t-11">
+									<span class="w-size9">
+										<i class="fa fa-phone fs-14 color6" aria-hidden="true"></i>
+									</span>
+
+									<span class="s-txt2 w-size10">
+										Phone: (+1) 96 6969 6969
+									</span>
+								</li>
+
+								<li class="dis-flex p-t-11">
+									<span class="w-size9">
+										<i class="fa fa-fax fs-14 color6" aria-hidden="true"></i>
+									</span>
+
+									<span class="s-txt2 w-size10">
+										Fax: (+1) 96 696 696969
+									</span>
+								</li>
+
+								<li class="dis-flex p-t-11">
+									<span class="w-size9">
+										<i class="fa fa-envelope fs-14 color6" aria-hidden="true"></i>
+									</span>
+
+									<span class="s-txt2 w-size10">
+										Email: contact@hoclauoto.com
+									</span>
+								</li>
+							</ul>
 						</div>
-
-						<!-- Comment -->
-						
-
-						<!-- Leave a comment -->
-
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8 col-lg-9 p-b-50">
+				<div class="p-r-40 p-r-0-lg">
+					<!-- Content Detail -->
+					<div class="p-b-48">
+						<h3 class="m-txt21 p-b-25">
+							{{$item->infor_drivings_title}}
+						</h3>						
+						<div class="stringToHtml">
+							{{$item->infor_drivings_content}}
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-	<script>
-        var str = document.getElementsByClassName('stringToHtml');
-        for (var i = 0; i < str.length; i++) {
-            str[i].innerHTML = str[i].innerText;
-        }
-    </script>
+	</div>
+</section>
+<script>
+	var str = document.getElementsByClassName('stringToHtml');
+	for (var i = 0; i < str.length; i++) {
+		str[i].innerHTML = str[i].innerText;
+	}
+</script>
 @endforeach
 @endsection

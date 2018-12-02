@@ -23,7 +23,6 @@ class InforDrivingController extends Controller
         $data = InforDriving::where('id', $id)->get();
         return view('client.inforcontent',compact('data'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
