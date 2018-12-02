@@ -106,16 +106,20 @@
 
     <div class="bg3 txt-center p-t-19 p-b-16">
         <span class="s-txt10">@ 2018 Power by:</span>
-        <a href="https://www.facebook.com/176163633284930" class="dis-inline s-txt11 hov-color-white trans-04">Nhóm 09 - KTPM2 - K10 - HaUI</a><br>
+        <a target="blank" href="https://www.facebook.com/176163633284930" class="dis-inline s-txt11 hov-color-white trans-04">Nhóm 09 - KTPM2 - K10 - HaUI</a><br>
 
-        <img width="20" src="http://graph.facebook.com/100008010943881/picture?type=square" alt="" class="img-circle rounded-circle">
-        Bùi Văn Huế -  
-
-        <img width="20" src="http://graph.facebook.com/100005752419402/picture?type=square" alt="" class="img-circle rounded-circle">
-        Hoàng Trung Huy - 
-
-        <img width="20" src="http://graph.facebook.com/100028206723106/picture?type=square" alt="" class="img-circle rounded-circle">
-        Nguyễn Đình Mạnh
+        <a target="blank" href="http://facebook.com/100008010943881">
+            <img width="20" src="http://graph.facebook.com/100008010943881/picture?type=square" alt="" class="img-circle rounded-circle">
+            Bùi Văn Huế &nbsp;
+        </a> 
+        <a target="blank" href="http://facebook.com/100005752419402">
+            <img width="20" src="http://graph.facebook.com/100005752419402/picture?type=square" alt="" class="img-circle rounded-circle">
+            Hoàng Trung Huy &nbsp;
+        </a>
+            <a target="blank" href="http://facebook.com/100028206723106">
+            <img width="20" src="http://graph.facebook.com/100028206723106/picture?type=square" alt="" class="img-circle rounded-circle">
+            Nguyễn Đình Mạnh
+        </a>
             
             
             

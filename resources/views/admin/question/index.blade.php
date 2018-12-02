@@ -39,8 +39,14 @@
                                         <ul>
                                             <li>{{ $item->question_ansA}}</li>
                                             <li>{{ $item->question_ansB}}</li>
+
+                                            @if ($item->question_ansC != null)
                                             <li>{{ $item->question_ansC}}</li>
+                                            @endif
+
+                                            @if ($item->question_ansD != null)
                                             <li>{{ $item->question_ansD}}</li>
+                                            @endif
                                         </ul>
                                     </td>
                                     <td class="center">

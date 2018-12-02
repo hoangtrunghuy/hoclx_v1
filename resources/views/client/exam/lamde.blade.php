@@ -70,18 +70,24 @@
 									    {{ $value->question->question_ansB }}
 									</label>
 								</li>
+								@if ($value->question->question_ansC != null)
 								<li>
 									<label>
 									    <input type="checkbox" class="chon" value="c" name="cau{{ $key }}_check3" />
 									    {{ $value->question->question_ansC }}
 									</label>
 								</li>
+								@endif
+
+								@if ($value->question->question_ansD != null)
 								<li>
 									<label>
 									    <input type="checkbox" class="chon" value="d" name="cau{{ $key }}_check4" />
 									    {{ $value->question->question_ansD }}
 									</label>
 								</li>
+								@endif
+
 								<input type="hidden" name="cau{{ $key }}_answerTrue" value="{{ $value->question->question_answerTrue }}">
 								<input type="hidden" name="cau{{ $key }}_id" value="{{ $value->question->id }}">
 							</ul>	

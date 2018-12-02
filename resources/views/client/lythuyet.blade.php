@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9 mx-auto">
-					<h2 class="text-center">Bộ 450 câu hỏi sát hạch lái xe Ôtô:</h2><br><br>
+					<h1 class="text-center">Bộ 450 câu hỏi sát hạch lái xe Ôtô:</h1><br><br>
 					@foreach($data as $key => $value)
 					<div class="col-md-12 form-group form-control" >
 						<p style="color:red;"><b>Câu số {{ $value->id }}:</b></p>
@@ -30,6 +30,7 @@
 								    @endif
 								</label>
 							</li>
+							@if ($value->question_ansC != null)
 							<li>
 								<label>
 								    * {{ $value->question_ansC }}
@@ -39,6 +40,9 @@
 								    @endif
 								</label>
 							</li>
+							@endif
+
+							@if ($value->question_ansD != null)
 							<li>
 								<label>
 								    * {{ $value->question_ansD }}
@@ -48,6 +52,7 @@
 								    @endif
 								</label>
 							</li>
+							@endif
 						</ul>
 					</div>
 					@endforeach

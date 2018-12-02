@@ -127,7 +127,7 @@
                          data-height="['auto']">
                         <div class="p-l-10 p-r-10 p-t-5 p-b-5">
                             <!-- Button -->
-                            <a href="#" class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03">
+                            <a href="{{ route('lythuyet') }}" class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03">
                                 Ôn Lý Thuyết
                                 <i class="fa fa-chevron-right m-l-9 fs-14" aria-hidden="true"></i>
                             </a>
@@ -135,7 +135,7 @@
 
                         <div class="p-l-10 p-r-10 p-t-5 p-b-5">
                             <!-- Button -->
-                            <a href="#" class="btn-drive size1 m-txt2 bgwhite bo-rad-4 trans-03">
+                            <a href="{{ route('exams.index') }}" class="btn-drive size1 m-txt2 bgwhite bo-rad-4 trans-03">
                                 Luyện Đề Ngay
                                 <i class="fa fa-chevron-right m-l-9 fs-14" aria-hidden="true"></i>
                             </a>
@@ -183,7 +183,7 @@
                          data-height="['auto']">
                         <div class="p-l-10 p-r-10 p-t-5 p-b-5">
                             <!-- Button -->
-                            <a href="#" class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03">
+                            <a href="{{ route('lythuyet') }}" class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03">
                                 Ôn Lý Thuyết
                                 <i class="fa fa-chevron-right m-l-9 fs-14" aria-hidden="true"></i>
                             </a>
@@ -191,7 +191,7 @@
 
                         <div class="p-l-10 p-r-10 p-t-5 p-b-5">
                             <!-- Button -->
-                            <a href="#" class="btn-drive size1 m-txt2 bgwhite bo-rad-4 trans-03">
+                            <a href="{{ route('exams.index') }}" class="btn-drive size1 m-txt2 bgwhite bo-rad-4 trans-03">
                                 Luyện Đề Ngay
                                 <i class="fa fa-chevron-right m-l-9 fs-14" aria-hidden="true"></i>
                             </a>
@@ -237,7 +237,7 @@
                          data-height="['auto']">
                         <div class="p-l-10 p-r-10 p-t-5 p-b-5">
                             <!-- Button -->
-                            <a href="#" class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03">
+                            <a href="{{ route('lythuyet') }}" class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03">
                                 Ôn Lý Thuyết
                                 <i class="fa fa-chevron-right m-l-9 fs-14" aria-hidden="true"></i>
                             </a>
@@ -245,7 +245,7 @@
 
                         <div class="p-l-10 p-r-10 p-t-5 p-b-5">
                             <!-- Button -->
-                            <a href="#" class="btn-drive size1 m-txt2 bgwhite bo-rad-4 trans-03">
+                            <a href="{{ route('exams.index') }}" class="btn-drive size1 m-txt2 bgwhite bo-rad-4 trans-03">
                                 Luyện Đề Ngay
                                 <i class="fa fa-chevron-right m-l-9 fs-14" aria-hidden="true"></i>
                             </a>

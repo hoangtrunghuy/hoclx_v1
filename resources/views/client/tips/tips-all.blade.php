@@ -1,5 +1,6 @@
 @extends('layouts.client')
 @section('content')
+<div class="container">
     <div class="row">
         @foreach($data as $item)
             <div class="col-sm-6 col-lg-3 p-t-30">
@@ -42,4 +43,5 @@
             </div>
         @endforeach
     </div>
+</div>
 @endsection
