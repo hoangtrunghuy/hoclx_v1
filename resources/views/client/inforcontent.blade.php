@@ -11,13 +11,26 @@
 <section class="p-t-65 p-b-45">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-10 col-md-4 col-lg-3 m-lr-auto p-b-50">
+			<div class="col-md-8 col-lg-9 p-b-50">
+				<div class="p-r-40 p-r-0-lg">
+					<!-- Content Detail -->
+					<div class="p-b-48">
+						<h3 class="m-txt21 p-b-25">
+							{{$item->infor_drivings_title}}
+						</h3>						
+						<div class="stringToHtml">
+							{{$item->infor_drivings_content}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-3 m-lr-auto p-b-50">
 				<div class="block-5">
 					<aside>
 						<h4 class="entry-title">FACEBOOK</h4>
 						<br>
 						<!--Facebook page-->
-						<div class="fb-page" data-href="https://www.facebook.com/bay.tam.chuc.company/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bay.tam.chuc.company/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bay.tam.chuc.company/">Tổng Cục Công Ty Phần Mềm Bảy Tám Chục</a></blockquote></div>
+						<div class="fb-page" data-href="https://www.facebook.com/bay.tam.chuc.company/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bay.tam.chuc.company/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bay.tam.chuc.company/">Tổng Cục Công Ty Phần Mềm Bảy Tám Chục</a></blockquote></div>
 
 					</aside>
 
@@ -72,19 +85,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-8 col-lg-9 p-b-50">
-				<div class="p-r-40 p-r-0-lg">
-					<!-- Content Detail -->
-					<div class="p-b-48">
-						<h3 class="m-txt21 p-b-25">
-							{{$item->infor_drivings_title}}
-						</h3>						
-						<div class="stringToHtml">
-							{{$item->infor_drivings_content}}
-						</div>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 </section>

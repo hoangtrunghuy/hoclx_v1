@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -54,7 +55,9 @@ class UserController extends Controller
 
             $model->user_img = 'images/'. $imageName;
 
-        }
+        }else{ $model->user_img = 'client/images/Person-icon-grey1.jpg'; }
+
+        $model->password = Hash::make($request['password']);
 
         $flag = $model->save();
         if($flag){

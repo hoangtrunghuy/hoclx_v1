@@ -23,12 +23,12 @@
                                         <div class="form-group">
                                             <label>Chọn loại câu hỏi</label>
                                             <select class="form-control" name="question_type">
-                                                <option value="1">Lý thuyết</option>
+                                                <option value="1" @if ($model->question_type == 1) selected @endif>Lý thuyết</option>
                                                 <!-- <option>Nghiệp vụ vận tải</option>
                                                 <option>Văn hóa lái xe</option>
                                                 <option>Kỹ thuật sửa chữa</option> -->
-                                                <option value="2">Biển báo</option>
-                                                <option value="3">Sa Hình</option>
+                                                <option value="2" @if ($model->question_type == 2) selected @endif>Biển báo</option>
+                                                <option value="3" @if ($model->question_type == 3) selected @endif>Sa Hình</option>
                                             </select>
                                         </div>
                                         <div class="form-group">

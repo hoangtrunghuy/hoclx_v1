@@ -55,15 +55,15 @@
                                     <h5>Đổi Mật Khẩu:</h5>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="old_password" placeholder="Nhập mật khẩu cũ"
+                                    <input type="password" name="old_password" placeholder="Nhập mật khẩu cũ"
                                            class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="password" name="password" placeholder="Nhập mật khẩu mới"
+                                    <input type="password" id="password" name="password" placeholder="Nhập mật khẩu mới"
                                            class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="confirm_password" name="confirm_password"
+                                    <input type="password" id="confirm_password" name="confirm_password"
                                            placeholder="Nhập lại mật khẩu mới" class="form-control">
                                 </div>
                             </div>

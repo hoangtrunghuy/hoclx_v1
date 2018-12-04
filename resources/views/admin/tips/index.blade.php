@@ -22,19 +22,21 @@
             <div class="panel-body">
                 <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>
+                        <th>STT</th>
                         <th>Title</th>
                         <th>Discription</th>
                         <th>Image</th>
-                        <th>Noi Dung</th>
+                        <!-- <th>Noi Dung</th> -->
                         <th>Action</th>
                     </thead>
                     <tbody>
-                        @foreach($data as $item)
+                        @foreach($data as $key => $item)
                         <tr>
+                            <td>{{++$key}}</td>
                             <td>{{$item->title}}</td>
                             <td>{{$item->discription}}</td>
                             <td><img width="100px"  src="{{$item->image}}"></td>
-                            <td class="stringToHtml">{{$item->content}}</td>
+                            <!-- <td class="stringToHtml">{{$item->content}}</td>  -->
                             <td>
                                 {{--<a href="{{route('tips.show', $item->id)}}">Show</a>--}}
                                 <a href="{{route('tips.edit', $item->id)}}"><i class="glyphicon glyphicon-edit"></i>Edit</a>

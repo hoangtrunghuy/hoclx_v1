@@ -47,7 +47,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label>Content</label>
-                    <textarea id="content" name="content" class="form-control" cols="30" rows="10">{!!$model->content!!}</textarea>
+                    <textarea id="content" name="content" class="form-control" cols="30" rows="50">{!!$model->content!!}</textarea>
                 </div>
             </div>
         </div>

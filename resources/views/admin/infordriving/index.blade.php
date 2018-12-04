@@ -24,19 +24,21 @@
             <div class="panel-body">
                 <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>
+                        <th>STT</th>
                         <th>Title</th>
                         <th>Discription</th>
                         <th>Image</th>
-                        <th>Content</th>
+                        <!-- <th>Content</th> -->
                         <th>Action</th>
                     </thead>
                     <tbody>
-                        @foreach($data as $item)
+                        @foreach($data as $key => $item)
                         <tr>
+                            <td>{{++$key}}</td>
                             <td>{{$item->infor_drivings_title}}</td>
                             <td>{{$item->infor_drivings_discription}}</td>
                             <td><img width="100px"  src="{{$item->infor_drivings_image}}"></td>
-                            <td class="stringToHtml">{{$item->infor_drivings_content}}</td>
+                            {{-- <td class="stringToHtml">{{$item->infor_drivings_content}}</td> --}}
                             <td>
                                 <a href="{{route('infordriving.edit', $item->id)}}"><i class="glyphicon glyphicon-edit"></i>Edit</a>
                                 <br>
@@ -48,8 +50,8 @@
                                     }
                                     "
                                     ><i class="glyphicon glyphicon-trash"></i>Delete</a>
-                                </td>
-                            </tr>
+                            </td>
+                        </tr>
                             @endforeach
                         </tbody>
                     </table>
