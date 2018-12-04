@@ -68,7 +68,14 @@ class QuestionController extends Controller
 
         }
 
-        $model->save();
+        $flag = $model->save();
+        
+        if($flag){
+            session()->flash('success','Tạo mới thành công !');
+        }
+        else{
+            session()->flash('warning','Tạo mới không thất bại !');
+        }
 
         return redirect(route('questions.index'));
     }
@@ -133,7 +140,14 @@ class QuestionController extends Controller
 
             $model->question_img = 'images/'.$imageName;
         }
-        $model->update();
+        $flag = $model->update();
+
+        if($flag){
+            session()->flash('success','cập nhật thành công !');
+        }
+        else{
+            session()->flash('warning','cập nhật không thành công !');
+        }
 
         return redirect(route('questions.index'));
     }
@@ -178,7 +192,14 @@ class QuestionController extends Controller
 
     public function delete_qs($id)
     {
-        $deletedRows = Question::where('id', $id)->delete();
+        $flag = Question::where('id', $id)->delete();
+
+        if($flag){
+            session()->flash('success','Xóa thành công !');
+        }
+        else{
+            session()->flash('warning','xóa không thành công !');
+        }
         
         return redirect(route('questions.index'));
     }

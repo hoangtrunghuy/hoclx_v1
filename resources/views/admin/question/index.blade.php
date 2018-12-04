@@ -52,7 +52,14 @@
                                     <td class="center">
                                         <a href="{{ route('questions.edit',$item->id) }}" title="">Edit</a>
 
-                                        <a href="{{ route('DeleteQuestion',$item->id) }}" class="destroy"  title="">Delete</a>
+                                        <a href="{{ route('DeleteQuestion',$item->id) }}" 
+                                            onclick = "event.preventDefault();
+
+                                           flag = confirm('Bạn có chác muốn xóa không!');
+                                           if(flag){
+                                           window.location = '{{route('DeleteQuestion', $item->id)}}';
+                                           }
+                                           " title="">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -67,4 +74,10 @@
             </div>
             <!-- /.col-lg-12 -->
         </div>
+        <script type="text/javascript" charset="utf-8" >
+            if("{{ Session()->get('success') }}" != "")
+                alert("{{ Session()->get('success') }}");
+            if("{{ Session()->get('warning') }}" != "")
+                alert("{{ Session()->get('warning') }}");
+        </script>
 @endsection

@@ -58,10 +58,10 @@ class UserController extends Controller
 
         $flag = $model->save();
         if($flag){
-            session()->flash('success','tạo mới thành công !');
+            session()->flash('success','Tạo mới thành công !');
         }
         else{
-            session()->flash('warning','tạo mới không thành công !');
+            session()->flash('warning','Tạo mới không thất bại !');
         }
 
         return redirect(route('user.index'));
@@ -137,11 +137,12 @@ class UserController extends Controller
 
         $flag = $model->delete();
         if($flag){
-            session()->flash('success','xóa thành công !');
+            session()->flash('success','Xóa thành công !');
         }
         else{
             session()->flash('warning','xóa không thành công !');
         }
-        return back();
+
+        return Redirect()->route('user.index');
     }
 }

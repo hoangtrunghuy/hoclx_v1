@@ -57,4 +57,10 @@
             </div>
             <!-- /.col-lg-12 -->
         </div>
+        <script type="text/javascript" charset="utf-8" >
+            if("{{ Session()->get('success') }}" != "")
+                alert("{{ Session()->get('success') }}");
+            if("{{ Session()->get('warning') }}" != "")
+                alert("{{ Session()->get('warning') }}");
+        </script>
         @endsection
